@@ -1,38 +1,35 @@
-Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1NTkyZDZhYi03YWZjLTRhMGItYmNjNy0yYWMzMjEwMGY5OGQiLCJpZCI6NDE2MTY3LCJpYXQiOjE3NzU3ODUxMjF9.4yH3waGH3QMFC-dJI21EMZCHEj0-3sohaAaNNmRweyA'
+Cesium.Ion.defaultAccessToken = 'YOUR_TOKEN_HERE';
 
 const viewer = new Cesium.Viewer('cesiumContainer', {
-
-  // Turn off all the default Earth UI elements
-  baseLayerPicker:   false,
-  geocoder:          false,
-  homeButton:        false,
-  sceneModePicker:   false,
-  navigationHelpButton: false,
-  animation:         false,
-  timeline:          false,
-  fullscreenButton:  false,
-
-  // Turn off default Earth imagery for now
-  imageryProvider: false,
-
-  // Turn off real world terrain
-  terrainProvider: new Cesium.EllipsoidTerrainProvider(),
+  baseLayerPicker:         false,
+  geocoder:                false,
+  homeButton:              false,
+  sceneModePicker:         false,
+  navigationHelpButton:    false,
+  animation:               false,
+  timeline:                false,
+  fullscreenButton:        false,
+  terrainProvider:         new Cesium.EllipsoidTerrainProvider(),
+  imageryProvider:         false,
 });
 
-viewer.CesiumWidget._cesiumWidget.creditsContainer.style.display = 'none';
-
+viewer.cesiumWidget.creditContainer.style.display = 'none';
 viewer.scene.backgroundColor = Cesium.Color.BLACK;
-
 viewer.scene.skyAtmosphere.show = true;
 
-//TEST - basic color to the globe to check if working
-viewer.scene.globe.baseColor = Cesium.Color.DARKBLUE;
-
-viewer.camara.setView({
-    destination: Cesium.Cartesian3.fromDegrees(
-        0,
-        20,
-        20000000
-    )
+const imageryProvider = new Cesium.UrlTemplateImageryProvider({
+  url: 'tiles/{z}/{x}/{reverseY}.jpg',
+  tilingScheme: new Cesium.WebMercatorTilingScheme(),
+  minimumLevel: 0,
+  maximumLevel: 6,
 });
 
+viewer.imageryLayers.addImageryProvider(imageryProvider);
+
+viewer.camera.setView({
+  destination: Cesium.Cartesian3.fromDegrees(
+    0,
+    20,
+    20000000
+  )
+});
