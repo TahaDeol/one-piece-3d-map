@@ -1,3 +1,44 @@
+const loadingScreen = document.getElementById('loadingScreen');
+const loadingFill   = document.getElementById('loadingFill');
+const loadingText   = document.getElementById('loadingText');
+
+const loadingMessages = [
+  'Hoisting the sails...',
+  'Entering the Grand Line...',
+  'Finding the Poneglyphs...',
+  'Braving the New World...',
+  'Locating Laugh Tale...',
+];
+
+let messageIndex = 0;
+let progress = 0;
+
+const totalDuration = 10000;
+const intervalSpeed = 750;
+const totalSteps    = totalDuration / intervalSpeed;
+const increment     = 100 / totalSteps;
+
+const loadingInterval = setInterval(function() {
+  progress += increment;
+  if (progress > 100) progress = 100;
+  loadingFill.style.width = progress + '%';
+
+  const newIndex = Math.min(
+    Math.floor((progress / 100) * loadingMessages.length),
+    loadingMessages.length - 1
+  );
+
+  if (newIndex !== messageIndex) {
+    messageIndex = newIndex;
+    loadingText.style.opacity = '0';
+    setTimeout(function() {
+      loadingText.textContent = loadingMessages[messageIndex];
+      loadingText.style.opacity = '1';
+    }, 400);
+  }
+
+}, intervalSpeed);
+
 Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1NTkyZDZhYi03YWZjLTRhMGItYmNjNy0yYWMzMjEwMGY5OGQiLCJpZCI6NDE2MTY3LCJpYXQiOjE3NzU3ODUxMjF9.4yH3waGH3QMFC-dJI21EMZCHEj0-3sohaAaNNmRweyA';
 
 const viewer = new Cesium.Viewer('cesiumContainer', {
@@ -26,10 +67,6 @@ const imageryProvider = new Cesium.UrlTemplateImageryProvider({
 
 viewer.imageryLayers.addImageryProvider(imageryProvider);
 
-viewer.camera.setView({
-  destination: Cesium.Cartesian3.fromDegrees(0, 20, 20000000)
-});
-
 // ============================================
 // MARKER COLORS BY REGION
 // ============================================
@@ -43,10 +80,6 @@ const regionColors = {
   'Calm Belt':   '#1abc9c',
   'Red Line':    '#e74c3c',
 };
-
-function getColor(region) {
-  return regionColors[region] || '#ffffff';
-}
 
 function createMarkerCanvas(color) {
   const canvas = document.createElement('canvas');
@@ -71,7 +104,7 @@ async function loadLocations() {
   const locations = await response.json();
 
   locations.forEach(location => {
-    const color = getColor(location.sea);
+    const color = regionColors[location.sea] || '#ffffff';
 
     viewer.entities.add({
       id: String(location.id),
@@ -104,6 +137,27 @@ async function loadLocations() {
 }
 
 loadLocations();
+// ============================================
+// HIDE LOADING SCREEN WHEN GLOBE IS READY
+// ============================================
+setTimeout(function() {
+  clearInterval(loadingInterval);
+  loadingFill.style.width   = '100%';
+  loadingText.style.opacity = '0';
+
+  setTimeout(function() {
+    loadingText.style.opacity = '1';
+    loadingText.textContent   = 'The One Piece is Real!';
+
+    setTimeout(function() {
+      loadingScreen.style.opacity = '0';
+      setTimeout(function() {
+        loadingScreen.style.display = 'none';
+      }, 800);
+    }, 800);
+  }, 400);
+
+}, 10000);
 
 // ============================================
 // CLICK HANDLER — show info panel
@@ -159,3 +213,23 @@ function showPanel(data) {
 function hidePanel() {
   document.getElementById('infoPanel').classList.add('hidden');
 }
+
+// ============================================
+// OPENING CAMERA ANIMATION
+// ============================================
+viewer.camera.setView({
+  destination: Cesium.Cartesian3.fromDegrees(0, 0, 62500000),
+});
+
+setTimeout(function() {
+  viewer.camera.flyTo({
+    destination: Cesium.Cartesian3.fromDegrees(138, 50, 3000000),
+    orientation: {
+      heading: Cesium.Math.toRadians(0),
+      pitch:   Cesium.Math.toRadians(-75),
+      roll:    0,
+    },
+    duration:       5,
+    easingFunction: Cesium.EasingFunction.CUBIC_IN_OUT,
+  });
+}, 11000);
