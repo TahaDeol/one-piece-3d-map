@@ -1,0 +1,5 @@
+.DS_Store
+images/
+tiles/
+node_modules/
+.env
