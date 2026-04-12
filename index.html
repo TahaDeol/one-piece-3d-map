@@ -15,6 +15,24 @@
 
     <div id="cesiumContainer"></div>
 
+    <div id="infoPanel" class="hidden">
+        <button id="closePanel" onclick="hidePanel()">✕</button>
+        <h2 id="panelName"></h2>
+        <div class="panelRow">
+            <span class="panelLabel">Region</span>
+            <span id="panelSea"></span>
+        </div>
+        <div class="panelRow">
+            <span class="panelLabel">Type</span>
+            <span id="panelType"></span>
+        </div>
+        <div class="panelRow">
+            <span class="panelLabel">Arc</span>
+            <span id="panelArc"></span>
+        </div>
+        <p id="panelNotes"></p>
+    </div>
+
     <script src="src/map.js"></script>  
 
 </body>

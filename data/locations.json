@@ -1,0 +1,1732 @@
+[
+  {
+    "id": 1775960521888,
+    "name": "Sixis Island",
+    "lon": 130.988,
+    "lat": 26.6462,
+    "sea": "East Blue",
+    "type": "Island",
+    "arc": "One Piece Ace's Story",
+    "notes": "A deserted island in East Blue where Portgas D. Ace was stranded after his ship was destroyed. He encountered Masked Deuce here, and after surviving together, Deuce became the first member of the Spade Pirates."
+  },
+  {
+    "id": 1775960576973,
+    "name": "Shimotsuki Village",
+    "lon": 144.8635,
+    "lat": 36.5991,
+    "sea": "East Blue",
+    "type": "Town",
+    "arc": "Romance Dawn",
+    "notes": "A small village in East Blue founded by Shimotsuki Kozaburo, who fled from Wano Country. It is home to Isshin Dojo where Roronoa Zoro trained alongside Kuina under Koushirou. Zoro's lifelong dream to become the world's greatest swordsman originated here."
+  },
+  {
+    "id": 1775960721646,
+    "name": "Kumate Island",
+    "lon": 125.8916,
+    "lat": 43.3705,
+    "sea": "East Blue",
+    "type": "Island",
+    "arc": "Baratie",
+    "notes": "An island in East Blue known for being inhabited by a violent cannibalistic tribe called the Kumate Tribe. Jango of the Black Cat Pirates claimed to have hypnotized the entire tribe during his travels. The island is only briefly mentioned and never shown in detail."
+  },
+  {
+    "id": 1775960739428,
+    "name": "Dawn Island",
+    "lon": 135.6185,
+    "lat": 53.4484,
+    "sea": "East Blue",
+    "type": "Island",
+    "arc": "Romance Dawn",
+    "notes": "The main island in the Goa Kingdom archipelago and the birthplace of Monkey D. Luffy. It contains Foosha Village, the Goa Kingdom capital, Grey Terminal, and Mt. Corvo. This island is central to Luffy's backstory and his childhood with Ace and Sabo."
+  },
+  {
+    "id": 1775960773658,
+    "name": "Goa Kingdom / Grey Terminal",
+    "lon": 135.1398,
+    "lat": 55.8688,
+    "sea": "East Blue",
+    "type": "Kingdom",
+    "arc": "Post-War",
+    "notes": "The Goa Kingdom is a monarchy on Dawn Island known for its corrupt nobility and rigid class system. Grey Terminal is the massive trash heap and slum outside its walls where outcasts live. Luffy, Ace, and Sabo built their secret base here and swore their brotherhood over sake."
+  },
+  {
+    "id": 1775960803340,
+    "name": "Foosha Village",
+    "lon": 136.6964,
+    "lat": 55.6798,
+    "sea": "East Blue",
+    "type": "Town",
+    "arc": "Romance Dawn",
+    "notes": "A peaceful port village on Dawn Island where Luffy spent his early childhood. It is home to Makino's bar, where the Red Hair Pirates frequently visited. Shanks gave Luffy his iconic straw hat here after Luffy was saved from the Lord of the Coast sea king."
+  },
+  {
+    "id": 1775960842777,
+    "name": "Mt. Corvo",
+    "lon": 136.1395,
+    "lat": 57.0597,
+    "sea": "East Blue",
+    "type": "Other",
+    "arc": "Post-War",
+    "notes": "A mountain on Dawn Island that serves as the hideout for the Dadan Family, a group of mountain bandits led by Curly Dadan. Garp entrusted both Ace and Luffy to Dadan's care, and this is where the two brothers along with Sabo grew up and trained together."
+  },
+  {
+    "id": 1775960863299,
+    "name": "Goat Island",
+    "lon": 129.1846,
+    "lat": 60.8883,
+    "sea": "East Blue",
+    "type": "Island",
+    "arc": "Filler Arc",
+    "notes": "An anime-only island that appears in filler episodes. It is inhabited by an old man named Zenny who lives alone with a herd of goats. The Straw Hats help him after discovering his dream to become a pirate. This location does not appear in the manga."
+  },
+  {
+    "id": 1775961073197,
+    "name": "Satsuruzu Kingdom",
+    "lon": 140.2962,
+    "lat": 66.1023,
+    "sea": "East Blue",
+    "type": "Kingdom",
+    "arc": "Romance Dawn",
+    "notes": "The home land of future Marine Koby. Two years prior to the events of the story, he had left on a fishing boat before accidentally boarding the ship of the Alvida Pirates where he was forced to work as a cabin boy."
+  },
+  {
+    "id": 1775961172160,
+    "name": "Nazawaka City",
+    "lon": 149.8514,
+    "lat": 70.2626,
+    "sea": "East Blue",
+    "type": "Town",
+    "arc": "One Piece Novel ZORO",
+    "notes": "Town  featured in the novel One Piece Novel Zoro."
+  },
+  {
+    "id": 1775961307057,
+    "name": "Nagagutsu Kingdom",
+    "lon": 113.5829,
+    "lat": 67.7937,
+    "sea": "East Blue",
+    "type": "Kingdom",
+    "arc": "Levely",
+    "notes": "Home of King Furrari and Prince Tritobu featured during the Levely in Mary Geoise"
+  },
+  {
+    "id": 1775961347507,
+    "name": "Shells Town / G-153",
+    "lon": 124.9745,
+    "lat": 61.706,
+    "sea": "East Blue",
+    "type": "Town",
+    "arc": "Romance Dawn",
+    "notes": "A port town in East Blue with the 153rd Marine Branch base. Luffy traveled here to recruit Roronoa Zoro, who was imprisoned by Captain Morgan's son Helmeppo. After defeating Morgan and freeing Zoro, this became the site of the Straw Hat Pirates' first official recruitment."
+  },
+  {
+    "id": 1775961531623,
+    "name": "G-77",
+    "lon": 110.1873,
+    "lat": 57.814,
+    "sea": "East Blue",
+    "type": "Marine Base",
+    "arc": "Arlong Park",
+    "notes": "During the early rule of Arlong on Conomi Islands, the G-77 branch had deployed units to to rescue the citizens. Ultimately failing and allowing Arlong's tyranny to grow."
+  },
+  {
+    "id": 1775961554962,
+    "name": "Organ Island / Orange Town",
+    "lon": 100.9968,
+    "lat": 51.4648,
+    "sea": "East Blue",
+    "type": "Town",
+    "arc": "Orange Town",
+    "notes": "An island in East Blue where Orange Town is located. The town was terrorized by Buggy the Clown and his pirate crew. Luffy and Zoro arrived here and recruited Nami after defeating Buggy. The mayor Boodle and his dog Chouchou are notable residents who defended their home."
+  },
+  {
+    "id": 1775961628300,
+    "name": "Island of Rare Animals",
+    "lon": 93.8014,
+    "lat": 47.2183,
+    "sea": "East Blue",
+    "type": "Island",
+    "arc": "Syrup Village",
+    "notes": "An island in East Blue inhabited by strange hybrid animals created by an eccentric scientist named Gaimon's absence. Gaimon himself is stuck in a treasure chest and guards what he believes are treasure boxes atop a cliff. Luffy visited briefly and left Gaimon to protect the animals."
+  },
+  {
+    "id": 1775961658853,
+    "name": "Tequila Wolf",
+    "lon": 95.7191,
+    "lat": 76.1135,
+    "sea": "East Blue",
+    "type": "Other",
+    "arc": "Post-War",
+    "notes": "A massive bridge in East Blue that has been under construction for over 700 years by order of the World Government. Slaves and criminals are forced to work there building the bridge toward an unknown destination. Robin was sent here by Kuma's powers and was later rescued by the Revolutionary Army."
+  },
+  {
+    "id": 1775961697631,
+    "name": "Gecko Islands",
+    "lon": 77.0903,
+    "lat": 50.3754,
+    "sea": "East Blue",
+    "type": "Archipelago",
+    "arc": "Syrup Village",
+    "notes": "An archipelago in East Blue consisting of multiple islands, with Syrup Village located on one of them. The islands are relatively peaceful and rural. This is the homeland of Usopp and where Kaya resides. The Black Cat Pirates targeted this location for Kaya's fortune."
+  },
+  {
+    "id": 1775961718517,
+    "name": "Syrup Village",
+    "lon": 76.4342,
+    "lat": 47.6978,
+    "sea": "East Blue",
+    "type": "Town",
+    "arc": "Syrup Village",
+    "notes": "A peaceful village on the Gecko Islands and the hometown of Usopp. Kaya, a wealthy young woman, lives in the mansion overlooking the village. Captain Kuro infiltrated the village as her butler Klahadore, planning to inherit her fortune. The Straw Hats defeated his Black Cat Pirates and recruited Usopp here."
+  },
+  {
+    "id": 1775961779967,
+    "name": "Mirror Ball Island",
+    "lon": 75.293,
+    "lat": 58.4791,
+    "sea": "East Blue",
+    "type": "Island",
+    "arc": "Drum Island",
+    "notes": "An island in East Blue known for its dance culture and festive atmosphere. Jango traveled here after the Black Cat Pirates disbanded and became famous as a dancer. He eventually joined the Marines alongside Fullbody after the two bonded over their shared love of dancing."
+  },
+  {
+    "id": 1775961964274,
+    "name": "G-16",
+    "lon": 59.4506,
+    "lat": 48.6,
+    "sea": "East Blue",
+    "type": "Marine Base",
+    "arc": "Arlong Park",
+    "notes": "Led by Captain Nezumi, tasked with protecting the Conomi Islands however under Arlong's rule through monthly payments by Arlong they had turned a blind eye to he is reign over the region."
+  },
+  {
+    "id": 1775961987473,
+    "name": "Gosa Village",
+    "lon": 49.9311,
+    "lat": 51.3262,
+    "sea": "East Blue",
+    "type": "Town",
+    "arc": "Arlong Park",
+    "notes": "A village in the Conomi Islands that was completely destroyed by Arlong and his Fish-Man Pirates as a demonstration of power. The village was flipped upside down, with buildings inverted into the ground. It serves as a grim reminder of Arlong's tyranny over the archipelago."
+  },
+  {
+    "id": 1775962019443,
+    "name": "Cocoyashi Village",
+    "lon": 45.9788,
+    "lat": 49.6104,
+    "sea": "East Blue",
+    "type": "Town",
+    "arc": "Arlong Park",
+    "notes": "Nami's hometown in the Conomi Islands where she grew up with her adoptive mother Bell-mère and sister Nojiko. The village suffered under Arlong's rule for eight years, with residents forced to pay tribute money to survive. Bell-mère was killed here when she couldn't pay for both herself and her daughters."
+  },
+  {
+    "id": 1775962038955,
+    "name": "Arlong Park",
+    "lon": 44.1468,
+    "lat": 52.0139,
+    "sea": "East Blue",
+    "type": "Other",
+    "arc": "Arlong Park",
+    "notes": "The headquarters of the Arlong Pirates, built to resemble Sabaody Park as a twisted homage to Fish-Man Island. Arlong ruled over the Conomi Islands from this location, extorting villages and enslaving Nami as his cartographer. The Straw Hats destroyed Arlong Park to free Nami and the islands from his tyranny."
+  },
+  {
+    "id": 1775962060301,
+    "name": "Conomi Islands",
+    "lon": 49.6933,
+    "lat": 54.245,
+    "sea": "East Blue",
+    "type": "Island",
+    "arc": "Arlong Park",
+    "notes": "An archipelago in East Blue consisting of over 20 islands including Cocoyashi Village and Gosa Village. The entire region was under the control of Arlong and his Fish-Man Pirates for eight years. After Arlong's defeat, the islands were freed and Nami could finally pursue her dream of mapping the world."
+  },
+  {
+    "id": 1775962209958,
+    "name": "Frauce Kingdom",
+    "lon": 55.9411,
+    "lat": 65.9538,
+    "sea": "East Blue",
+    "type": "Kingdom",
+    "arc": "Levely",
+    "notes": "Governed by Queen Ban Dedessinée, one of the Monarches in attendance of the Levely in Mary Geoise."
+  },
+  {
+    "id": 1775962366234,
+    "name": "Cozia Island",
+    "lon": 35.7568,
+    "lat": 60.6205,
+    "sea": "East Blue",
+    "type": "Island",
+    "arc": "Whole Cake Island",
+    "notes": "Invaded by Germa-66 13 years ago by crossing the North Blue. Ultimately allowing Sanji to escape and seek refuge from his father and brothers."
+  },
+  {
+    "id": 1775962419193,
+    "name": "Baratie",
+    "lon": 71.4185,
+    "lat": 33.4255,
+    "sea": "East Blue",
+    "type": "Other",
+    "arc": "Baratie",
+    "notes": "A floating restaurant ship in East Blue owned and operated by the legendary pirate-turned-chef Zeff, also known as Red-Leg Zeff. Sanji worked here as a sous chef before joining the Straw Hats. The restaurant was attacked by Don Krieg's armada seeking food, leading to a battle where Luffy defeated Krieg and recruited Sanji."
+  },
+  {
+    "id": 1775962604317,
+    "name": "Oykot Kingdom",
+    "lon": 49.8623,
+    "lat": 27.4479,
+    "sea": "East Blue",
+    "type": "Kingdom",
+    "arc": "Arlong Park",
+    "notes": "Ravaged by a pirate attack, the marines had sent Bell-mère and her unit to save the kingdom. On the brink of giving up she finds Nojiko and an infant Nami, who she decides to save both and bring back to her home town."
+  },
+  {
+    "id": 1775962640447,
+    "name": "Lougetown / Polestar Islands",
+    "lon": 18.4545,
+    "lat": 29.1279,
+    "sea": "East Blue",
+    "type": "Town",
+    "arc": "Lougetown",
+    "notes": "Known as the \"Town of the Beginning and the End,\" Loguetown is located on the Polestar Islands and is the birthplace and execution site of Gol D. Roger. It is the last stop before entering the Grand Line. Luffy visited Roger's execution platform here and narrowly escaped execution himself thanks to a lightning strike."
+  },
+  {
+    "id": 1775962943911,
+    "name": "Reverse Mountain",
+    "lon": 8.1496,
+    "lat": -0.1209,
+    "sea": "Red Line",
+    "type": "Other",
+    "arc": "Reverse Mountain",
+    "notes": "A massive mountain at the intersection of the Red Line and Grand Line where water from all four Blues flows upward due to unique currents. It serves as one of two entry points into the Grand Line. Ships must ride the upward canals to cross over and descend into the Grand Line on the other side."
+  },
+  {
+    "id": 1775962976279,
+    "name": "Twins Cape",
+    "lon": 17.9137,
+    "lat": -2.8461,
+    "sea": "Grand Line",
+    "type": "Other",
+    "arc": "Reverse Mountain",
+    "notes": "The first location in the Grand Line at the base of Reverse Mountain. The lighthouse keeper Crocus lives here inside the whale Laboon, treating his injuries. Laboon has been waiting at the capes for 50 years for the Rumbar Pirates to return. The Straw Hats obtained their first Log Pose here."
+  },
+  {
+    "id": 1775962999916,
+    "name": "Whisky Peak",
+    "lon": 26.4407,
+    "lat": 3.7836,
+    "sea": "Grand Line",
+    "type": "Town",
+    "arc": "Whisky Peak",
+    "notes": "A cactus-covered island on the Grand Line that appears welcoming but is actually a town of bounty hunters working for Baroque Works. The residents feign hospitality to capture pirates. Zoro single-handedly defeated 100 bounty hunters here, and the crew first learned about Baroque Works and the threat to Alabasta."
+  },
+  {
+    "id": 1775963043139,
+    "name": "Boin Archipelago",
+    "lon": 30.1941,
+    "lat": -12.9825,
+    "sea": "Grand Line",
+    "type": "Archipelago",
+    "arc": "Post-War",
+    "notes": "A cluster of giant plant islands in the Grand Line shaped like enormous flowers. The islands are carnivorous, luring prey to their centers with abundant food before consuming them. Usopp was sent here by Kuma and trained for two years under Heracles, becoming significantly stronger and learning Pop Green techniques."
+  },
+  {
+    "id": 1775963065667,
+    "name": "Little Garden",
+    "lon": 36.2148,
+    "lat": 6.6161,
+    "sea": "Grand Line",
+    "type": "Island",
+    "arc": "Little Garden",
+    "notes": "A prehistoric island in the Grand Line where dinosaurs and ancient creatures still roam due to its unique climate. Two giant warriors, Dorry and Brogy from Elbaf, have been dueling here for over 100 years over a forgotten dispute. The Straw Hats befriended them and learned the meaning of warrior pride."
+  },
+  {
+    "id": 1775963123295,
+    "name": "Kyuka Island",
+    "lon": 40.1098,
+    "lat": 1.9016,
+    "sea": "Grand Line",
+    "type": "Island",
+    "arc": "Little Garden",
+    "notes": "An island in the Grand Line that serves as a vacation spot. It was mentioned as a location where Crocodile's Baroque Works agents operated. Limited information is available as it receives only brief mention without detailed depiction in the main story."
+  },
+  {
+    "id": 1775963151186,
+    "name": "Drum Island / Sakura Kingdom",
+    "lon": 48.1504,
+    "lat": 7.919,
+    "sea": "Grand Line",
+    "type": "Kingdom",
+    "arc": "Drum Island",
+    "notes": "A winter island in the Grand Line formerly ruled by the tyrannical King Wapol, who hoarded all doctors except the witch-like Kureha. The Straw Hats came here seeking treatment for Nami and recruited Tony Tony Chopper. After Wapol's defeat, Dalton became king and renamed it the Sakura Kingdom for its cherry blossom-like snow."
+  },
+  {
+    "id": 1775963249716,
+    "name": "Renaisse",
+    "lon": 52.0579,
+    "lat": -0.2339,
+    "sea": "Grand Line",
+    "type": "Island",
+    "arc": "Little Garden",
+    "notes": "While on Renaisse, Smoker and Tashigi arrested Baroque Works agent Mr. 11, though they were unaware of his allegiance at the time. Miss Thursday, Mr. 11's partner, abandoned him, and ran from the two Marines."
+  },
+  {
+    "id": 1775963449804,
+    "name": "Momoiro Island",
+    "lon": 51.5224,
+    "lat": -11.6178,
+    "sea": "Grand Line",
+    "type": "Island",
+    "arc": "Post-War",
+    "notes": "Known as Peachy Island, this is the home of the Kamabakka Kingdom ruled by Emporio Ivankov of the Revolutionary Army. The island is inhabited by okama (crossdressers) and is known for Attack Cuisine that can unlock human potential. Sanji was sent here by Kuma and trained for two years, learning the recipes and Newkama Kenpo techniques."
+  },
+  {
+    "id": 1775963509176,
+    "name": "Alabasta Kingdom",
+    "lon": 65.6264,
+    "lat": 10.1258,
+    "sea": "Grand Line",
+    "type": "Kingdom",
+    "arc": "Alabasta",
+    "notes": "A massive desert kingdom in the Grand Line ruled by King Cobra Nefertari and his daughter Princess Vivi. Crocodile and Baroque Works orchestrated a civil war to seize control and obtain the ancient weapon Pluton. The Straw Hats helped Vivi save her kingdom by defeating Crocodile and exposing his schemes."
+  },
+  {
+    "id": 1775963586300,
+    "name": "Nanimonai Island",
+    "lon": 61.4269,
+    "lat": 4.2521,
+    "sea": "Grand Line",
+    "type": "Island",
+    "arc": "Alabasta",
+    "notes": "Miss All-Sunday gave Vivi an Eternal Pose to this island to help the Straw Hat Pirates reach Arabasta. However, while Vivi was contemplating whether or not she should accept, Luffy suddenly grabbed the pose and destroyed it, refusing to let an enemy choose their route."
+  },
+  {
+    "id": 1775963675036,
+    "name": "Foolshout Island",
+    "lon": 64.3637,
+    "lat": -5.3147,
+    "sea": "Grand Line",
+    "type": "Island",
+    "arc": "Fishman Island",
+    "notes": "The Sun Pirates arrived here to bring back Koala to her mother. They did it successfully but Fisher Tiger met his end in a Marine ambush led by Rear Admiral Strawberry.\nLater, Arlong would come back to the island to seek revenge, only to be defeated and captured by Vice Admiral Borsalino."
+  },
+  {
+    "id": 1775963711790,
+    "name": "Weatheria",
+    "lon": 72.1407,
+    "lat": -3.1625,
+    "sea": "Grand Line",
+    "type": "Island",
+    "arc": "Post-War",
+    "notes": "A small sky island inhabited by scientists who study weather and climate. The island itself floats through the atmosphere using weather-based technology. Nami was sent here by Kuma and spent two years studying meteorology and weather science, significantly improving her navigation and Clima-Tact abilities."
+  },
+  {
+    "id": 1775963729744,
+    "name": "Mock Town",
+    "lon": 80.5633,
+    "lat": 2.2498,
+    "sea": "Grand Line",
+    "type": "Town",
+    "arc": "Jaya",
+    "notes": "A lawless pirate town on the island of Jaya, filled with criminals and bounty hunters. The town is dominated by taverns and violence, with pirates fighting constantly. Bellamy the Hyena ruled the town and mocked Luffy's dream of finding Sky Island. Luffy refused to fight back, demonstrating true strength through restraint."
+  },
+  {
+    "id": 1775963743390,
+    "name": "Jaya",
+    "lon": 81.9664,
+    "lat": 1.0779,
+    "sea": "Grand Line",
+    "type": "Island",
+    "arc": "Jaya",
+    "notes": "A spring island in the Grand Line that was once much larger before part of it was blasted into the sky by the Knock Up Stream 400 years ago. That section became part of Skypiea. Mock Town is located here, and the Straw Hats met Montblanc Cricket, a descendant of the explorer Noland, who helped them reach Sky Island."
+  },
+  {
+    "id": 1775963808699,
+    "name": "Ukkari Island",
+    "lon": 87.6476,
+    "lat": 10.4851,
+    "sea": "Grand Line",
+    "type": "Island",
+    "arc": "Water 7",
+    "notes": "Ukkari Hot-Spring Island is an island located in Paradise, and where Gedatsu landed after being defeated in Skypiea."
+  },
+  {
+    "id": 1775963838056,
+    "name": "Skypiea",
+    "lon": 90.7117,
+    "lat": 3.7079,
+    "sea": "Grand Line",
+    "type": "Island",
+    "arc": "Skypiea",
+    "notes": "A sky island located 10,000 meters above the Grand Line in the White-White Sea, accessible via the Knock Up Stream. The island is inhabited by winged Skypieans and was ruled by the tyrannical God Enel. Part of the island is Upper Yard, the missing section of Jaya containing the golden city of Shandora. Luffy defeated Enel and rang the golden bell."
+  },
+  {
+    "id": 1775963859885,
+    "name": "Angel Island",
+    "lon": 92.4054,
+    "lat": 0.4848,
+    "sea": "Grand Line",
+    "type": "Town",
+    "arc": "Skypiea",
+    "notes": "The main residential area of Skypiea where the Skypiean people live. It features cloud streets and buildings made of island clouds. The island contains Angel Beach where the Straw Hats first landed and met Conis and her father Pagaya. The residents lived in fear under Enel's divine rule before his defeat."
+  },
+  {
+    "id": 1775963875197,
+    "name": "Birka",
+    "lon": 93.7911,
+    "lat": 12.088,
+    "sea": "Grand Line",
+    "type": "Island",
+    "arc": "Skypiea",
+    "notes": "A sky island that was the birthplace of Enel. After Enel obtained the powers of the Goro Goro no Mi, he destroyed the entire island and its population before conquering Skypiea. The island no longer exists, serving as a testament to Enel's destructive god complex and absolute power."
+  },
+  {
+    "id": 1775963901682,
+    "name": "G-8",
+    "lon": 100.5076,
+    "lat": 0.6083,
+    "sea": "Grand Line",
+    "type": "Marine Base",
+    "arc": "Filler Arc",
+    "notes": "A large Marine fortress in the Grand Line that appears only in the anime. The Straw Hats accidentally landed inside the base after falling from Skypiea. Led by Vice Admiral Jonathan, the base became the setting for an infiltration arc where the crew had to escape. This location does not appear in the manga."
+  },
+  {
+    "id": 1775963936108,
+    "name": "Long Ring Long Land",
+    "lon": 99.9722,
+    "lat": -3.8285,
+    "sea": "Grand Line",
+    "type": "Island",
+    "arc": "Long Ring Long Land",
+    "notes": "A unique island in the Grand Line where everything is elongated, including the animals and plants. The island's terrain shifts with the tides, revealing different sections. The Straw Hats encountered Foxy the Silver Fox here and competed in the Davy Back Fight, a pirate game where crew members are wagered."
+  },
+  {
+    "id": 1775963973501,
+    "name": "Kenzan Island",
+    "lon": 99.4147,
+    "lat": -12.9053,
+    "sea": "Grand Line",
+    "type": "Island",
+    "arc": "Post-War",
+    "notes": "This is where the Longarm Tribe had taken Brook and put him on display. While the Longarms in Kenzan witnessed the living skeleton through in his cage, Brook was able to obtain a newspaper to learn of Luffy's exploits. After that, Brook decided to start a concert to the island's inhabitants"
+  },
+  {
+    "id": 1775964057049,
+    "name": "Namakura Island / Harahetania",
+    "lon": 107.8161,
+    "lat": -10.0126,
+    "sea": "Grand Line",
+    "type": "Island",
+    "arc": "Post-War",
+    "notes": "Brook was sent to this island by Bartholomew Kuma during the events of the Sabaody Archipelago Arc. The only location on Namakura Island mentioned is Harahettania, a kingdom including a Satan-worshiping tribe run by Pekkori."
+  },
+  {
+    "id": 1775964559362,
+    "name": "San Faldo",
+    "lon": 117.1757,
+    "lat": -12.0419,
+    "sea": "Grand Line",
+    "type": "Town",
+    "arc": "Water 7",
+    "notes": "An island in the Grand Line known for its annual carnival. It was mentioned as a location where the Straw Hats considered going after the events of Enies Lobby. The island is famous for its festive atmosphere and celebrations but is not shown in detail in the series."
+  },
+  {
+    "id": 1775964684600,
+    "name": "Shift Station",
+    "lon": 120.1383,
+    "lat": -6.6994,
+    "sea": "Grand Line",
+    "type": "Other",
+    "arc": "Water 7",
+    "notes": "One of the stations along the Puffing Tom sea train route that connects  several Islands to Water 7. The sea train system was invented by Tom the shipwright and operates on tracks laid across the ocean. The Straw Hats passed through here meeting Kokoro, Chimney and Gonbe."
+  },
+  {
+    "id": 1775964778800,
+    "name": "Pucci Island",
+    "lon": 114.945,
+    "lat": -2.2306,
+    "sea": "Grand Line",
+    "type": "Town",
+    "arc": "Punk Hazard",
+    "notes": "Very little has been revealed about Pucci in the storyline. The only thing known of its history is that it was connected to Water 7 fourteen years ago to help with trade, when the latter's economy was very weak due to pirate attacks on merchant ships."
+  },
+  {
+    "id": 1775964816439,
+    "name": "Karakuri Island",
+    "lon": 116.6272,
+    "lat": 6.0201,
+    "sea": "Grand Line",
+    "type": "Island",
+    "arc": "Post-War",
+    "notes": "A highly advanced winter island in the Grand Line and the birthplace of the legendary scientist Dr. Vegapunk. The island is known for its futuristic technology and mechanical innovations, far ahead of the rest of the world. Franky was sent here by Kuma and spent two years studying Vegapunk's blueprints, upgrading his cyborg body."
+  },
+  {
+    "id": 1775964861282,
+    "name": "G-3",
+    "lon": 119.3554,
+    "lat": 10.5331,
+    "sea": "Grand Line",
+    "type": "Marine Base",
+    "arc": "Post-War",
+    "notes": "It was briefly shown after Ace and Whitebeard's deaths, with the soldiers stationed there cheering and celebrating their victory. One of the Marines there claimed that he would work hard and one day become strong enough to be called to Marine Headquarters."
+  },
+  {
+    "id": 1775964894648,
+    "name": "Scrap Island",
+    "lon": 126.4383,
+    "lat": -0.867,
+    "sea": "Grand Line",
+    "type": "Island",
+    "arc": "Water 7",
+    "notes": "An island in the Grand Line composed entirely of discarded ships and scrap materials. Tom's Workers, including a young Franky, would collect materials from this island for shipbuilding. It played a role in Franky's backstory as he built his Battle Frankies from the salvaged parts found here."
+  },
+  {
+    "id": 1775964914953,
+    "name": "Water 7",
+    "lon": 126.9197,
+    "lat": -2.8379,
+    "sea": "Grand Line",
+    "type": "Town",
+    "arc": "Water 7",
+    "notes": "A massive island city in the Grand Line built on water, renowned as the world's greatest shipbuilding center. The city features canals as streets and the famous Galley-La Company shipyard. The Straw Hats came here to repair the Going Merry but learned it was beyond saving. They recruited Franky and obtained the Thousand Sunny here."
+  },
+  {
+    "id": 1775965056096,
+    "name": "St. Poplar",
+    "lon": 127.0188,
+    "lat": -11.1719,
+    "sea": "Grand Line",
+    "type": "Town",
+    "arc": "Sabaody Archipelago",
+    "notes": "St. Poplar became connected to Water 7 with the completion of the Sea Train at a time when the economy in Water 7 was weak due to attacks on merchant ships. Once connected, it supplied wood to Water 7. Years later, Franky sent the Square Sisters here to buy Adam Wood on the black market."
+  },
+  {
+    "id": 1775965160679,
+    "name": "Guanhao",
+    "lon": 136.8087,
+    "lat": -12.08,
+    "sea": "Grand Line",
+    "type": "Island",
+    "arc": "Amazon Lily",
+    "notes": "Island used as a training camp for future Cipher Pol Agents. The defeated CP9 agents fled after the events of Enies Lobby. They worked various jobs to raise money for Lucci's medical treatment while hiding from the World Government. The island served as their temporary refuge before they were eventually reinstated."
+  },
+  {
+    "id": 1775965192575,
+    "name": "Enies Lobby",
+    "lon": 143.534,
+    "lat": -8.7942,
+    "sea": "Grand Line",
+    "type": "Marine Base",
+    "arc": "Enies Lobby",
+    "notes": "The World Government's judicial island, also known as the \"Island of Justice,\" where criminals are tried before being sent to Impel Down. It exists in perpetual daylight due to a massive hole in the ocean nearby. The Straw Hats invaded to rescue Robin, declared war on the World Government, and destroyed the island before escaping via the Gates of Justice."
+  },
+  {
+    "id": 1775965211862,
+    "name": "Thriller Bark",
+    "lon": 141.3863,
+    "lat": 0.4635,
+    "sea": "Grand Line",
+    "type": "Other",
+    "arc": "Thriller Bark",
+    "notes": "The world's largest pirate ship, so massive it resembles an island, commanded by Gecko Moria of the Seven Warlords. Located in the mysterious Florian Triangle, Moria used the power of the Kage Kage no Mi to steal shadows and create zombie armies. The Straw Hats defeated Moria here and recruited Brook, the skeleton musician."
+  },
+  {
+    "id": 1775965250101,
+    "name": "Florian Triangle",
+    "lon": 141.2147,
+    "lat": 4.7615,
+    "sea": "Grand Line",
+    "type": "Other",
+    "arc": "Thriller Bark",
+    "notes": "A mysterious region of the Grand Line shrouded in perpetual fog where over 100 ships disappear annually. The area is compared to the real-world Bermuda Triangle due to its supernatural reputation. Thriller Bark resided within this region. As the Straw Hats escaped, massive shadowy creatures were briefly glimpsed in the fog, their nature never explained."
+  },
+  {
+    "id": 1775965300854,
+    "name": "Kuraigana Island",
+    "lon": 148.9435,
+    "lat": 8.9224,
+    "sea": "Grand Line",
+    "type": "Island",
+    "arc": "Post War",
+    "notes": "A dark, gloomy island in the Grand Line perpetually shrouded in shadows, home to the ruins of the Shikkearu Kingdom destroyed by war. Dracule Mihawk, the world's greatest swordsman, resides in a castle here. Zoro was sent to this island by Kuma and trained under Mihawk for two years, mastering Haki and becoming far stronger."
+  },
+  {
+    "id": 1775965326640,
+    "name": "Impel Down",
+    "lon": 153.284,
+    "lat": -17.0037,
+    "sea": "Grand Line",
+    "type": "Marine Base",
+    "arc": "Impel Down",
+    "notes": "The World Government's maximum security underwater prison located in the Calm Belt, designed to be inescapable. It has six levels of increasing torment, with the secret Level 6 holding the world's most dangerous criminals erased from history. Luffy infiltrated to rescue Ace, causing a massive breakout that freed legendary prisoners including Crocodile and Jinbe."
+  },
+  {
+    "id": 1775965351744,
+    "name": "Rusukaina",
+    "lon": 135.7854,
+    "lat": -16.7194,
+    "sea": "Grand Line",
+    "type": "Island",
+    "arc": "Post-War",
+    "notes": "An uninhabited island in the Calm Belt northwest of Amazon Lily, home to 48 seasons that change weekly and extremely powerful wildlife. Silvers Rayleigh brought Luffy here to train for two years, teaching him all three forms of Haki. The island's dangerous beasts served as training partners for Luffy to master his abilities."
+  },
+  {
+    "id": 1775965376487,
+    "name": "Amazon Lily",
+    "lon": 141.0191,
+    "lat": -18.4493,
+    "sea": "Grand Line",
+    "type": "Island",
+    "arc": "Amazon Lily",
+    "notes": "An island nation in the Calm Belt inhabited exclusively by the Kuja tribe, a race of warrior women. Men are forbidden from entering under penalty of death. Ruled by the Warlord Boa Hancock, the island is protected from Sea Kings by the Kuja's Haki abilities. Luffy was sent here by Kuma and won Hancock's love after showing her compassion."
+  },
+  {
+    "id": 1775965404965,
+    "name": "Sabaody Archipelago",
+    "lon": 160.7084,
+    "lat": -2.573,
+    "sea": "Grand Line",
+    "type": "Archipelago",
+    "arc": "Sabaody Archipelago",
+    "notes": "A massive mangrove archipelago located just before the Red Line, serving as the final stop in Paradise before entering the New World. The island is famous for its coating mechanics who enable ships to travel underwater to Fish-Man Island. It hosts a lawless zone, a Human Auction House, and is where the Straw Hats were separated by Kuma. The Eleven Supernovas gathered here."
+  },
+  {
+    "id": 1775965432687,
+    "name": "Flying Fish Raider Base",
+    "lon": 154.4179,
+    "lat": -0.3794,
+    "sea": "Grand Line",
+    "type": "Archipelago",
+    "arc": "Sabaody Archipelago",
+    "notes": "The headquarters of the Flying Fish Riders, a kidnapping gang led by Duval who rode flying fish. Located near Sabaody Archipelago, the gang captured people to sell at the Human Auction House. After Sanji inadvertently fixed Duval's disfigured face, the gang reformed and became allies of the Straw Hats, later helping guard the Thousand Sunny."
+  },
+  {
+    "id": 1775965458623,
+    "name": "Lulusia",
+    "lon": 159.5931,
+    "lat": 4.578,
+    "sea": "Grand Line",
+    "type": "Kingdom",
+    "arc": "Levely",
+    "notes": "A kingdom in the Grand Line that participated in the Levely at Mary Geoise. The kingdom was completely obliterated by the World Government using the ancient weapon controlled by Im as punishment for harboring revolutionary sentiment. Its destruction was covered up as a natural disaster, demonstrating the true power the World Government possesses."
+  },
+  {
+    "id": 1775965492196,
+    "name": "Marineford",
+    "lon": 163.2502,
+    "lat": -8.6498,
+    "sea": "Grand Line",
+    "type": "Marine Base",
+    "arc": "Marineford",
+    "notes": "The former headquarters of Marine operations and the center of World Government military power, located at the end of Paradise. The Summit War took place here when Whitebeard's forces attacked to rescue Ace from execution. The battle resulted in the deaths of both Ace and Whitebeard, reshaping the world's power balance. Marine HQ later relocated to the New World."
+  },
+  {
+    "id": 1775965548842,
+    "name": "G-2",
+    "lon": 163.274,
+    "lat": 8.7439,
+    "sea": "Grand Line",
+    "type": "Marine Base",
+    "arc": "Skypiea",
+    "notes": "A Marine base in the Grand Line that appeared in the cover story following Ace's search for Blackbeard. Vice Admiral Comil is stationed at this base. Ace infiltrated the base during his hunt for Blackbeard and caused some destruction before escaping. The base is one of the major Marine installations in Paradise."
+  },
+  {
+    "id": 1775966544552,
+    "name": "Red Port",
+    "lon": 164.9782,
+    "lat": -7.6136,
+    "sea": "Red Line",
+    "type": "Marine Base",
+    "arc": "Levely",
+    "notes": "The port town located at the base of the Red Line beneath Mary Geoise. It serves as the entry point for royalty and dignitaries attending the Levely, who must ascend to the holy land via a massive elevator called the Bondola. The port connects the surface world to the seat of World Government power high above."
+  },
+  {
+    "id": 1775966592940,
+    "name": "Fish Man Island",
+    "lon": 172.8767,
+    "lat": -1.7366,
+    "sea": "Grand Line",
+    "type": "Island",
+    "arc": "Fish Man Island",
+    "notes": "An underwater island located 10,000 meters below sea level in a giant bubble beneath the Red Line, serving as the gateway between Paradise and the New World. Home to fish-men and merfolk, the island is ruled by the Ryugu Kingdom. The Straw Hats defeated Hody Jones here and Luffy declared the island under his protection, claiming Big Mom's former territory."
+  },
+  {
+    "id": 1775966638400,
+    "name": "Mary Geoise",
+    "lon": -175.3873,
+    "lat": 0.318,
+    "sea": "Red Line",
+    "type": "Kingdom",
+    "arc": "Levely",
+    "notes": "he holy land atop the Red Line and capital of the World Government, home to the Celestial Dragons (World Nobles) who are descendants of the twenty kings who founded the Government 800 years ago. Pangaea Castle houses the Empty Throne where Imu secretly rules. The Levely convenes here every four years, and it holds secrets about the Void Century."
+  },
+  {
+    "id": 1775966735999,
+    "name": "New Marineford / G-1",
+    "lon": -163.7797,
+    "lat": 8.2541,
+    "sea": "New World",
+    "type": "Marine Base",
+    "arc": "Dressrosa",
+    "notes": "The relocated Marine Headquarters in the New World, formerly known as G-1. After the Summit War and Whitebeard's death destabilized the seas, Fleet Admiral Sakazuki moved Marine HQ to the New World to directly confront the Yonko threat. The original Marineford was converted into a base called G-1. This relocation signified the Marines' aggressive new stance."
+  },
+  {
+    "id": 1775966948817,
+    "name": "G-5",
+    "lon": -164.2712,
+    "lat": -9.3717,
+    "sea": "New World",
+    "type": "Marine Base",
+    "arc": "Punk Hazard",
+    "notes": "A Marine base in the New World notorious for its brutal and unruly soldiers who ignore regulations. Vice Admiral Vergo was secretly stationed here while working as an undercover agent for Donquixote Doflamingo. Vice Admiral Smoker later took command. The base's soldiers are considered outcasts within the Marines due to their violent methods."
+  },
+  {
+    "id": 1775966969317,
+    "name": "Punk Hazard",
+    "lon": -156.9298,
+    "lat": -8.3585,
+    "sea": "New World",
+    "type": "Island",
+    "arc": "Punk Hazard",
+    "notes": "A devastated island in the New World split between fire and ice due to the battle between Admirals Akainu and Aokiji for the position of Fleet Admiral. Formerly a World Government research facility, it became Caesar Clown's secret laboratory for creating weapons of mass destruction and artificial Devil Fruits. The Straw Hat-Law alliance formed here to take down Kaido."
+  },
+  {
+    "id": 1775967030939,
+    "name": "Raijin Island",
+    "lon": -154.4042,
+    "lat": -3.5939,
+    "sea": "New World",
+    "type": "Island",
+    "arc": "Post-War",
+    "notes": "One of three islands the Log Pose points to after Fish-Man Island, known for constant lightning storms. The island experiences perpetual thunderstorms, making it extremely dangerous to approach. Urouge of the Worst Generation was shown on this island. Its harsh conditions exemplify the New World's unpredictable and deadly climate."
+  },
+  {
+    "id": 1775967068575,
+    "name": "Risky Red Island",
+    "lon": -152.5294,
+    "lat": 1.3526,
+    "sea": "New World",
+    "type": "Island",
+    "arc": "Punk Hazard",
+    "notes": "One of three islands the Log Pose points to after Fish-Man Island. The island is considered extremely dangerous, as implied by its name. Limited information is available as the Straw Hats did not visit this island, choosing to go to Punk Hazard instead after receiving a distress call."
+  },
+  {
+    "id": 1775967112862,
+    "name": "Mystoria Island",
+    "lon": -154.3806,
+    "lat": 5.8367,
+    "sea": "New World",
+    "type": "Island",
+    "arc": "Punk Hazard",
+    "notes": "One of three islands the Log Pose points to after Fish-Man Island. It is described as having mysterious characteristics befitting its name. The Straw Hats did not visit this island, opting instead to investigate a distress signal from Punk Hazard. Details about the island remain largely unknown."
+  },
+  {
+    "id": 1775967185316,
+    "name": "Majiatsuka Kingdom",
+    "lon": -146.1012,
+    "lat": -11.1785,
+    "sea": "New World",
+    "type": "Kingdom",
+    "arc": "Dressrosa",
+    "notes": "The Majiatsuka Kingdom is a southern country in the New World that Rolling Logan comes from."
+  },
+  {
+    "id": 1775967286433,
+    "name": "Mogaro Kingdom",
+    "lon": -136.9144,
+    "lat": 7.3089,
+    "sea": "New World",
+    "type": "Kingdom",
+    "arc": "Dressrosa",
+    "notes": "The Mogaro Kingdom is a nation in the New World where the Funk Brothers came from."
+  },
+  {
+    "id": 1775967375460,
+    "name": "Standing Kingdom",
+    "lon": -133.5659,
+    "lat": 11.8475,
+    "sea": "New World",
+    "type": "Kingdom",
+    "arc": "Dressrosa",
+    "notes": "The Standing Kingdom is a Kingdom in New World, also the home nation of Orlumbus'."
+  },
+  {
+    "id": 1775967486263,
+    "name": "Gartel Island",
+    "lon": -126.8142,
+    "lat": 6.3625,
+    "sea": "New World",
+    "type": "Island",
+    "arc": "Whole Cake Island",
+    "notes": "Gartel Island is an island in the New World. It is under the protection of the Red Hair Pirates. Raided by Barto Club under the banner of the Straw Hats."
+  },
+  {
+    "id": 1775967505839,
+    "name": "Prodence Kingdom",
+    "lon": -131.4687,
+    "lat": -10.1848,
+    "sea": "New World",
+    "type": "Kingdom",
+    "arc": "Dressrosa",
+    "notes": "A kingdom in the New World ruled by King Elizabello II, known for his legendary King Punch capable of taking down a Yonko with a single blow when fully charged. The kingdom participated in the Corrida Colosseum tournament in Dressrosa. After Doflamingo's defeat, Prodence Kingdom joined the Straw Hat Grand Fleet alliance."
+  },
+  {
+    "id": 1775967539144,
+    "name": "Dressrosa Kingdom",
+    "lon": -125.568,
+    "lat": -5.5422,
+    "sea": "New World",
+    "type": "Kingdom",
+    "arc": "Dressrosa",
+    "notes": "A kingdom in the New World known as the \"Land of Love, Passion, and Toys,\" ruled secretly by Donquixote Doflamingo who usurped the throne from the Riku Family. The country featured living toys who were actually humans transformed by Sugar's Devil Fruit, erased from everyone's memories. Luffy defeated Doflamingo and restored King Riku to power."
+  },
+  {
+    "id": 1775967661874,
+    "name": "Flower Hill",
+    "lon": -125.842,
+    "lat": -2.3002,
+    "sea": "New World",
+    "type": "Other",
+    "arc": "Dressrosa",
+    "notes": "The flower fields are a lovely field that are full of sunflowers with one big tree that is in the middle of the field. Hidden beneath the flower field are the secret headquarters of the Riku Royal Army. This is also the place where Rebecca's mother, Scarlett, is buried."
+  },
+  {
+    "id": 1775967683337,
+    "name": "Corrida Colosseum",
+    "lon": -126.0077,
+    "lat": -4.6047,
+    "sea": "New World",
+    "type": "Other",
+    "arc": "Dressrosa",
+    "notes": "A massive gladiatorial arena in Dressrosa where warriors fight for fame, glory, and prizes. Doflamingo hosted a tournament with the Mera Mera no Mi as the grand prize to lure out enemies. Luffy entered under the alias \"Lucy\" and competed alongside legendary fighters including Sabo, who ultimately won the fruit. The colosseum warriors later joined the fight against Doflamingo."
+  },
+  {
+    "id": 1775967726735,
+    "name": "Royal Palace",
+    "lon": -125.0523,
+    "lat": -3.4229,
+    "sea": "New World",
+    "type": "Other",
+    "arc": "Dressrosa",
+    "notes": "The royal palace of Dressrosa located atop a massive plateau overlooking the kingdom. Originally home to the Riku royal family, it was seized by Doflamingo when he took control. The palace contains the SMILE factory hidden underground and the executive tower where Doflamingo's officers resided."
+  },
+  {
+    "id": 1775967775450,
+    "name": "Acacia",
+    "lon": -127.2992,
+    "lat": -5.7001,
+    "sea": "New World",
+    "type": "Town",
+    "arc": "Dressrosa",
+    "notes": "The port town of Dressrosa where ships dock and visitors first arrive to the kingdom. It serves as the main entry point to the island and contains various shops and establishments. The Straw Hats and Law arrived here when they came to execute their plan against Doflamingo. The town reflects Dressrosa's Spanish-inspired architecture and culture."
+  },
+  {
+    "id": 1775967802922,
+    "name": "Green Bit",
+    "lon": -121.2503,
+    "lat": -1.2621,
+    "sea": "New World",
+    "type": "Other",
+    "arc": "Dressrosa",
+    "notes": "A small forested island north of Dressrosa connected by an iron bridge, though the waters are infested with Fighting Fish making crossing deadly. The island is home to a hidden tribe of Tontatta dwarves who live in an underground kingdom. Law and the Straw Hats used this location for their exchange with Doflamingo that sparked the conflict."
+  },
+  {
+    "id": 1775967890037,
+    "name": "Broc Coli Island",
+    "lon": -120.3845,
+    "lat": 11.6794,
+    "sea": "New World",
+    "type": "Island",
+    "arc": "Whole Cake Island",
+    "notes": "War had been raging on the island for two years, during which time one side had been sourcing its weapons from Donquixote Doflamingo. However, after Doflamingo's fall and arrest, that side lost access to its primary source of weapons, leading it to hire Germa 66 to end the war once and for all"
+  },
+  {
+    "id": 1775967930703,
+    "name": "Applenine Island",
+    "lon": -117.2749,
+    "lat": 1.3066,
+    "sea": "New World",
+    "type": "Island",
+    "arc": "Dressrosa",
+    "notes": "After the fall of Donquixote Doflamingo and his regime, Vice Admiral Maynard broadcast a message to all three islands neighboring the country of Dressrosa. When the message was shown in Applenine Island, the citizens were shown to be afraid of Doflamingo's regime. They were astonished to see the island's state, and again when Admiral Fujitora knelt and apologized to the former king Riku Doldo III."
+  },
+  {
+    "id": 1775967964183,
+    "name": "Yukiryu Island",
+    "lon": -115.338,
+    "lat": -13.1949,
+    "sea": "New World",
+    "type": "Island",
+    "arc": "Jaya",
+    "notes": "Shanks and his crewmates on Yukiryu.\nShanks and his crewmates on Yukiryu.\nShanks and his crew were hanging out on the island when Shanks received a call from Rockstar about Whitebeard tearing up the message he wanted to send him and his request to meet him in person."
+  },
+  {
+    "id": 1775968096599,
+    "name": "Baltigo",
+    "lon": -101.3155,
+    "lat": -13.0465,
+    "sea": "New World",
+    "type": "Island",
+    "arc": "Post-Enies Lobby",
+    "notes": "Baltigo, labeled as the \"Island of White Soil\" is an island located somewhere in the Grand Line. It was the Headquarters of the Revolutionary Army for years, and the island where Nico Robin spent two years honing her skills. The island's existence was long shrouded in mystery but finally became known to the whole world after its location was leaked. Baltigo was destroyed during an intense battle with the Blackbeard Pirates."
+  },
+  {
+    "id": 1775968142535,
+    "name": "Whole Cake Island",
+    "lon": -98.6784,
+    "lat": 5.1292,
+    "sea": "New World",
+    "type": "Island",
+    "arc": "Whole Cake Island",
+    "notes": "The main island of Totto Land and headquarters of Big Mom's empire, made entirely of edible materials including buildings of cake, chocolate, and candy. The Chateau at its center housed Big Mom and her family. Luffy infiltrated to rescue Sanji from his arranged marriage to Pudding and clashed with Big Mom, ultimately escaping after Bege's assassination attempt failed."
+  },
+  {
+    "id": 1775968160715,
+    "name": "Zou",
+    "lon": -88.4948,
+    "lat": -8.8164,
+    "sea": "New World",
+    "type": "Other",
+    "arc": "Zou",
+    "notes": "A massive island that exists on the back of Zunisha, a giant elephant that has wandered the seas for over 1,000 years as punishment for an ancient crime. Home to the Mink Tribe, a race of anthropomorphic animals who are natural-born warriors capable of using Electro. The Road Poneglyph here revealed the path to Laugh Tale, and the Straw Hats formed an alliance with the Minks against Kaido."
+  },
+  {
+    "id": 1775968424046,
+    "name": "Karai Bari Island",
+    "lon": -81.7972,
+    "lat": -11.7423,
+    "sea": "New World",
+    "type": "Island",
+    "arc": "Zou",
+    "notes": "Karai Bari Island is an island in the New World which was occupied by Buggy's Delivery, which has since integrated into the Cross Guild."
+  },
+  {
+    "id": 1775968508729,
+    "name": "Ballon Terminal",
+    "lon": -79.5126,
+    "lat": 7.4235,
+    "sea": "New World",
+    "type": "Island",
+    "arc": "Dressrosa",
+    "notes": "Ballon Terminal is a ruined city located on a Sky Island above the New World. The sky island is suspended by a multitude of helium balloons along its underside."
+  },
+  {
+    "id": 1775968572536,
+    "name": "Marine GS General Hospital",
+    "lon": -69.0968,
+    "lat": -6.6123,
+    "sea": "New World",
+    "type": "Marine Base",
+    "arc": "Egghead Island",
+    "notes": "The Marine GS General Hospital is a hospital for Marines. The Marine GS General Hospital is a hospital for Marines."
+  },
+  {
+    "id": 1775968682628,
+    "name": "Foodvalten Island",
+    "lon": -76.4506,
+    "lat": 0.2501,
+    "sea": "New World",
+    "type": "Island",
+    "arc": "Post-War",
+    "notes": "Foodvalten was one of the many islands protected by Whitebeard. However, after his death, the protection fell apart, and the Brownbeard Pirates attacked soon after, claiming control of the island. Brownbeard's rule on the island was brief, as Basil Hawkins and his crew landed on the island, and he crippled Brownbeard and his entire crew, forcing them to leave the island in utter defeat."
+  },
+  {
+    "id": 1775968711807,
+    "name": "Wano Kingdom",
+    "lon": -68.5807,
+    "lat": 6.6363,
+    "sea": "New World",
+    "type": "Kingdom",
+    "arc": "Wano",
+    "notes": "An isolated nation in the New World with a feudal Japanese-inspired culture, closed off from the World Government for 800 years. The country was ruled by the tyrannical shogun Kurozumi Orochi in alliance with Kaido of the Four Emperors. Divided into six regions, Wano was the site of a massive war where Luffy and the alliance defeated Kaido and Big Mom, liberating the country."
+  },
+  {
+    "id": 1775968729132,
+    "name": "Udon",
+    "lon": -69.316,
+    "lat": 9.6829,
+    "sea": "New World",
+    "type": "Town",
+    "arc": "Wano",
+    "notes": "One of the six regions of Wano Country, known for its weapons factories and the Prisoner Mine where enemies of the shogunate are forced into slave labor. Luffy was imprisoned here after his initial defeat by Kaido and trained to master advanced Armament Haki while breaking rocks. He eventually led a prisoner rebellion and recruited many allies including Hyogoro."
+  },
+  {
+    "id": 1775968744513,
+    "name": "Flower Capital",
+    "lon": -67.8634,
+    "lat": 11.1489,
+    "sea": "New World",
+    "type": "Town",
+    "arc": "Wano",
+    "notes": "The prosperous capital city of Wano located in the center of the country, serving as the seat of the shogunate. While the rest of Wano suffered under Kaido's pollution and starvation, the Flower Capital remained beautiful and wealthy, its citizens unaware of the country's true state. The city features traditional Japanese architecture and hosts the annual Fire Festival."
+  },
+  {
+    "id": 1775968756577,
+    "name": "Kuri",
+    "lon": -71.5379,
+    "lat": 12.1746,
+    "sea": "New World",
+    "type": "Town",
+    "arc": "Wano",
+    "notes": "One of the six regions of Wano Country, formerly a lawless wasteland until Kozuki Oden tamed it and became its daimyo. The region includes Okobore Town where impoverished citizens survive on leftovers, and Oden Castle where the Kozuki loyalists gathered. Kuri served as the base for the alliance's operations to overthrow Kaido and Orochi."
+  },
+  {
+    "id": 1775968768858,
+    "name": "Kibi",
+    "lon": -68.7187,
+    "lat": 12.9711,
+    "sea": "New World",
+    "type": "Town",
+    "arc": "Wano",
+    "notes": "One of the six regions of Wano Country. Like other regions outside the Flower Capital, Kibi suffered under Kaido's industrial pollution and the oppressive rule of Orochi's shogunate. The region's daimyo was likely killed or subjugated during Kaido's takeover 20 years prior to the current events."
+  },
+  {
+    "id": 1775968783486,
+    "name": "Ringo",
+    "lon": -65.8528,
+    "lat": 11.896,
+    "sea": "New World",
+    "type": "Town",
+    "arc": "Wano",
+    "notes": "One of the six regions of Wano Country, characterized by a perpetually cold, snowy climate. The region contains the Northern Cemetery where Wano's honored dead are buried with their swords standing as grave markers. Zoro obtained the legendary blade Shusui here, and it was later returned to rest on Ryuma's grave in exchange for Enma."
+  },
+  {
+    "id": 1775968806856,
+    "name": "Hakumai",
+    "lon": -66.9259,
+    "lat": 9.5663,
+    "sea": "New World",
+    "type": "Town",
+    "arc": "Wano",
+    "notes": "One of the six regions of Wano Country, formerly ruled by Daimyo Shimotsuki Yasuie, a loyal supporter of the Kozuki clan. After Yasuie's public execution by Orochi for distributing the rebellion's secret message, the region's people mourned deeply. Hakumai's residents preserved their loyalty to the Kozuki family throughout the 20-year occupation."
+  },
+  {
+    "id": 1775968833341,
+    "name": "Onigashima",
+    "lon": -68.7185,
+    "lat": 8.0197,
+    "sea": "New World",
+    "type": "Island",
+    "arc": "Wano",
+    "notes": "A skull-shaped island off the coast of Wano that served as Kaido's primary stronghold and the headquarters of the Beast Pirates. The island featured a massive horned skull as its centerpiece with Kaido's castle built within. The decisive Raid on Onigashima saw the alliance battle Kaido's forces, culminating in Luffy's awakening and defeat of Kaido atop the floating island."
+  },
+  {
+    "id": 1775968914929,
+    "name": "Egghead Island",
+    "lon": -65.3558,
+    "lat": -0.6844,
+    "sea": "New World",
+    "type": "Island",
+    "arc": "Egghead",
+    "notes": "The futuristic island laboratory of Dr. Vegapunk, described as the \"Island of the Future\" with technology 500 years ahead of the current era. The island features climate-controlled environments, advanced robots called Seraphim, and Vegapunk's six satellite bodies. The Straw Hats arrived seeking Vegapunk's help, triggering a massive World Government response and revelations about the Void Century."
+  },
+  {
+    "id": 1775969010391,
+    "name": "G-14",
+    "lon": -64.9143,
+    "lat": -5.1148,
+    "sea": "New World",
+    "type": "Marine Base",
+    "arc": "Egghead",
+    "notes": "A Marine base in the New World where Vice Admiral Doll is stationed. The base was mentioned in connection with Marine operations following the events at Wano. It serves as one of the major Marine installations in the New World, helping to maintain World Government presence in the dangerous second half of the Grand Line."
+  },
+  {
+    "id": 1775969074562,
+    "name": "Sphinx Island",
+    "lon": -56.8957,
+    "lat": -3.5757,
+    "sea": "New World",
+    "type": "Island",
+    "arc": "Wano",
+    "notes": "An impoverished island in the New World that was the homeland of Edward Newgate (Whitebeard). He used his pirate earnings to fund the island and protect it from pirates and the World Government. After Whitebeard's death, Marco and the remnants of the Whitebeard Pirates protect the island. Whitebeard and Ace are buried here, and it serves as a pilgrimage site."
+  },
+  {
+    "id": 1775969119785,
+    "name": "Doerena Kingdom",
+    "lon": -54.0788,
+    "lat": -11.8445,
+    "sea": "New World",
+    "type": "Kingdom",
+    "arc": "Dressrosa",
+    "notes": "A noble of the kingdom travelled to Dressrosa in order to compete for the Mera Mera no Mi at the Corrida Colosseum."
+  },
+  {
+    "id": 1775969177263,
+    "name": "Hachinosu / Pirate Island",
+    "lon": -45.6721,
+    "lat": -3.5589,
+    "sea": "New World",
+    "type": "Island",
+    "arc": "Long Ring Long Land",
+    "notes": "Lawless island in the New World serves as the headquarters of the Blackbeard Pirates after they claimed it as their territory. The island was formerly ruled by the legendary pirate Rocks D. Xebec and was the base of the Rocks Pirates. Koby was held prisoner here before SWORD launched a rescue operation, and the island was recognized as a nation by the World Government."
+  },
+  {
+    "id": 1775969231673,
+    "name": "Elbaf Island",
+    "lon": -51.2569,
+    "lat": 1.5331,
+    "sea": "New World",
+    "type": "Kingdom",
+    "arc": "Elbaf",
+    "notes": "The legendary homeland of the Giant warrior race, considered the strongest nation in the world due to its powerful military. Elbaf has been foreshadowed since Little Garden and is a dream destination for Usopp, who aspires to visit the land of brave warriors. The island features Viking-inspired culture, the World Tree, and is ruled by giant royalty. Big Mom's obsession with giants stems from her childhood there."
+  },
+  {
+    "id": 1775969308434,
+    "name": "Heaven World",
+    "lon": -51.2906,
+    "lat": 9.0023,
+    "sea": "New World",
+    "type": "Other",
+    "arc": "Elbaf",
+    "notes": "Heaven World is the topmost region of Elbaph and in the highest branches of Treasure Tree Adam. Virtually nothing is known about this region currently."
+  },
+  {
+    "id": 1775969333613,
+    "name": "Sun World",
+    "lon": -51.3,
+    "lat": 5.9515,
+    "sea": "New World",
+    "type": "Other",
+    "arc": "Elbaf",
+    "notes": "he Sun World is the main upper region of Elbaph and where its population primarily lives. Most of the land consists of deciduous forests and plains, as well as urban settlements built by the resident giants. These settlements are built on individual branches of the Adam Tree, but have more recently been connected through specially built Branch Routes."
+  },
+  {
+    "id": 1775969382257,
+    "name": "Underworld",
+    "lon": -53.3096,
+    "lat": 2.7891,
+    "sea": "New World",
+    "type": "Other",
+    "arc": "Elbaf",
+    "notes": "Also known as the First World in local legends, refers to the lower regions of Elbaph, below the Adam Tree's branches and surrounding its base. It consists primarily of snow-coated, forested mountains surrounding the Adam Tree's base, with grassy plains near the coast. Because sunlight is blocked by the Adam Tree's canopy, the climate is always very cold with raging blizzards."
+  },
+  {
+    "id": 1775969464823,
+    "name": "Winner Island",
+    "lon": -45.7776,
+    "lat": 11.8787,
+    "sea": "New World",
+    "type": "Island",
+    "arc": "Egghead",
+    "notes": "Winner Island is one of three islands that follow Wano Country in the New World, alongside Egghead and Elbaph. The Blackbeard Pirates ambushed the Heart Pirates on Winner Island in order to steal their Road Poneglyph markings."
+  },
+  {
+    "id": 1775969525144,
+    "name": "Loadestar Island",
+    "lon": -21.7228,
+    "lat": -0.4837,
+    "sea": "New World",
+    "type": "Island",
+    "arc": "Zou",
+    "notes": "Lodestar Island is the penultimate island in the Grand Line, and the last island in the New World that can be reached by any conventional Log Pose route."
+  },
+  {
+    "id": 1775972326563,
+    "name": "Briss Kingdom",
+    "lon": 43.43,
+    "lat": -40.5449,
+    "sea": "South Blue",
+    "type": "Kingdom",
+    "arc": "Jaya",
+    "notes": "he Briss Kingdom is a kingdom located in the South Blue. St. Briss had come from this country."
+  },
+  {
+    "id": 1775972398059,
+    "name": "Baterilla Island",
+    "lon": 42.3242,
+    "lat": -67.0397,
+    "sea": "South Blue",
+    "type": "Island",
+    "arc": "Marineford",
+    "notes": "Baterilla is an island in the South Blue where Portgas D. Ace was born."
+  },
+  {
+    "id": 1775972493300,
+    "name": "Taya Kingdom",
+    "lon": 57.1929,
+    "lat": -57.1521,
+    "sea": "South Blue",
+    "type": "Kingdom",
+    "arc": "Egghead",
+    "notes": "The Taya Kingdom is a World Government-affiliated nation in the South Blue that Aramaki originates from."
+  },
+  {
+    "id": 1775972534922,
+    "name": "Samba",
+    "lon": 51.828,
+    "lat": -36.5602,
+    "sea": "South Blue",
+    "type": "Kingdom",
+    "arc": "Filler Arc",
+    "notes": "Samba Island is a non-canon island in the New World, previously protected by the Whitebeard Pirates and later ruled by Chameleone as a tyrant. It became autonomous once Chameleone was ousted."
+  },
+  {
+    "id": 1775972633506,
+    "name": "Judo Island",
+    "lon": 76.8517,
+    "lat": -63.1361,
+    "sea": "South Blue",
+    "type": "Island",
+    "arc": "Filler",
+    "notes": "Judo Island is an island where the world's greatest judo masters live. They practice table tennis as featured in One Piece Party spin-off."
+  },
+  {
+    "id": 1775972691133,
+    "name": "Kutsukku Island",
+    "lon": 75.8246,
+    "lat": -45.0174,
+    "sea": "South Blue",
+    "type": "Island",
+    "arc": "Wano",
+    "notes": "It is the country where Eustass Kid, Killer, Heat, and Wire were born."
+  },
+  {
+    "id": 1775972745927,
+    "name": "Vespa Kingdom",
+    "lon": 89.7046,
+    "lat": -61.4335,
+    "sea": "South Blue",
+    "type": "Kingdom",
+    "arc": "N/a - Vivre Card",
+    "notes": "The Vespa Kingdom is a nation somewhere in the South Blue. It is the homeland of former Marine Admiral and current Blackbeard Pirates Titanic Captain Kuzan."
+  },
+  {
+    "id": 1775972795759,
+    "name": "Centaurea Kingdom",
+    "lon": 102.0649,
+    "lat": -57.8669,
+    "sea": "South Blue",
+    "type": "Kingdom",
+    "arc": "Post-Enis Lobby",
+    "notes": "Two years ago, the Revolutionary Army and an unknown force battled for control of the country. The victory was led by the Revolutionary Army. With the fall of Centaurea, the Revolutionary Army has declared that another country had fallen."
+  },
+  {
+    "id": 1775972854495,
+    "name": "Roshwan Kingdom[",
+    "lon": 101.3699,
+    "lat": -53.3498,
+    "sea": "South Blue",
+    "type": "Kingdom",
+    "arc": "Levely",
+    "notes": "The Roshwan Kingdom is a nation in the South Blue, ruled by King Beer VI, attendee of the Levely in Mary Geoise."
+  },
+  {
+    "id": 1775972904174,
+    "name": "Torino Kingdom / Treasure Island",
+    "lon": 97.8986,
+    "lat": -33.0644,
+    "sea": "South Blue",
+    "type": "Kingdom",
+    "arc": "Post-War",
+    "notes": "Tony Tony Chopper was sent here by Bartholomew Kuma during the events in the Sabaody Archipelago Arc. He spent two years here in order to train."
+  },
+  {
+    "id": 1775973010417,
+    "name": "Evil Black Drum Kingdom",
+    "lon": 130.5388,
+    "lat": -59.3552,
+    "sea": "South Blue",
+    "type": "Kingdom",
+    "arc": "Levely",
+    "notes": "The Evil Black Drum Kingdom is the kingdom Wapol currently rules with his wife Kinderella and his dog Hakowan by his side."
+  },
+  {
+    "id": 1775973072856,
+    "name": "Tumi",
+    "lon": 129.9098,
+    "lat": -37.8432,
+    "sea": "South Blue",
+    "type": "Island",
+    "arc": "Egghead",
+    "notes": "Tumi appears to feature at least one town, with a large tower in the center. Said tower was destroyed by Bartholomew Kuma, implying it was a stronghold of sorts for the local rulers. It was conquered by the Revolutionary Army around twelve years ago."
+  },
+  {
+    "id": 1775973116866,
+    "name": "Sorbet Kingdom",
+    "lon": 141.9156,
+    "lat": -51.2739,
+    "sea": "South Blue",
+    "type": "Kingdom",
+    "arc": "Egghead",
+    "notes": "A kingdom in South Blue and the birthplace of Bartholomew Kuma. The kingdom was impoverished and suffered under the tyranny of corrupt kings who exploited the Buccaneer race. Kuma's father was killed here, and young Kuma was enslaved before eventually escaping. The kingdom's tragic history shaped Kuma's path toward becoming a Revolutionary and later a Warlord."
+  },
+  {
+    "id": 1775973158449,
+    "name": "Castle Town",
+    "lon": 141.4278,
+    "lat": -48.0068,
+    "sea": "South Blue",
+    "type": "Town",
+    "arc": "Egghead",
+    "notes": "The Castle Town is the capital of the Sorbet Kingdom, located to the north of the country. It is where most of the kingdom's working citizens live, as well as its royal family. Because of King Bekori's segregatory laws, this place and its immediate surroundings were the only legally recognized territory of the Sorbet Kingdom for a while."
+  },
+  {
+    "id": 1775973181335,
+    "name": "Elderly Village",
+    "lon": 140.7024,
+    "lat": -49.4843,
+    "sea": "South Blue",
+    "type": "Town",
+    "arc": "Egghead",
+    "notes": "This village was located to the southwest of Sorbet, near Kuma's church. Most of its residents consisted of poor, aged peasants. During Bekori's rule, the village was left out of the kingdom's own protection and sovereignty, causing its already vulnerable population to become more susceptible to death and enslavement."
+  },
+  {
+    "id": 1775973220040,
+    "name": "Church",
+    "lon": 142.3681,
+    "lat": -49.9401,
+    "sea": "South Blue",
+    "type": "Other",
+    "arc": "Egghead",
+    "notes": "To the southeast of Sorbet, there is a church formerly managed by Clapp and his wife. After their family was forced into slavery, the church fell into disuse. Later, their son Bartholomew Kuma and his friend Ginny took up residence there after escaping from slavery"
+  },
+  {
+    "id": 1775973270027,
+    "name": "Karate Island",
+    "lon": 149.8071,
+    "lat": -34.7539,
+    "sea": "South Blue",
+    "type": "Island",
+    "arc": "Water 7",
+    "notes": "Jerry from the CP6 trained there, in order to master the art of boxing."
+  },
+  {
+    "id": 1775973438284,
+    "name": "Rakesh",
+    "lon": -121.6623,
+    "lat": 44.8639,
+    "sea": "North Blue",
+    "type": "Island",
+    "arc": "Dressrosa",
+    "notes": "Rakesh is a port town within the North Blue region. It was only named in the anime."
+  },
+  {
+    "id": 1775973528137,
+    "name": "Swallow Island",
+    "lon": -110.167,
+    "lat": 47.9065,
+    "sea": "North Blue",
+    "type": "Island",
+    "arc": "Dressrosa",
+    "notes": "Thirteen years ago, the island was to serve as a temporary base for the Donquixote Pirates following their plan to steal the Ope Ope no Mi from the pirates lead by Diez Barrels.[1] However, the crew never landed on the island when they spotted the Marine ships lead by Vice Admiral Tsuru, who set up an ambush for the crew based on Rosinante's information."
+  },
+  {
+    "id": 1775973590883,
+    "name": "Spider Miles",
+    "lon": -110.5385,
+    "lat": 54.5665,
+    "sea": "North Blue",
+    "type": "Town",
+    "arc": "Dressrosa",
+    "notes": "An island in North Blue where the young Trafalgar Law, dying from Amber Lead Syndrome, encountered Donquixote Doflamingo's crew. Law joined the Donquixote Pirates here, beginning his dark journey under Doflamingo's tutelage. This location marks the start of Law's connection to the Donquixote Family before Corazon saved him."
+  },
+  {
+    "id": 1775973631770,
+    "name": "Rubeck Island",
+    "lon": -116.0895,
+    "lat": 57.8897,
+    "sea": "North Blue",
+    "type": "Island",
+    "arc": "Dressrosa",
+    "notes": "ubeck Island is an island in North Blue. Thirteen years ago, it was where a pirate named Diez Barrels was going to trade the Ope Ope no Mi to the Marines in exchange for a hefty amount of money."
+  },
+  {
+    "id": 1775973687604,
+    "name": "Minion Island",
+    "lon": -103.4667,
+    "lat": 54.2744,
+    "sea": "North Blue",
+    "type": "Island",
+    "arc": "Dressrosa",
+    "notes": "Minion Island is an island in North Blue. It's the place where Trafalgar Law obtained his Ope Ope no Mi powers and Donquixote Rosinante died by the hands of his elder brother Donquixote Doflamingo."
+  },
+  {
+    "id": 1775973729406,
+    "name": "Kuen Village",
+    "lon": -106.6839,
+    "lat": 62.1483,
+    "sea": "North Blue",
+    "type": "Town",
+    "arc": "Dressrosa",
+    "notes": "A village in the North Blue where Baby 5 was born."
+  },
+  {
+    "id": 1775973759700,
+    "name": "White City / Flevance Kingdom",
+    "lon": -96.5027,
+    "lat": 61.6508,
+    "sea": "North Blue",
+    "type": "Kingdom",
+    "arc": "Dressrosa",
+    "notes": "A wealthy kingdom in North Blue known as the \"White City\" due to its abundant Amber Lead, a valuable white mineral used in everything from paint to cosmetics. The World Government knew the mineral was toxic but concealed this, leading to the entire population developing fatal Amber Lead Syndrome. When the truth emerged, neighboring nations exterminated the \"infected\" citizens. Law was the sole survivor."
+  },
+  {
+    "id": 1775973801653,
+    "name": "Downs Island",
+    "lon": -92.4734,
+    "lat": 47.7868,
+    "sea": "North Blue",
+    "type": "Island",
+    "arc": "Dressrosa",
+    "notes": "An island located in the North Blue, notable as the birthplace of the gang that would eventually evolve into the infamous Donquixote Pirates, founded by Donquixote Doflamingo."
+  },
+  {
+    "id": 1775973841232,
+    "name": "Notice Town",
+    "lon": -86.9764,
+    "lat": 40.3899,
+    "sea": "North Blue",
+    "type": "Town",
+    "arc": "Dressrosa",
+    "notes": "Notice\nNotice\nStatistics\nJapanese Name:\nノーティス\nRomanized Name:\nNōtisu\nEnglish Name:\nNortis\nFirst appearance:\nChapter 769; Episode 709 (mentioned)[1]\nRegion:\nNorth Blue\nNotice is a wealthy town in the North Blue. It is the hometown of the Bellamy Pirates, who found the place \"boring\" and left it for a life of piracy sometime in their youth."
+  },
+  {
+    "id": 1775973906796,
+    "name": "Whiteland Kingdom",
+    "lon": -62.5184,
+    "lat": 73.0871,
+    "sea": "North Blue",
+    "type": "Kingdom",
+    "arc": "Levely",
+    "notes": "Iwatobi the king of Whiteland attended the Levely in Mary Geoise."
+  },
+  {
+    "id": 1775973963261,
+    "name": "Germa Kingdom",
+    "lon": -38.2114,
+    "lat": 65.3469,
+    "sea": "North Blue",
+    "type": "Kingdom",
+    "arc": "Whole Cake",
+    "notes": "The Germa Kingdom, also known as the Kingdom of Science. A unique mobile kingdom in the North Blue consisting of a fleet of ships that can combine to form a floating island nation. Ruled by the Vinsmoke Family, Germa once conquered the entire North Blue 300 years ago. The kingdom is renowned for its advanced cloning technology and genetically modified soldiers. Sanji was born a prince here but escaped after being imprisoned by his father Judge for showing human emotions."
+  },
+  {
+    "id": 1775973997108,
+    "name": "Lvneel Kingdom",
+    "lon": -57.5772,
+    "lat": 49.2192,
+    "sea": "North Blue",
+    "type": "Kingdom",
+    "arc": "Jaya",
+    "notes": "The Lvneel Kingdom is a kingdom in the North Blue. This is where Mont Blanc Noland was born and where he was executed. This is also Mont Blanc Cricket's ancestral home."
+  },
+  {
+    "id": 1775974083708,
+    "name": "Deul Kingdom",
+    "lon": -41.3149,
+    "lat": 47.2597,
+    "sea": "North Blue",
+    "type": "Kingdom",
+    "arc": "Levely",
+    "notes": "Home to Chap one of the monarchs attending the Levely in Mary Geoise."
+  },
+  {
+    "id": 1775974265942,
+    "name": "Ilisia Kingdom",
+    "lon": -131.1832,
+    "lat": -44.5781,
+    "sea": "West Blue",
+    "type": "Kingdom",
+    "arc": "Levely",
+    "notes": "Kingdom of Cezar is affiliated with the World Government, and its ruler is allowed a seat at the Levely."
+  },
+  {
+    "id": 1775974344335,
+    "name": "Ballywood Kingdom",
+    "lon": -133.7447,
+    "lat": -60.9256,
+    "sea": "West Blue",
+    "type": "Kingdom",
+    "arc": "Levely",
+    "notes": "Ruled by King Ham Burg, acting chairman for the Levely in Mary Geoise."
+  },
+  {
+    "id": 1775974434404,
+    "name": "G-80",
+    "lon": -117.9011,
+    "lat": -53.1227,
+    "sea": "West Blue",
+    "type": "Marine Base",
+    "arc": "Post-War",
+    "notes": "It was this base which was called for help two weeks after the Summit War of Marineford by an unknown island of the West Blue. The 80th Branch sent Marine soldiers there to protect it from pirates who had decided to head for the Grand Line after they had learned about the death of the Emperor Whitebeard."
+  },
+  {
+    "id": 1775974490207,
+    "name": "Toroa Island",
+    "lon": -104.2871,
+    "lat": -66.1991,
+    "sea": "West Blue",
+    "type": "Island",
+    "arc": "Sabaody Archipelago",
+    "notes": "Not much is known about it except that a pirate named Byron originates from here; he was a descendant from a long line of musicians. He eventually left and traveled to the Grand Line, where he was captured and sold off as a slave."
+  },
+  {
+    "id": 1775974540300,
+    "name": "Ohara",
+    "lon": -107.7753,
+    "lat": -34.0363,
+    "sea": "West Blue",
+    "type": "Island",
+    "arc": "Water 7",
+    "notes": "An island in West Blue that was home to the world's greatest archaeological institution, the Tree of Knowledge library. Ohara's scholars studied the Poneglyphs to uncover the Void Century's secrets. The World Government ordered a Buster Call that annihilated the entire island 22 years ago, killing all inhabitants. Nico Robin was the sole survivor, becoming the only person alive able to read the ancient language."
+  },
+  {
+    "id": 1775974598294,
+    "name": "God Valley",
+    "lon": -80.5096,
+    "lat": -49.2279,
+    "sea": "West Blue",
+    "type": "Island",
+    "arc": "Wano",
+    "notes": "A former island that was completely erased from history and maps by the World Government. It was the site of the legendary God Valley Incident 38 years ago, where Gol D. Roger and Monkey D. Garp allied to defeat the Rocks Pirates led by Rocks D. Xebec. Celestial Dragons were present during the incident, and the details remain classified. The island no longer exists."
+  },
+  {
+    "id": 1775974672148,
+    "name": "Soja Island",
+    "lon": -59.2928,
+    "lat": -48.5579,
+    "sea": "West Blue",
+    "type": "Island",
+    "arc": "Egghead",
+    "notes": "Home island of Issho prior to becoming and Admiral for the Marines."
+  },
+  {
+    "id": 1775974745934,
+    "name": "Kano Country",
+    "lon": -45.751,
+    "lat": -63.1869,
+    "sea": "West Blue",
+    "type": "Kingdom",
+    "arc": "Dressrosa",
+    "notes": "The Kano Country is a nation in the West Blue where the Chinjao Family came from."
+  },
+  {
+    "id": 1775974800888,
+    "name": "Las Camp Region",
+    "lon": -125.2729,
+    "lat": -73.9012,
+    "sea": "West Blue",
+    "type": "Other",
+    "arc": "Post-War",
+    "notes": "Las Camp is a sea in the West Blue. After Whitebeard's death, pirates were reported attacking an island from this sea, and the Marines were having trouble dealing with them."
+  },
+  {
+    "id": 1775974896975,
+    "name": "Red Line (End of Grand Line)",
+    "lon": 179.6881,
+    "lat": -7.1258,
+    "sea": "Red Line",
+    "type": "Other",
+    "arc": "Syrup Village",
+    "notes": "A massive ring-shaped continent that circles the entire One Piece world vertically, dividing the global ocean into four seas (East Blue, West Blue, North Blue, South Blue) and the Grand Line. The Red Line is virtually impassable except at specific points like Reverse Mountain and Fish-Man Island. Mary Geoise, the seat of World Government power, sits atop it. The continent is central to world geography and serves as both a barrier and a symbol of the world's divided nature."
+  },
+  {
+    "id": 1775974918863,
+    "name": "Red Line (Begging of Grand Line)",
+    "lon": -4.3905,
+    "lat": 48.9296,
+    "sea": "Red Line",
+    "type": "Other",
+    "arc": "Syrup Village",
+    "notes": "A massive ring-shaped continent that circles the entire One Piece world vertically, dividing the global ocean into four seas (East Blue, West Blue, North Blue, South Blue) and the Grand Line. The Red Line is virtually impassable except at specific points like Reverse Mountain and Fish-Man Island. Mary Geoise, the seat of World Government power, sits atop it. The continent is central to world geography and serves as both a barrier and a symbol of the world's divided nature."
+  },
+  {
+    "id": 1775975041394,
+    "name": "Calm Belt (North Blue)",
+    "lon": -85.6234,
+    "lat": 18.4932,
+    "sea": "Calm Belt",
+    "type": "Other",
+    "arc": "Reverse Mountain",
+    "notes": "Two strips of ocean running parallel to the Grand Line on both sides, separating it from the four Blues. The Calm Belt has no winds or currents, making traditional sailing impossible, and is infested with massive Sea Kings that nest in its waters. Only ships with Seastone-coated hulls (like Marine vessels) or those using alternative propulsion can cross safely. Amazon Lily, Impel Down, and Rusukaina are located within the Calm Belt, protected by its natural dangers."
+  },
+  {
+    "id": 1775975060414,
+    "name": "Calm Belt (West Blue)",
+    "lon": -88.631,
+    "lat": -18.6133,
+    "sea": "Calm Belt",
+    "type": "Other",
+    "arc": "Reverse Mountain",
+    "notes": "Two strips of ocean running parallel to the Grand Line on both sides, separating it from the four Blues. The Calm Belt has no winds or currents, making traditional sailing impossible, and is infested with massive Sea Kings that nest in its waters. Only ships with Seastone-coated hulls (like Marine vessels) or those using alternative propulsion can cross safely. Amazon Lily, Impel Down, and Rusukaina are located within the Calm Belt, protected by its natural dangers."
+  },
+  {
+    "id": 1775975079826,
+    "name": "Calm Belt (East Blue)",
+    "lon": 88.7721,
+    "lat": 18.0916,
+    "sea": "Calm Belt",
+    "type": "Other",
+    "arc": "Reverse Mountain",
+    "notes": "Two strips of ocean running parallel to the Grand Line on both sides, separating it from the four Blues. The Calm Belt has no winds or currents, making traditional sailing impossible, and is infested with massive Sea Kings that nest in its waters. Only ships with Seastone-coated hulls (like Marine vessels) or those using alternative propulsion can cross safely. Amazon Lily, Impel Down, and Rusukaina are located within the Calm Belt, protected by its natural dangers."
+  },
+  {
+    "id": 1775975095009,
+    "name": "Calm Belt (South Blue)",
+    "lon": 90.1099,
+    "lat": -18.7915,
+    "sea": "Calm Belt",
+    "type": "Other",
+    "arc": "Reverse Mountain",
+    "notes": "Two strips of ocean running parallel to the Grand Line on both sides, separating it from the four Blues. The Calm Belt has no winds or currents, making traditional sailing impossible, and is infested with massive Sea Kings that nest in its waters. Only ships with Seastone-coated hulls (like Marine vessels) or those using alternative propulsion can cross safely. Amazon Lily, Impel Down, and Rusukaina are located within the Calm Belt, protected by its natural dangers."
+  },
+  {
+    "id": 1775975148415,
+    "name": "Paradise",
+    "lon": 22.671,
+    "lat": 11.876,
+    "sea": "Grand Line",
+    "type": "Other",
+    "arc": "Arlong Park",
+    "notes": "name of the first half of the Grand Line given by pirates fleeing the New World, compared to which \"the first half is a paradise\". It is located between the East and South Blue, and goes from the Twin Cape to Mary Geoise."
+  },
+  {
+    "id": 1775975304917,
+    "name": "New World",
+    "lon": -156.0011,
+    "lat": 12.486,
+    "sea": "New World",
+    "type": "Other",
+    "arc": "Jaya",
+    "notes": "he New World refers to the second half of the Grand Line and is the main setting of the second half of One Piece. It is located between West and North Blue, and Fish-Man Island and the other side of Reverse Mountain. The only known people to have fully explored it are Gol D. Roger and his crew."
+  },
+  {
+    "id": 1775975439515,
+    "name": "East Blue",
+    "lon": 155.2753,
+    "lat": 29.6932,
+    "sea": "East Blue",
+    "type": "Other",
+    "arc": "",
+    "notes": "One of the four seas divided by the Grand Line and Red Line, considered the weakest and most peaceful of the Blues. Despite this reputation, East Blue is the birthplace of the Pirate King Gol D. Roger and Monkey D. Luffy. The sea contains Dawn Island, Shells Town, Orange Town, Syrup Village, Baratie, Arlong Park, and Loguetown. It is where Luffy assembled his initial crew before entering the Grand Line."
+  },
+  {
+    "id": 1775975468795,
+    "name": "North Blue",
+    "lon": -155.4848,
+    "lat": 30.3657,
+    "sea": "East Blue",
+    "type": "Other",
+    "arc": "North",
+    "notes": "One of the four seas divided by the Grand Line and Red Line, known for its darker history and powerful figures. North Blue is the birthplace of Sanji, Trafalgar Law, and the Donquixote Family. The sea contains the destroyed Flevance Kingdom, Lvneel Kingdom, the mobile Germa Kingdom, and Minion Island. It was once entirely conquered by the Vinsmoke Family's Germa 66 over 300 years ago."
+  },
+  {
+    "id": 1775975492057,
+    "name": "South Blue",
+    "lon": 161.4741,
+    "lat": -23.4807,
+    "sea": "South Blue",
+    "type": "Other",
+    "arc": "",
+    "notes": "One of the four seas divided by the Grand Line and Red Line. South Blue is known for its diverse islands and is the birthplace of several notable characters including Portgas D. Ace (Baterilla), Franky, Eustass Kid, and Jewelry Bonney. The sea contains the Sorbet Kingdom, Torino Kingdom, Karate Island, and Centaurea. It is considered to have a moderate level of pirate activity compared to the other Blues."
+  },
+  {
+    "id": 1775975509185,
+    "name": "West Blue",
+    "lon": -155.3488,
+    "lat": -24.755,
+    "sea": "West Blue",
+    "type": "Other",
+    "arc": "",
+    "notes": "One of the four seas divided by the Grand Line and Red Line. West Blue is the birthplace of Nico Robin and the shipwright Tom, and contained the scholarly island of Ohara before its destruction by Buster Call. The sea also includes Kano Country, home of the Happo Navy and the Chinjao Family. Brook's original crew, the Rumbar Pirates, also originated from West Blue before entering the Grand Line."
+  }
+]

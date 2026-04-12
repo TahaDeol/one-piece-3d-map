@@ -11,3 +11,60 @@ html, body, #cesiumContainer {
   background: #000;
   font-family: 'Georgia', serif;
 }
+
+#infoPanel {
+  position: absolute;
+  bottom: 40px;
+  left: 20px;
+  width: 300px;
+  background: rgba(26, 26, 46, 0.95);
+  border: 2px solid #c8a951;
+  border-radius: 8px;
+  padding: 20px;
+  color: #e0e0e0;
+  font-family: Georgia, serif;
+  z-index: 999;
+  transition: opacity 0.3s ease;
+}
+
+#infoPanel h2 {
+  color: #c8a951;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.panelRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 8px;
+}
+
+.panelLabel {
+  color: #c8a951;
+  font-size: 0.8rem;
+}
+
+#panelNotes {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #ccc;
+  margin-top: 12px;
+}
+
+#closePanel {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: #c8a951;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
