@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>One Piece — Location Recorder</title>
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.114/Build/Cesium/Cesium.js"></script>
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.114/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+  <link rel="stylesheet" href="src/recorder.css">
+</head>
+<body>
+  <div id="cesiumContainer"></div>
+  <div id="sidebar">
+    <h2>📍 Location Recorder</h2>
+    <p id="instruction">Click anywhere on the globe to pin a location</p>
+
+    <div id="form" class="hidden">
+      <div class="field">
+        <label>Name</label>
+        <input type="text" id="name" placeholder="e.g. Alabasta">
+      </div>
+      <div class="field">
+        <label>Sea / Region</label>
+        <select id="sea">
+          <option value="North Blue">North Blue</option>
+          <option value="East Blue">East Blue</option>
+          <option value="South Blue">South Blue</option>
+          <option value="West Blue">West Blue</option>
+          <option value="Grand Line">Grand Line</option>
+          <option value="New World">New World</option>
+          <option value="Calm Belt">Calm Belt</option>
+          <option value="Red Line">Red Line</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Type</label>
+        <select id="type">
+          <option value="Island">Island</option>
+          <option value="Kingdom">Kingdom</option>
+          <option value="Marine Base">Marine Base</option>
+          <option value="Town">Town</option>
+          <option value="Archipelago">Archipelago</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Story Arc</label>
+        <input type="text" id="arc" placeholder="e.g. Alabasta Arc">
+      </div>
+      <div class="field">
+        <label>Notes</label>
+        <textarea id="notes" placeholder="Any extra details..."></textarea>
+      </div>
+      <div class="buttons">
+        <button id="saveBtn">Save Location</button>
+        <button id="cancelBtn">Cancel</button>
+      </div>
+    </div>
+
+    <div id="savedList">
+      <h3>Saved Locations (<span id="count">0</span>)</h3>
+      <ul id="locationList"></ul>
+    </div>
+
+    <button id="exportBtn">Export locations.json</button>
+    <button id="importBtn">Import Existing JSON</button>
+    <input type="file" id="importFile" accept=".json" class="hidden">
+  </div>
+
+  <script src="src/recorder.js"></script>
+</body>
+</html>
