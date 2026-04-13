@@ -104,7 +104,7 @@ async function loadLocations() {
   const response = await fetch('data/locations.json');
   const locations = await response.json();
   
-  allocations = locations;
+  allLocations = locations;
 
   locations.forEach(location => {
     const color = regionColors[location.sea] || '#ffffff';
@@ -156,7 +156,7 @@ searchInput.addEventListener('input', function() {
         return;
     }
 
-    const results = allocations.filter(location =>
+    const results = allLocations.filter(location =>
         location.name.toLowerCase().includes(query)
     );
 
@@ -210,6 +210,53 @@ document.addEventListener('click', function(e) {
         searchDropdown.innerHTML = '';
     }
 });
+
+const filterToggle = document.getElementById('filterToggle');
+const filterContent = document.getElementById('filterContent');
+const selectAllBtn = document.getElementById('selectAllBtn');
+const deselectAllBtn = document.getElementById('deselectAllBtn');
+
+filterToggle.addEventListener('click', function() {
+    filterContent.classList.toggle('hidden');
+});
+
+function applyFilters() {
+  const checkedSeas  = [...document.querySelectorAll('.filterCheck[data-group="sea"]:checked')].map(cb => cb.value);
+  const checkedTypes = [...document.querySelectorAll('.filterCheck[data-group="type"]:checked')].map(cb => cb.value);
+  const showFiller   = document.querySelector('.filterCheck[data-group="arc"][value="filler"]').checked;
+  const showCanon    = document.querySelector('.filterCheck[data-group="arc"][value="canon"]').checked;
+
+  viewer.entities.values.forEach(entity => {
+    if (!entity.properties) return;
+
+    const sea  = entity.properties.sea.getValue();
+    const type = entity.properties.type.getValue();
+    const arc  = entity.properties.arc.getValue();
+
+    const isFiller = arc.toLowerCase().includes('filler');
+    const arcMatch = (isFiller && showFiller) || (!isFiller && showCanon);
+
+    entity.show = checkedSeas.includes(sea) &&
+                  checkedTypes.includes(type) &&
+                  arcMatch;
+  });
+}
+
+document.querySelectorAll('.filterCheck').forEach(checkbox => {
+  checkbox.addEventListener('change', applyFilters);
+});
+
+selectAllBtn.addEventListener('click', function() {
+  document.querySelectorAll('.filterCheck').forEach(cb => cb.checked = true);
+  applyFilters();
+});
+
+deselectAllBtn.addEventListener('click', function() {
+  document.querySelectorAll('.filterCheck').forEach(cb => cb.checked = false);
+  applyFilters();
+});
+
+
 
 // ============================================
 // HIDE LOADING SCREEN WHEN GLOBE IS READY
