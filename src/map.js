@@ -8,6 +8,7 @@ const loadingScreen = document.getElementById('loadingScreen');
 const loadingFill   = document.getElementById('loadingFill');
 const loadingText   = document.getElementById('loadingText');
 
+
 const loadingMessages = [
   'Hoisting the sails...',
   'Entering the Grand Line...',
@@ -155,6 +156,8 @@ loadLocations();
 // ============================================
 const searchInput = document.getElementById('searchInput');
 const searchDropdown = document.getElementById('searchDropdown');
+const filterPanel = document.getElementById('filterPanel');
+filterPanel.style.marginTop = '70px';
 
 searchInput.addEventListener('input', function() {
     const query = this.value.toLowerCase();
@@ -162,6 +165,7 @@ searchInput.addEventListener('input', function() {
    if (query.length < 2) {
         searchDropdown.classList.add('hidden');
         searchDropdown.innerHTML = '';
+        filterPanel.style.marginTop = '70px';
         return;
     }
 
@@ -172,9 +176,9 @@ searchInput.addEventListener('input', function() {
     if (results.length === 0) {
         searchDropdown.classList.add('hidden');
         searchDropdown.innerHTML = '';
+        filterPanel.style.marginTop = '70px';
         return;
     }
-
     searchDropdown.innerHTML = '';
     results.slice(0, 8).forEach(location => {
         const item = document.createElement('div');
@@ -211,12 +215,19 @@ searchInput.addEventListener('input', function() {
     });
     
     searchDropdown.classList.remove('hidden');
+
+    const dropdownBottom = searchDropdown.getBoundingClientRect().bottom;
+    const searchTop = document.getElementById('searchContainer').getBoundingClientRect().top;
+    const offset = dropdownBottom - searchTop + 30;
+    filterPanel.style.marginTop = offset + 'px';
+    filterPanel.style.transition = 'margin-top 0.2s ease';
 });
 
 document.addEventListener('click', function(e) {
     if (!document.getElementById('searchContainer').contains(e.target)) {
         searchDropdown.classList.add('hidden');
         searchDropdown.innerHTML = '';
+        filterPanel.style.marginTop = '70px';
     }
 });
 
@@ -344,12 +355,11 @@ function showRoute() {
   routeCoordinates.forEach((stop, index) => {
     const dot = viewer.entities.add({
         position: Cesium.Cartesian3.fromDegrees(stop.lon, stop.lat),
-        pointd: {
+        point: {
             pixelSize: 6,
             color: Cesium.Color.fromCssColorString('#f0d080'),
             outlineColor: Cesium.Color.fromCssColorString('#2c1508'),
             outlineWidth: 1,
-            disableDepthTestDistance: Number.POSITIVE_INFINITY,
         },
     });
     routeEntities.push(dot);

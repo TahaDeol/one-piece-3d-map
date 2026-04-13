@@ -290,9 +290,11 @@ html, body, #cesiumContainer {
   border-top: none;
   border-radius: 0 0 2px 2px;
   max-height: 300px;
+  height: auto;
   overflow-y: auto;
-  box-shadow: 1px solid rgba(80, 45, 10, 0.15);
-
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  position: relative;
 }
 
 .searchResult {
@@ -326,7 +328,7 @@ html, body, #cesiumContainer {
 
 #filterPanel {
   position: absolute;
-  top: 70px;
+  top: 0px;
   right: 20px;
   width: 280px;
   z-index: 999;
