@@ -47,19 +47,20 @@ gdal2tiles.py --profile=mercator --zoom=0-6 --webviewer=none --no-kml --tiledriv
 4. Run `serve .` and open `http://localhost:3000`
 
 ## Project Structure
+```
 one-piece-3d-map/
-src/
-map.js          — Core globe logic, markers, search, filters
-map.css         — All styling including loading screen
-recorder.js     — Location coordinate recording tool
-recorder.css    — Recorder tool styling
-data/
-locations.json  — All 190+ location coordinates and metadata
-images/           — Source map image (not tracked in git)
-tiles/            — Generated map tiles (not tracked in git)
-index.html        — Main application
-recorder.html     — Internal coordinate recording tool
-
+  src/
+    map.js          — Core globe logic, markers, search, filters
+    map.css         — All styling including loading screen
+    recorder.js     — Location coordinate recording tool
+    recorder.css    — Recorder tool styling
+  data/
+    locations.json  — All 190+ location coordinates and metadata
+  images/           — Source map image (not tracked in git)
+  tiles/            — Generated map tiles (not tracked in git)
+  index.html        — Main application
+  recorder.html     — Internal coordinate recording tool
+```
 ## Data
 All location coordinates were manually recorded using a custom built 
 coordinate recording tool. Each location includes name, region, type, 
