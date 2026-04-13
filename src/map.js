@@ -513,11 +513,19 @@ function showPanel(data) {
   document.getElementById('panelType').textContent  = data.type;
   document.getElementById('panelArc').textContent   = data.arc;
   document.getElementById('panelNotes').textContent = data.notes;
-  document.getElementById('infoPanel').classList.remove('hidden');
+  const panel = document.getElementById('infoPanel');
+    panel.classList.remove('hidden');
+    setTimeout(function() {
+        panel.classList.add('visible');
+    }, 10);
 }
 
 function hidePanel() {
-  document.getElementById('infoPanel').classList.add('hidden');
+  const panel = document.getElementById('infoPanel');
+    panel.classList.remove('visible');
+    setTimeout(function() {
+        panel.classList.add('hidden');
+    }, 400);
 }
 
 // ============================================
