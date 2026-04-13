@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <div id="loadingScreen">
+    <div id="loadingScreen" style="display: none;">
 
         <svg class="sea-route" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
             <path d="M-100 200 Q 300 150 600 250 T 1200 200 T 1600 220"
@@ -62,6 +62,16 @@
     </div>
 
     <div id="cesiumContainer"></div>
+
+    <div id="searchContainer">
+        <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="Search for a location..."
+            autoComplete="off"
+        />
+        <div id="searchDropdown" class="hidden"></div>
+    </div>
 
     <div id="infoPanel" class="hidden">
         <button id="closePanel" onclick="hidePanel()">✕</button>

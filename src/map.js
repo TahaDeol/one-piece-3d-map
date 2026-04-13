@@ -1,3 +1,4 @@
+let allLocations = [];
 const loadingScreen = document.getElementById('loadingScreen');
 const loadingFill   = document.getElementById('loadingFill');
 const loadingText   = document.getElementById('loadingText');
@@ -102,6 +103,8 @@ function createMarkerCanvas(color) {
 async function loadLocations() {
   const response = await fetch('data/locations.json');
   const locations = await response.json();
+  
+  allocations = locations;
 
   locations.forEach(location => {
     const color = regionColors[location.sea] || '#ffffff';
@@ -137,6 +140,77 @@ async function loadLocations() {
 }
 
 loadLocations();
+
+// ============================================
+// SEARCH FUNCTIONALITY
+// ============================================
+const searchInput = document.getElementById('searchInput');
+const searchDropdown = document.getElementById('searchDropdown');
+
+searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase();
+  
+   if (query.length < 2) {
+        searchDropdown.classList.add('hidden');
+        searchDropdown.innerHTML = '';
+        return;
+    }
+
+    const results = allocations.filter(location =>
+        location.name.toLowerCase().includes(query)
+    );
+
+    if (results.length === 0) {
+        searchDropdown.classList.add('hidden');
+        searchDropdown.innerHTML = '';
+        return;
+    }
+
+    searchDropdown.innerHTML = '';
+    results.slice(0, 8).forEach(location => {
+        const item = document.createElement('div');
+        item.className = 'searchResult';
+        item.innerHTML = `
+            <div class="searchResultName">${location.name}</div>
+            <div class="searchResultSea">${location.sea} · ${location.type}</div>
+        `;
+
+        item.addEventListener('click', function() {
+            viewer.camera.flyTo({
+                destination: Cesium.Cartesian3.fromDegrees(
+                    location.lon, 
+                    location.lat, 
+                    3000000
+                ),
+                duration: 2,
+            });
+
+            showPanel({
+                name:  location.name,
+                sea:   location.sea,
+                type:  location.type,
+                arc:   location.arc,
+                notes: location.notes,
+            });
+            
+            searchDropdown.classList.add('hidden');
+            searchDropdown.innerHTML = '';
+            searchInput.value = '';
+        });
+
+        searchDropdown.appendChild(item);
+    });
+    
+    searchDropdown.classList.remove('hidden');
+});
+
+document.addEventListener('click', function(e) {
+    if (!document.getElementById('searchContainer').contains(e.target)) {
+        searchDropdown.classList.add('hidden');
+        searchDropdown.innerHTML = '';
+    }
+});
+
 // ============================================
 // HIDE LOADING SCREEN WHEN GLOBE IS READY
 // ============================================
@@ -232,4 +306,4 @@ setTimeout(function() {
     duration:       5,
     easingFunction: Cesium.EasingFunction.CUBIC_IN_OUT,
   });
-}, 11000);
+}, 0); //Set back to 11000 when finished testing other features
