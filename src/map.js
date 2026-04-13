@@ -1,4 +1,9 @@
 let allLocations = [];
+
+// ============================================
+// LOADING SCREEN
+// ============================================
+
 const loadingScreen = document.getElementById('loadingScreen');
 const loadingFill   = document.getElementById('loadingFill');
 const loadingText   = document.getElementById('loadingText');
@@ -40,6 +45,10 @@ const loadingInterval = setInterval(function() {
 
 }, intervalSpeed);
 
+// ============================================
+// 3D GLOBE SETUP
+// ============================================
+
 Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1NTkyZDZhYi03YWZjLTRhMGItYmNjNy0yYWMzMjEwMGY5OGQiLCJpZCI6NDE2MTY3LCJpYXQiOjE3NzU3ODUxMjF9.4yH3waGH3QMFC-dJI21EMZCHEj0-3sohaAaNNmRweyA';
 
 const viewer = new Cesium.Viewer('cesiumContainer', {
@@ -77,8 +86,8 @@ const regionColors = {
   'North Blue':  '#2ecc71',
   'South Blue':  '#e67e22',
   'Grand Line':  '#c8a951',
-  'New World':   '#e74c3c',
-  'Calm Belt':   '#1abc9c',
+  'New World':   '#000000',
+  'Calm Belt':   '#ffffff',
   'Red Line':    '#e74c3c',
 };
 
@@ -142,7 +151,7 @@ async function loadLocations() {
 loadLocations();
 
 // ============================================
-// SEARCH FUNCTIONALITY
+// SEARCH BAR
 // ============================================
 const searchInput = document.getElementById('searchInput');
 const searchDropdown = document.getElementById('searchDropdown');
@@ -211,6 +220,10 @@ document.addEventListener('click', function(e) {
     }
 });
 
+// ============================================
+// FILTER PANEL
+// ============================================
+
 const filterToggle = document.getElementById('filterToggle');
 const filterContent = document.getElementById('filterContent');
 const selectAllBtn = document.getElementById('selectAllBtn');
@@ -256,7 +269,172 @@ deselectAllBtn.addEventListener('click', function() {
   applyFilters();
 });
 
+// ============================================
+// ROUTE TOGGLE
+// ============================================
 
+const routeCoordinates = [
+    {name: "Dawn Island",                  lon: 135.6185,  lat: 53.4484},
+    {name: "Goat Island",                  lon: 129.1846,  lat: 60.8883},
+    {name: "Shells Town / G-153",          lon: 124.9745,  lat: 61.706},
+    {name: "Organ Island / Orange Town",   lon: 100.9968,  lat: 51.4648},
+    {name: "Island of Rare Animals",       lon: 93.8014,   lat: 47.2183},
+    {name: "Syrup Village",                lon: 76.4342,   lat: 47.6978},
+    {name: "Baratie",                      lon: 71.4185,   lat: 33.4255},
+    {name: "Cocoyashi Village",            lon: 45.9788,   lat: 49.6104},
+    {name: "Arlong Park",                  lon: 44.1468,   lat: 52.0139},
+    {name: "Lougetown / Polestar Islands", lon: 18.4545,   lat: 29.1279},
+    {name: "Reverse Mountain",             lon: 8.1496,    lat: -0.1209},
+    {name: "Twins Cape",                   lon: 17.9137,   lat: -2.8461},
+    {name: "Whisky Peak",                  lon: 26.4407,   lat: 3.7836},
+    {name: "Little Garden",                lon: 36.2148,   lat: 6.6161},
+    {name: "Drum Island / Sakura Kingdom", lon: 48.1504,   lat: 7.919},
+    {name: "Alabasta Kingdom",             lon: 65.6264,   lat: 10.1258},
+    {name: "Mock Town",                    lon: 80.5633,   lat: 2.2498},
+    {name: "Jaya",                         lon: 81.9664,   lat: 1.0779},
+    {name: "Angel Island",                 lon: 92.4054,   lat: 0.4848},
+    {name: "Skypiea",                      lon: 90.7117,   lat: 3.7079},
+    {name: "Long Ring Long Land",          lon: 99.9722,   lat: -3.8285},
+    {name: "Shift Station",                lon: 120.1383,  lat: -6.6994},
+    {name: "Water 7",                      lon: 126.9197,  lat: -2.8379},
+    {name: "Enies Lobby",                  lon: 143.534,   lat: -8.7942},
+    {name: "Thriller Bark",                lon: 141.3863,  lat: 0.4635},
+    {name: "Flying Fish Raider Base",      lon: 154.4179,  lat: -0.3794},
+    {name: "Sabaody Archipelago",          lon: 160.7084,  lat: -2.573},
+    {name: "Fish Man Island",              lon: 172.8767,  lat: -1.7366},
+    {name: "Punk Hazard",                  lon: -156.9298, lat: -8.3585},
+    {name: "Dressrosa Kingdom",            lon: -125.568,  lat: -5.5422},
+    {name: "Green Bit",                    lon: -121.2503, lat: -1.2621},
+    {name: "Zou",                          lon: -88.4948,  lat: -8.8164},
+    {name: "Whole Cake Island",            lon: -98.6784,  lat: 5.1292},
+    {name: "Wano Kingdom",                 lon: -68.5807,  lat: 6.6363},
+    {name: "Egghead Island",               lon: -65.3558,  lat: -0.6844},
+    {name: "Elbaf Island",                 lon: -51.2569,  lat: 1.5331},
+];
+
+let routeVisible = false;
+let routeEntities = [];
+let shipEntity = null;
+let shipInterval = null;
+
+function buildRoute() {
+    const positions = [];
+    routeCoordinates.forEach(point => {
+        positions.push(Cesium.Cartesian3.fromDegrees(point.lon, point.lat));
+    });
+    return positions;
+};
+
+function showRoute() {
+  const positions = buildRoute();
+
+  const routeLine = viewer.entities.add({
+    polyline: {
+      positions: positions,
+      width: 2,
+      material: new Cesium.PolylineDashMaterialProperty({
+        color: Cesium.Color.fromCssColorString('#f0d080'),
+        dashLength: 20,
+      }),
+      clampToGround: false,
+    }
+  });
+  routeEntities.push(routeLine);
+
+  routeCoordinates.forEach((stop, index) => {
+    const dot = viewer.entities.add({
+        position: Cesium.Cartesian3.fromDegrees(stop.lon, stop.lat),
+        pointd: {
+            pixelSize: 6,
+            color: Cesium.Color.fromCssColorString('#f0d080'),
+            outlineColor: Cesium.Color.fromCssColorString('#2c1508'),
+            outlineWidth: 1,
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
+        },
+    });
+    routeEntities.push(dot);
+  });
+
+  let shipIndex = 0;
+    shipEntity = viewer.entities.add({
+        position: Cesium.Cartesian3.fromDegrees(
+            routeCoordinates[0].lon,
+            routeCoordinates[0].lat
+    ),
+    billboard: {
+        image: (() => {
+        const canvas  = document.createElement('canvas');
+        canvas.width  = 64;
+        canvas.height = 64;
+        return canvas;
+    })(),
+    scale: 1.5,
+    verticalOrigin: Cesium.VerticalOrigin.CENTER,
+    }
+});
+
+const img = new Image();
+img.src = 'images/straw-hat-jolly-roger.png';
+img.onload = function() {
+  const canvas  = document.createElement('canvas');
+  canvas.width  = 64;
+  canvas.height = 64;
+  const ctx = canvas.getContext('2d');
+  ctx.drawImage(img, 0, 0, 64, 64);
+  shipEntity.billboard.image = canvas;
+};
+  let currentStop  = 0;
+let nextStop     = 1;
+let progress     = 0;
+const STEP       = 0.005;
+
+shipInterval = setInterval(function() {
+  progress += STEP;
+
+  if (progress >= 1) {
+    progress  = 0;
+    currentStop = nextStop;
+    nextStop    = (nextStop + 1) % routeCoordinates.length;
+  }
+
+  const from = routeCoordinates[currentStop];
+  const to   = routeCoordinates[nextStop];
+
+  const lon = from.lon + (to.lon - from.lon) * progress;
+  const lat = from.lat + (to.lat - from.lat) * progress;
+
+  shipEntity.position = new Cesium.ConstantPositionProperty(
+    Cesium.Cartesian3.fromDegrees(lon, lat)
+  );
+
+}, 16);
+}
+
+function hideRoute() {
+    routeEntities.forEach(e => viewer.entities.remove(e));
+    routeEntities = [];
+    if (shipEntity) {
+        viewer.entities.remove(shipEntity);
+        shipEntity = null;
+    }
+    if (shipInterval) {
+        clearInterval(shipInterval);
+        shipInterval = null;
+    }
+}
+
+document.getElementById('routeToggle').addEventListener('click', function() {
+    routeVisible = !routeVisible;
+    if (routeVisible) {
+        showRoute();
+        this.classList.add('active');
+        this.textContent = '✖ Hide Route';
+    } else {
+        hideRoute();
+        this.classList.remove('active');
+        this.textContent = '⚓ Straw Hat Route';
+    }
+});
 
 // ============================================
 // HIDE LOADING SCREEN WHEN GLOBE IS READY
@@ -281,7 +459,7 @@ setTimeout(function() {
 }, 10000);
 
 // ============================================
-// CLICK HANDLER — show info panel
+// INFO PANEL ON CLICK
 // ============================================
 viewer.screenSpaceEventHandler.setInputAction(function(click) {
   const picked = viewer.scene.pick(click.position);
@@ -319,9 +497,6 @@ viewer.screenSpaceEventHandler.setInputAction(function(click) {
 
 }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
 
-// ============================================
-// INFO PANEL
-// ============================================
 function showPanel(data) {
   document.getElementById('panelName').textContent  = data.name;
   document.getElementById('panelSea').textContent   = data.sea;

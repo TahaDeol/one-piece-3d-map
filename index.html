@@ -72,47 +72,49 @@
         />
         <div id="searchDropdown" class="hidden"></div>
     </div>
+    
+    <button id="routeToggle">⚓ Straw Hat Route</button>
 
-<div id="filterPanel">
-  <button id="filterToggle">☰ Filters</button>
+    <div id="filterPanel">
+        <button id="filterToggle">☰ Filters</button>
 
-  <div id="filterContent" class="hidden">
+        <div id="filterContent" class="hidden">
 
-    <div class="filterSection">
-      <h3>Region</h3>
-      <label><input type="checkbox" class="filterCheck" data-group="sea" value="East Blue" checked> East Blue</label>
-      <label><input type="checkbox" class="filterCheck" data-group="sea" value="West Blue" checked> West Blue</label>
-      <label><input type="checkbox" class="filterCheck" data-group="sea" value="North Blue" checked> North Blue</label>
-      <label><input type="checkbox" class="filterCheck" data-group="sea" value="South Blue" checked> South Blue</label>
-      <label><input type="checkbox" class="filterCheck" data-group="sea" value="Grand Line" checked> Grand Line</label>
-      <label><input type="checkbox" class="filterCheck" data-group="sea" value="Red Line" checked> Red Line</label>
-      <label><input type="checkbox" class="filterCheck" data-group="sea" value="Calm Belt" checked> Calm Belt</label>
-      <label><input type="checkbox" class="filterCheck" data-group="sea" value="New World" checked> New World</label>
-    </div>
+            <div class="filterSection">
+                <h3>Region</h3>
+                <label><input type="checkbox" class="filterCheck" data-group="sea" value="East Blue" checked> East Blue</label>
+                <label><input type="checkbox" class="filterCheck" data-group="sea" value="West Blue" checked> West Blue</label>
+                <label><input type="checkbox" class="filterCheck" data-group="sea" value="North Blue" checked> North Blue</label>
+                <label><input type="checkbox" class="filterCheck" data-group="sea" value="South Blue" checked> South Blue</label>
+                <label><input type="checkbox" class="filterCheck" data-group="sea" value="Grand Line" checked> Grand Line</label>
+                <label><input type="checkbox" class="filterCheck" data-group="sea" value="Red Line" checked> Red Line</label>
+                <label><input type="checkbox" class="filterCheck" data-group="sea" value="Calm Belt" checked> Calm Belt</label>
+                <label><input type="checkbox" class="filterCheck" data-group="sea" value="New World" checked> New World</label>
+            </div>
 
-    <div class="filterSection">
-      <h3>Type</h3>
-      <label><input type="checkbox" class="filterCheck" data-group="type" value="Island" checked> Island</label>
-      <label><input type="checkbox" class="filterCheck" data-group="type" value="Kingdom" checked> Kingdom</label>
-      <label><input type="checkbox" class="filterCheck" data-group="type" value="Marine Base" checked> Marine Base</label>
-      <label><input type="checkbox" class="filterCheck" data-group="type" value="Other" checked> Other</label>
-      <label><input type="checkbox" class="filterCheck" data-group="type" value="Town" checked> Town</label>
-      <label><input type="checkbox" class="filterCheck" data-group="type" value="Archipelago" checked> Archipelago</label>
-    </div>
+            <div class="filterSection">
+                <h3>Type</h3>
+                <label><input type="checkbox" class="filterCheck" data-group="type" value="Island" checked> Island</label>
+                <label><input type="checkbox" class="filterCheck" data-group="type" value="Kingdom" checked> Kingdom</label>
+                <label><input type="checkbox" class="filterCheck" data-group="type" value="Marine Base" checked> Marine Base</label>
+                <label><input type="checkbox" class="filterCheck" data-group="type" value="Other" checked> Other</label>
+                <label><input type="checkbox" class="filterCheck" data-group="type" value="Town" checked> Town</label>
+                <label><input type="checkbox" class="filterCheck" data-group="type" value="Archipelago" checked> Archipelago</label>
+            </div>
 
-    <div class="filterSection">
-      <h3>Arc</h3>
-      <label><input type="checkbox" class="filterCheck" data-group="arc" value="canon" checked> Canon</label>
-      <label><input type="checkbox" class="filterCheck" data-group="arc" value="filler" checked> Filler</label>
-    </div>
+            <div class="filterSection">
+                <h3>Arc</h3>
+                <label><input type="checkbox" class="filterCheck" data-group="arc" value="canon" checked> Canon</label>
+                <label><input type="checkbox" class="filterCheck" data-group="arc" value="filler" checked> Filler</label>
+            </div>
 
-    <div class="filterActions">
-      <button class="filterActionBtn" id="selectAllBtn">Select All</button>
-      <button class="filterActionBtn" id="deselectAllBtn">Deselect All</button>
-    </div>
+            <div class="filterActions">
+                <button class="filterActionBtn" id="selectAllBtn">Select All</button>
+                <button class="filterActionBtn" id="deselectAllBtn">Deselect All</button>
+            </div>
 
-  </div>
-</div>  
+        </div>
+    </div>  
 
     <div id="infoPanel" class="hidden">
         <button id="closePanel" onclick="hidePanel()">✕</button>
