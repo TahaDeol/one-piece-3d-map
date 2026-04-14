@@ -81,6 +81,7 @@ viewer.imageryLayers.addImageryProvider(imageryProvider);
 // ============================================
 // MARKER COLORS BY REGION
 // ============================================
+
 const regionColors = {
   'East Blue':   '#3498db',
   'West Blue':   '#9b59b6',
@@ -110,11 +111,14 @@ function createMarkerCanvas(color) {
 // ============================================
 // LOAD LOCATIONS
 // ============================================
+
 async function loadLocations() {
   const response = await fetch('data/locations.json');
   const locations = await response.json();
   
   allLocations = locations;
+  document.getElementById('counterTotal').textContent   = locations.length;
+  document.getElementById('counterCurrent').textContent = locations.length;
 
   locations.forEach(location => {
     const color = regionColors[location.sea] || '#ffffff';
@@ -154,10 +158,11 @@ loadLocations();
 // ============================================
 // SEARCH BAR
 // ============================================
+
 const searchInput = document.getElementById('searchInput');
 const searchDropdown = document.getElementById('searchDropdown');
 const filterPanel = document.getElementById('filterPanel');
-filterPanel.style.marginTop = '70px';
+filterPanel.style.marginTop = '90px';
 
 searchInput.addEventListener('input', function() {
     const query = this.value.toLowerCase();
@@ -165,7 +170,7 @@ searchInput.addEventListener('input', function() {
    if (query.length < 2) {
         searchDropdown.classList.add('hidden');
         searchDropdown.innerHTML = '';
-        filterPanel.style.marginTop = '70px';
+        filterPanel.style.marginTop = '90px';
         return;
     }
 
@@ -176,7 +181,7 @@ searchInput.addEventListener('input', function() {
     if (results.length === 0) {
         searchDropdown.classList.add('hidden');
         searchDropdown.innerHTML = '';
-        filterPanel.style.marginTop = '70px';
+        filterPanel.style.marginTop = '90px';
         return;
     }
     searchDropdown.innerHTML = '';
@@ -218,7 +223,7 @@ searchInput.addEventListener('input', function() {
 
     const dropdownBottom = searchDropdown.getBoundingClientRect().bottom;
     const searchTop = document.getElementById('searchContainer').getBoundingClientRect().top;
-    const offset = dropdownBottom - searchTop + 30;
+    const offset = dropdownBottom - searchTop + 45;
     filterPanel.style.marginTop = offset + 'px';
     filterPanel.style.transition = 'margin-top 0.2s ease';
 });
@@ -227,7 +232,7 @@ document.addEventListener('click', function(e) {
     if (!document.getElementById('searchContainer').contains(e.target)) {
         searchDropdown.classList.add('hidden');
         searchDropdown.innerHTML = '';
-        filterPanel.style.marginTop = '70px';
+        filterPanel.style.marginTop = '90px';
     }
 });
 
@@ -263,6 +268,13 @@ function applyFilters() {
     entity.show = checkedSeas.includes(sea) &&
                   checkedTypes.includes(type) &&
                   arcMatch;
+
+    const visibleCount = viewer.entities.values.filter(e => 
+        e.properties && e.show !== false
+        ).length;
+
+    document.getElementById('counterCurrent').textContent = visibleCount;
+
   });
 }
 
@@ -278,6 +290,39 @@ selectAllBtn.addEventListener('click', function() {
 deselectAllBtn.addEventListener('click', function() {
   document.querySelectorAll('.filterCheck').forEach(cb => cb.checked = false);
   applyFilters();
+});
+
+// ============================================
+// KEYBOARD SHORTCUTS
+// ============================================
+
+document.addEventListener('keydown', function(e) {
+    const tag = document.activeElement.tagName.toLowerCase();
+    const typing = tag === 'input' || tag === 'textarea';
+
+    if (e.key === '/' && !typing) {
+        e.preventDefault();
+        searchInput.focus();
+    }
+
+    if ((e.key === 'f' || e.key === 'F') && !typing) {
+        filterContent.classList.toggle('hidden');
+    }
+
+    if ((e.key === 'r' || e.key === 'R') && !typing) {
+        const routeBtn = document.getElementById('routeToggle');
+        routeBtn.click();
+    }
+
+    if ((e.key === 'c' || e.key === 'C') && !typing) {
+        searchInput.blur();
+        searchDropdown.classList.add('hidden'); 
+        searchDropdown.innerHTML = '';
+        filterPanel.style.marginTop = '90px';
+        filterContent.classList.add('hidden');
+        hidePanel();
+        searchInput.value = '';
+    }
 });
 
 // ============================================
@@ -449,6 +494,7 @@ document.getElementById('routeToggle').addEventListener('click', function() {
 // ============================================
 // HIDE LOADING SCREEN WHEN GLOBE IS READY
 // ============================================
+
 setTimeout(function() {
   clearInterval(loadingInterval);
   loadingFill.style.width   = '100%';
@@ -471,6 +517,7 @@ setTimeout(function() {
 // ============================================
 // INFO PANEL ON CLICK
 // ============================================
+
 viewer.screenSpaceEventHandler.setInputAction(function(click) {
   const picked = viewer.scene.pick(click.position);
 
@@ -531,6 +578,7 @@ function hidePanel() {
 // ============================================
 // OPENING CAMERA ANIMATION
 // ============================================
+
 viewer.camera.setView({
   destination: Cesium.Cartesian3.fromDegrees(0, 0, 62500000),
 });

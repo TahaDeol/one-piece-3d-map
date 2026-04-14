@@ -26,10 +26,19 @@ html, body, #cesiumContainer {
   color: #2c1508;
   font-family: 'IM Fell English', Georgia, serif;
   z-index: 999;
-  transition: opacity 0.3s ease;
   box-shadow:
     inset 0 0 20px rgba(80, 40, 10, 0.1),
     0 4px 20px rgba(0, 0, 0, 0.4);
+  transform: translateX(-420px);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#infoPanel.visible {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: all;
 }
 
 #infoPanel h2 {
@@ -252,7 +261,7 @@ html, body, #cesiumContainer {
 
 #searchContainer {
   position: absolute;
-  top: 20px;
+  top: 40px;
   right: 20px;
   width: 280px;
   z-index: 999;
@@ -429,6 +438,77 @@ html, body, #cesiumContainer {
 .filterActionBtn:hover {
   background: rgba(80, 45, 10, 0.25);
 }
+
+#locationCounter {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  width: 220px;
+  background: rgba(201, 169, 110, 0.92);
+  border: 2px solid rgba(80, 45, 10, 0.6);
+  border-radius: 2px;
+  padding: 8px 15px;
+  color: #2c1508;
+  font-family: 'IM Fell English', Georgia, serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  z-index: 999;
+  box-shadow:
+    inset 0 0 20px rgba(80, 40, 10, 0.1),
+    0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+#controlsLegend {
+  position: absolute;
+  top: 90px;
+  left: 20px;
+  width: 220px;
+  background: rgba(201, 169, 110, 0.6);
+  border: 1px solid rgba(80, 45, 10, 0.3);
+  border-radius: 2px;
+  padding: 8px 15px;
+  color: #2c1508;
+  font-family: 'IM Fell English', Georgia, serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#controlsTitle {
+  font-family: 'Uncial Antiqua', Georgia, serif;
+  font-size: 1rem;
+  color: #2c1508;
+  font-style: normal;
+  margin-bottom: 4px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(80, 45, 10, 0.3);
+}
+
+.controlRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controlLabel {
+  font-size: 0.95rem;
+  color: #2c1508;
+}
+
+.controlKey {
+  background: rgba(80, 45, 10, 0.15);
+  border: 1px solid rgba(80, 45, 10, 0.4);
+  border-radius: 2px;
+  padding: 1px 8px;
+  font-style: normal;
+  font-family: Georgia, serif;
+  font-size: 0.8rem;
+  color: #2c1508;
+}
+
 
 #routeToggle {
   position: absolute;

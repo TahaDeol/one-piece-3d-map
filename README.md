@@ -17,7 +17,7 @@ and detailed island information.
 
 ## Features
 - 3D interactive globe with One Piece world map texture
-- 191 location markers color coded by sea region
+- 173 location markers color coded by sea region
 - Fly-to camera animations on location select
 - Location info panel with arc and lore details
 - Pirate map themed loading screen with animated progress bar
