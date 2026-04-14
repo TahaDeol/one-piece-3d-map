@@ -162,7 +162,7 @@ loadLocations();
 const searchInput = document.getElementById('searchInput');
 const searchDropdown = document.getElementById('searchDropdown');
 const filterPanel = document.getElementById('filterPanel');
-filterPanel.style.marginTop = '90px';
+filterPanel.style.marginTop = '107px';
 
 searchInput.addEventListener('input', function() {
     const query = this.value.toLowerCase();
@@ -170,18 +170,25 @@ searchInput.addEventListener('input', function() {
    if (query.length < 2) {
         searchDropdown.classList.add('hidden');
         searchDropdown.innerHTML = '';
-        filterPanel.style.marginTop = '90px';
+        filterPanel.style.marginTop = '107px';
         return;
     }
 
-    const results = allLocations.filter(location =>
-        location.name.toLowerCase().includes(query)
-    );
+    const sliderIndex  = parseInt(spoilerSlider.value);
+    const allowedArcs  = arcOrder.slice(0, sliderIndex + 1);
+    const showFiller   = document.querySelector('.filterCheck[data-group="arc"][value="filler"]').checked;
+
+    const results = allLocations.filter(location => {
+        const isFiller = location.arc.toLowerCase().includes('filler');
+        const inArcRange = allowedArcs.includes(location.arc);
+        const arcVisible = (isFiller && showFiller) || (!isFiller && inArcRange);
+        return location.name.toLowerCase().includes(query) && arcVisible;
+    });
 
     if (results.length === 0) {
         searchDropdown.classList.add('hidden');
         searchDropdown.innerHTML = '';
-        filterPanel.style.marginTop = '90px';
+        filterPanel.style.marginTop = '107px';
         return;
     }
     searchDropdown.innerHTML = '';
@@ -232,7 +239,7 @@ document.addEventListener('click', function(e) {
     if (!document.getElementById('searchContainer').contains(e.target)) {
         searchDropdown.classList.add('hidden');
         searchDropdown.innerHTML = '';
-        filterPanel.style.marginTop = '90px';
+        filterPanel.style.marginTop = '107px';
     }
 });
 
@@ -409,10 +416,26 @@ document.addEventListener('keydown', function(e) {
         searchInput.blur();
         searchDropdown.classList.add('hidden'); 
         searchDropdown.innerHTML = '';
-        filterPanel.style.marginTop = '90px';
+        filterPanel.style.marginTop = '107px';
         filterContent.classList.add('hidden');
         hidePanel();
         searchInput.value = '';
+    }
+
+    if ((e.key === 'h' || e.key === 'H') && !typing) {
+        const uiElements = [
+            document.getElementById('searchContainer'),
+            document.getElementById('filterPanel'),
+            document.getElementById('locationCounter'),
+            document.getElementById('controlsLegend'),
+            document.getElementById('spoilerPanel'),
+            document.getElementById('routeToggle'),
+        ];
+
+        const isHidden = uiElements[0].style.display === 'none';
+        uiElements.forEach(el => {
+            el.style.display = isHidden ? '' : 'none';
+        });
     }
 
     if (e.key === 'ArrowRight' && !typing) {
