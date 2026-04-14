@@ -250,32 +250,36 @@ filterToggle.addEventListener('click', function() {
 });
 
 function applyFilters() {
-  const checkedSeas  = [...document.querySelectorAll('.filterCheck[data-group="sea"]:checked')].map(cb => cb.value);
-  const checkedTypes = [...document.querySelectorAll('.filterCheck[data-group="type"]:checked')].map(cb => cb.value);
-  const showFiller   = document.querySelector('.filterCheck[data-group="arc"][value="filler"]').checked;
-  const showCanon    = document.querySelector('.filterCheck[data-group="arc"][value="canon"]').checked;
+    const sliderIndex  = parseInt(spoilerSlider.value);
+    const allowedArcs  = arcOrder.slice(0, sliderIndex + 1);
+    const checkedSeas  = [...document.querySelectorAll('.filterCheck[data-group="sea"]:checked')].map(cb => cb.value);
+    const checkedTypes = [...document.querySelectorAll('.filterCheck[data-group="type"]:checked')].map(cb => cb.value);
+    const showFiller   = document.querySelector('.filterCheck[data-group="arc"][value="filler"]').checked;
+    const showCanon    = document.querySelector('.filterCheck[data-group="arc"][value="canon"]').checked;
 
-  viewer.entities.values.forEach(entity => {
-    if (!entity.properties) return;
+    viewer.entities.values.forEach(entity => {
+        if (!entity.properties) return;
 
     const sea  = entity.properties.sea.getValue();
     const type = entity.properties.type.getValue();
     const arc  = entity.properties.arc.getValue();
 
-    const isFiller = arc.toLowerCase().includes('filler');
-    const arcMatch = (isFiller && showFiller) || (!isFiller && showCanon);
+    const isFiller   = arc.toLowerCase().includes('filler');
+    const inArcRange = allowedArcs.includes(arc);
+    const arcMatch   = (isFiller && showFiller) || (!isFiller && showCanon && inArcRange);
 
     entity.show = checkedSeas.includes(sea) &&
                   checkedTypes.includes(type) &&
                   arcMatch;
-
-    const visibleCount = viewer.entities.values.filter(e => 
-        e.properties && e.show !== false
-        ).length;
-
-    document.getElementById('counterCurrent').textContent = visibleCount;
-
   });
+
+  const current = arcOrder[sliderIndex];
+  spoilerArc.textContent = arcDisplayNames[current] || current;
+
+  const visibleCount = viewer.entities.values.filter(e => 
+    e.properties && e.show !== false).length;
+
+  document.getElementById('counterCurrent').textContent = visibleCount;
 }
 
 document.querySelectorAll('.filterCheck').forEach(checkbox => {
@@ -291,6 +295,93 @@ deselectAllBtn.addEventListener('click', function() {
   document.querySelectorAll('.filterCheck').forEach(cb => cb.checked = false);
   applyFilters();
 });
+
+// ============================================
+// SPOILER BAR
+// ============================================
+
+const arcOrder = [
+  'Romance Dawn',
+  'N/a - Vivre Card',
+  'One Piece Novel ZORO',
+  'Orange Town',
+  'Syrup Village',
+  'Baratie',
+  'Arlong Park',
+  'Loguetown',
+  'Reverse Mountain',
+  'Whisky Peak',
+  'Little Garden',
+  'Drum Island',
+  'Alabasta',
+  "One Piece Ace's Story",
+  'Jaya',
+  'Skypiea',
+  'Long Ring Long Land',
+  'Water Seven',
+  'Enies Lobby',
+  'Post-Enies Lobby',
+  'Thriller Bark',
+  'Sabaody Archipelago',
+  'Amazon Lily',
+  'Impel Down',
+  'Marineford',
+  'Post-War',
+  'Fish Man Island',
+  'Punk Hazard',
+  'Dressrosa',
+  'Zou',
+  'Whole Cake Island',
+  'Levely',
+  'Wano',
+  'Egghead',
+  'Elbaf',
+];
+
+const spoilerSlider = document.getElementById('spoilerSlider');
+const spoilerArc = document.getElementById('spoilerArc');
+
+const arcDisplayNames = {
+  'N/a - Vivre Card':      'Romance Dawn Arc',
+  'One Piece Novel ZORO':  'Romance Dawn Arc',
+  "One Piece Ace's Story": 'Alabasta Arc',
+  'Romance Dawn':          'Romance Dawn Arc',
+  'Orange Town':           'Orange Town Arc',
+  'Syrup Village':         'Syrup Village Arc',
+  'Baratie':               'Baratie Arc',
+  'Arlong Park':           'Arlong Park Arc',
+  'Loguetown':             'Loguetown Arc',
+  'Reverse Mountain':      'Reverse Mountain Arc',
+  'Whisky Peak':           'Whisky Peak Arc',
+  'Little Garden':         'Little Garden Arc',
+  'Drum Island':           'Drum Island Arc',
+  'Alabasta':              'Alabasta Arc',
+  'Jaya':                  'Jaya Arc',
+  'Skypiea':               'Skypiea Arc',
+  'Long Ring Long Land':   'Long Ring Long Land Arc',
+  'Water Seven':           'Water Seven Arc',
+  'Enies Lobby':           'Enies Lobby Arc',
+  'Post-Enies Lobby':      'Post-Enies Lobby Arc',
+  'Thriller Bark':         'Thriller Bark Arc',
+  'Sabaody Archipelago':   'Sabaody Archipelago Arc',
+  'Amazon Lily':           'Amazon Lily Arc',
+  'Impel Down':            'Impel Down Arc',
+  'Marineford':            'Marineford Arc',
+  'Post-War':              'Post-War Arc',
+  'Fish Man Island':       'Fish-Man Island Arc',
+  'Punk Hazard':           'Punk Hazard Arc',
+  'Dressrosa':             'Dressrosa Arc',
+  'Zou':                   'Zou Arc',
+  'Whole Cake Island':     'Whole Cake Island Arc',
+  'Levely':                'Levely Arc',
+  'Wano':                  'Wano Arc',
+  'Egghead':               'Egghead Arc',
+  'Elbaf':                 'Elbaf Arc',
+};
+
+spoilerSlider.addEventListener('input', applyFilters);
+
+applyFilters();
 
 // ============================================
 // KEYBOARD SHORTCUTS
@@ -323,6 +414,20 @@ document.addEventListener('keydown', function(e) {
         hidePanel();
         searchInput.value = '';
     }
+
+    if (e.key === 'ArrowRight' && !typing) {
+        const slider = document.getElementById('spoilerSlider');
+        slider.value = Math.min(parseInt(slider.value) + 1, parseInt(slider.max));
+        applyFilters();
+    }
+
+    if (e.key === 'ArrowLeft' && !typing) {
+        const slider = document.getElementById('spoilerSlider');
+        slider.value = Math.max(parseInt(slider.value) - 1, parseInt(slider.min));
+        applyFilters();
+    }
+
+
 });
 
 // ============================================

@@ -76,8 +76,8 @@
     "lat": 60.8883,
     "sea": "East Blue",
     "type": "Island",
-    "arc": "Filler Arc",
-    "notes": "An anime-only island that appears in filler episodes. It is inhabited by an old man named Zenny who lives alone with a herd of goats. The Straw Hats help him after discovering his dream to become a pirate. This location does not appear in the manga."
+    "arc": "Romance Dawn",
+    "notes": "Goat Island is an island in the East Blue that the Alvida Pirates used as a hideout. It is where Luffy first met Koby and Alvida."
   },
   {
     "id": 1775961073197,
@@ -281,12 +281,12 @@
   },
   {
     "id": 1775962640447,
-    "name": "Lougetown / Polestar Islands",
+    "name": "Loguetown / Polestar Islands",
     "lon": 18.4545,
     "lat": 29.1279,
     "sea": "East Blue",
     "type": "Town",
-    "arc": "Lougetown",
+    "arc": "Loguetown",
     "notes": "Known as the \"Town of the Beginning and the End,\" Loguetown is located on the Polestar Islands and is the birthplace and execution site of Gol D. Roger. It is the last stop before entering the Grand Line. Luffy visited Roger's execution platform here and narrowly escaped execution himself thanks to a lightning strike."
   },
   {
@@ -406,7 +406,7 @@
     "lat": -5.3147,
     "sea": "Grand Line",
     "type": "Island",
-    "arc": "Fishman Island",
+    "arc": "Fish Man Island",
     "notes": "The Sun Pirates arrived here to bring back Koala to her mother. They did it successfully but Fisher Tiger met his end in a Marine ambush led by Rear Admiral Strawberry.\nLater, Arlong would come back to the island to seek revenge, only to be defeated and captured by Vice Admiral Borsalino."
   },
   {
@@ -446,7 +446,7 @@
     "lat": 10.4851,
     "sea": "Grand Line",
     "type": "Island",
-    "arc": "Water 7",
+    "arc": "Water Seven",
     "notes": "Ukkari Hot-Spring Island is an island located in Paradise, and where Gedatsu landed after being defeated in Skypiea."
   },
   {
@@ -486,7 +486,7 @@
     "lat": 0.6083,
     "sea": "Grand Line",
     "type": "Marine Base",
-    "arc": "Filler Arc",
+    "arc": "Filler",
     "notes": "A large Marine fortress in the Grand Line that appears only in the anime. The Straw Hats accidentally landed inside the base after falling from Skypiea. Led by Vice Admiral Jonathan, the base became the setting for an infiltration arc where the crew had to escape. This location does not appear in the manga."
   },
   {
@@ -526,7 +526,7 @@
     "lat": -12.0419,
     "sea": "Grand Line",
     "type": "Town",
-    "arc": "Water 7",
+    "arc": "Water Seven",
     "notes": "An island in the Grand Line known for its annual carnival. It was mentioned as a location where the Straw Hats considered going after the events of Enies Lobby. The island is famous for its festive atmosphere and celebrations but is not shown in detail in the series."
   },
   {
@@ -536,8 +536,8 @@
     "lat": -6.6994,
     "sea": "Grand Line",
     "type": "Other",
-    "arc": "Water 7",
-    "notes": "One of the stations along the Puffing Tom sea train route that connects  several Islands to Water 7. The sea train system was invented by Tom the shipwright and operates on tracks laid across the ocean. The Straw Hats passed through here meeting Kokoro, Chimney and Gonbe."
+    "arc": "Water Seven",
+    "notes": "One of the stations along the Puffing Tom sea train route that connects  several Islands to Water Seven. The sea train system was invented by Tom the shipwright and operates on tracks laid across the ocean. The Straw Hats passed through here meeting Kokoro, Chimney and Gonbe."
   },
   {
     "id": 1775964778800,
@@ -547,7 +547,7 @@
     "sea": "Grand Line",
     "type": "Town",
     "arc": "Punk Hazard",
-    "notes": "Very little has been revealed about Pucci in the storyline. The only thing known of its history is that it was connected to Water 7 fourteen years ago to help with trade, when the latter's economy was very weak due to pirate attacks on merchant ships."
+    "notes": "Very little has been revealed about Pucci in the storyline. The only thing known of its history is that it was connected to Water Seven fourteen years ago to help with trade, when the latter's economy was very weak due to pirate attacks on merchant ships."
   },
   {
     "id": 1775964816439,
@@ -576,17 +576,17 @@
     "lat": -0.867,
     "sea": "Grand Line",
     "type": "Island",
-    "arc": "Water 7",
+    "arc": "Water Seven",
     "notes": "An island in the Grand Line composed entirely of discarded ships and scrap materials. Tom's Workers, including a young Franky, would collect materials from this island for shipbuilding. It played a role in Franky's backstory as he built his Battle Frankies from the salvaged parts found here."
   },
   {
     "id": 1775964914953,
-    "name": "Water 7",
+    "name": "Water Seven",
     "lon": 126.9197,
     "lat": -2.8379,
     "sea": "Grand Line",
     "type": "Town",
-    "arc": "Water 7",
+    "arc": "Water Seven",
     "notes": "A massive island city in the Grand Line built on water, renowned as the world's greatest shipbuilding center. The city features canals as streets and the famous Galley-La Company shipyard. The Straw Hats came here to repair the Going Merry but learned it was beyond saving. They recruited Franky and obtained the Thousand Sunny here."
   },
   {
@@ -597,7 +597,7 @@
     "sea": "Grand Line",
     "type": "Town",
     "arc": "Sabaody Archipelago",
-    "notes": "St. Poplar became connected to Water 7 with the completion of the Sea Train at a time when the economy in Water 7 was weak due to attacks on merchant ships. Once connected, it supplied wood to Water 7. Years later, Franky sent the Square Sisters here to buy Adam Wood on the black market."
+    "notes": "St. Poplar became connected to Water Seven with the completion of the Sea Train at a time when the economy in Water Seven was weak due to attacks on merchant ships. Once connected, it supplied wood to Water Seven. Years later, Franky sent the Square Sisters here to buy Adam Wood on the black market."
   },
   {
     "id": 1775965160679,
@@ -646,7 +646,7 @@
     "lat": 8.9224,
     "sea": "Grand Line",
     "type": "Island",
-    "arc": "Post War",
+    "arc": "Post-War",
     "notes": "A dark, gloomy island in the Grand Line perpetually shrouded in shadows, home to the ruins of the Shikkearu Kingdom destroyed by war. Dracule Mihawk, the world's greatest swordsman, resides in a castle here. Zoro was sent to this island by Kuma and trained under Mihawk for two years, mastering Haki and becoming far stronger."
   },
   {
@@ -1016,7 +1016,7 @@
     "lat": -6.6123,
     "sea": "New World",
     "type": "Marine Base",
-    "arc": "Egghead Island",
+    "arc": "Egghead",
     "notes": "The Marine GS General Hospital is a hospital for Marines. The Marine GS General Hospital is a hospital for Marines."
   },
   {
@@ -1156,7 +1156,7 @@
     "lat": -3.5589,
     "sea": "New World",
     "type": "Island",
-    "arc": "Long Ring Long Land",
+    "arc": "Egghead",
     "notes": "Lawless island in the New World serves as the headquarters of the Blackbeard Pirates after they claimed it as their territory. The island was formerly ruled by the legendary pirate Rocks D. Xebec and was the base of the Rocks Pirates. Koby was held prisoner here before SWORD launched a rescue operation, and the island was recognized as a nation by the World Government."
   },
   {
@@ -1227,7 +1227,7 @@
     "sea": "South Blue",
     "type": "Kingdom",
     "arc": "Jaya",
-    "notes": "he Briss Kingdom is a kingdom located in the South Blue. St. Briss had come from this country."
+    "notes": "The Briss Kingdom is a kingdom located in the South Blue. St. Briss had come from this country."
   },
   {
     "id": 1775972398059,
@@ -1256,7 +1256,7 @@
     "lat": -36.5602,
     "sea": "South Blue",
     "type": "Kingdom",
-    "arc": "Filler Arc",
+    "arc": "Filler",
     "notes": "Samba Island is a non-canon island in the New World, previously protected by the Whitebeard Pirates and later ruled by Chameleone as a tyrant. It became autonomous once Chameleone was ousted."
   },
   {
@@ -1296,7 +1296,7 @@
     "lat": -57.8669,
     "sea": "South Blue",
     "type": "Kingdom",
-    "arc": "Post-Enis Lobby",
+    "arc": "Post-Enies Lobby",
     "notes": "Two years ago, the Revolutionary Army and an unknown force battled for control of the country. The victory was led by the Revolutionary Army. With the fall of Centaurea, the Revolutionary Army has declared that another country had fallen."
   },
   {
@@ -1386,7 +1386,7 @@
     "lat": -34.7539,
     "sea": "South Blue",
     "type": "Island",
-    "arc": "Water 7",
+    "arc": "Water Seven",
     "notes": "Jerry from the CP6 trained there, in order to master the art of boxing."
   },
   {
@@ -1477,7 +1477,7 @@
     "sea": "North Blue",
     "type": "Town",
     "arc": "Dressrosa",
-    "notes": "Notice\nNotice\nStatistics\nJapanese Name:\nノーティス\nRomanized Name:\nNōtisu\nEnglish Name:\nNortis\nFirst appearance:\nChapter 769; Episode 709 (mentioned)[1]\nRegion:\nNorth Blue\nNotice is a wealthy town in the North Blue. It is the hometown of the Bellamy Pirates, who found the place \"boring\" and left it for a life of piracy sometime in their youth."
+    "notes": "Notice is a wealthy town in the North Blue. It is the hometown of the Bellamy Pirates, who found the place \"boring\" and left it for a life of piracy sometime in their youth."
   },
   {
     "id": 1775973906796,
@@ -1496,7 +1496,7 @@
     "lat": 65.3469,
     "sea": "North Blue",
     "type": "Kingdom",
-    "arc": "Whole Cake",
+    "arc": "Whole Cake Island",
     "notes": "The Germa Kingdom, also known as the Kingdom of Science. A unique mobile kingdom in the North Blue consisting of a fleet of ships that can combine to form a floating island nation. Ruled by the Vinsmoke Family, Germa once conquered the entire North Blue 300 years ago. The kingdom is renowned for its advanced cloning technology and genetically modified soldiers. Sanji was born a prince here but escaped after being imprisoned by his father Judge for showing human emotions."
   },
   {
@@ -1566,7 +1566,7 @@
     "lat": -34.0363,
     "sea": "West Blue",
     "type": "Island",
-    "arc": "Water 7",
+    "arc": "Enies Lobby",
     "notes": "An island in West Blue that was home to the world's greatest archaeological institution, the Tree of Knowledge library. Ohara's scholars studied the Poneglyphs to uncover the Void Century's secrets. The World Government ordered a Buster Call that annihilated the entire island 22 years ago, killing all inhabitants. Nico Robin was the sole survivor, becoming the only person alive able to read the ancient language."
   },
   {
@@ -1621,7 +1621,7 @@
   },
   {
     "id": 1775974918863,
-    "name": "Red Line (Begging of Grand Line)",
+    "name": "Red Line (Beginning of Grand Line)",
     "lon": -4.3905,
     "lat": 48.9296,
     "sea": "Red Line",
@@ -1696,7 +1696,7 @@
     "lat": 29.6932,
     "sea": "East Blue",
     "type": "Other",
-    "arc": "",
+    "arc": "Romance Dawn",
     "notes": "One of the four seas divided by the Grand Line and Red Line, considered the weakest and most peaceful of the Blues. Despite this reputation, East Blue is the birthplace of the Pirate King Gol D. Roger and Monkey D. Luffy. The sea contains Dawn Island, Shells Town, Orange Town, Syrup Village, Baratie, Arlong Park, and Loguetown. It is where Luffy assembled his initial crew before entering the Grand Line."
   },
   {
@@ -1706,7 +1706,7 @@
     "lat": 30.3657,
     "sea": "East Blue",
     "type": "Other",
-    "arc": "North",
+    "arc": "Romance Dawn",
     "notes": "One of the four seas divided by the Grand Line and Red Line, known for its darker history and powerful figures. North Blue is the birthplace of Sanji, Trafalgar Law, and the Donquixote Family. The sea contains the destroyed Flevance Kingdom, Lvneel Kingdom, the mobile Germa Kingdom, and Minion Island. It was once entirely conquered by the Vinsmoke Family's Germa 66 over 300 years ago."
   },
   {
@@ -1716,7 +1716,7 @@
     "lat": -23.4807,
     "sea": "South Blue",
     "type": "Other",
-    "arc": "",
+    "arc": "Romance Dawn",
     "notes": "One of the four seas divided by the Grand Line and Red Line. South Blue is known for its diverse islands and is the birthplace of several notable characters including Portgas D. Ace (Baterilla), Franky, Eustass Kid, and Jewelry Bonney. The sea contains the Sorbet Kingdom, Torino Kingdom, Karate Island, and Centaurea. It is considered to have a moderate level of pirate activity compared to the other Blues."
   },
   {
@@ -1726,7 +1726,7 @@
     "lat": -24.755,
     "sea": "West Blue",
     "type": "Other",
-    "arc": "",
+    "arc": "Romance Dawn",
     "notes": "One of the four seas divided by the Grand Line and Red Line. West Blue is the birthplace of Nico Robin and the shipwright Tom, and contained the scholarly island of Ohara before its destruction by Buster Call. The sea also includes Kano Country, home of the Happo Navy and the Chinjao Family. Brook's original crew, the Rumbar Pirates, also originated from West Blue before entering the Grand Line."
   }
 ]
