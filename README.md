@@ -23,8 +23,24 @@ and detailed island information.
 - Pirate map themed loading screen with animated progress bar
 - Cinematic opening camera animation flying into Dawn Island
 - Search bar with live dropdown suggestions
+- Spoiler-aware search that hides locations beyond story progress
 - Collapsible filter panel by region, type and arc
-- Straw Hat journey route overlay with animated marker
+- Straw Hat journey route overlay with animated ship
+- Story progress slider filtering locations by arc
+- Location counter showing filtered results
+- Smooth slide-in info panel animation
+- Keyboard shortcuts for all major actions
+- Hide UI toggle for clean globe viewing
+
+## Keyboard Shortcuts
+| Key | Action |
+|---|---|
+| `/` | Focus search bar |
+| `F` | Toggle filter panel |
+| `R` | Toggle Straw Hat route |
+| `C` | Close all panels |
+| `H` | Hide / show all UI |
+| `←` `→` | Move story progress backward / forward |
 
 ## Region Color Key
 - East Blue — Blue
@@ -58,9 +74,9 @@ gdal2tiles.py --profile=mercator --zoom=0-6 --webviewer=none --no-kml --tiledriv
         recorder.js     — Location coordinate recording tool
         recorder.css    — Recorder tool styling
       data/
-        locations.json  — All 191 location coordinates and metadata
+        locations.json  — All 173 location coordinates and metadata
       images/
-        straw-hat-jolly-roger.png — Straw Hat Jolly Roger for route animation
+        jolly-roger.png — Straw Hat Jolly Roger for route animation
       tiles/            — Generated map tiles (not tracked in git)
       index.html        — Main application
       recorder.html     — Internal coordinate recording tool
@@ -72,14 +88,10 @@ coordinate recording tool. Each location includes name, region, type,
 story arc, and lore notes.
 
 ## Upcoming Features
-- Smooth info panel animations
-- Location counter showing filtered results
-- Copy coordinates button
-- Keyboard shortcuts
-- Spoiler toggle
 - URL state preservation
 - Mobile responsive layout
 - Marker clustering
 
 ## Credits
 Map image created by Xads181 on DeviantArt.
+One Piece is created by Eiichiro Oda.
