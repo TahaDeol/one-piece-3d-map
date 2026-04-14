@@ -151,9 +151,62 @@ async function loadLocations() {
       }
     });
   });
+
+  restoreURL();
+
 }
 
 loadLocations();
+
+// ============================================
+// URL STATE
+// ============================================
+
+function getURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('location');
+}
+
+function setURL(name) {
+    const params = new URLSearchParams(window.location.search);
+    params.set('location', name);
+    window.history.replaceState({}, '', '?' + params.toString());
+}
+
+function clearURL() {
+    window.history.replaceState({}, '', window.location.pathname);
+}
+
+async function restoreURL() {
+    const locationName = getURL();
+    if (!locationName) return;
+
+    const location = allLocations.find(location => 
+        location.name.toLowerCase() === decodeURIComponent(locationName).toLowerCase()
+    );
+
+    if (!location) return;
+
+    setTimeout(function() {
+        viewer.camera.flyTo({
+            destination: Cesium.Cartesian3.fromDegrees(
+                location.lon,
+                location.lat,
+                3000000
+            ),
+            duration: 2,
+        });
+
+        showPanel({
+            name:  location.name,
+            sea:   location.sea,
+            type:  location.type,
+            arc:   location.arc,
+            notes: location.notes,
+        });
+    }, 11001);
+}
+
 
 // ============================================
 // SEARCH BAR
@@ -688,6 +741,7 @@ function showPanel(data) {
   document.getElementById('panelType').textContent  = data.type;
   document.getElementById('panelArc').textContent   = data.arc;
   document.getElementById('panelNotes').textContent = data.notes;
+  setURL(data.name);
   const panel = document.getElementById('infoPanel');
     panel.classList.remove('hidden');
     setTimeout(function() {
@@ -698,6 +752,7 @@ function showPanel(data) {
 function hidePanel() {
   const panel = document.getElementById('infoPanel');
     panel.classList.remove('visible');
+    clearURL();
     setTimeout(function() {
         panel.classList.add('hidden');
     }, 400);
