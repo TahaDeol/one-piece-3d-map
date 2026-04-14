@@ -63,6 +63,59 @@
 
     <div id="cesiumContainer"></div>
 
+    <button id="mobileMenuBtn">☰</button>
+
+    <div id="mobileDrawer" class="hidden">
+        <div id="drawerHeader">
+            <span>One Piece Map</span>
+            <button id="drawerClose">✕</button>
+        </div>
+        <div id="drawerSearch">
+            <input 
+                type="text" 
+                id="mobileSearchInput" 
+                placeholder="Search for a location..."
+                autocomplete="off"
+            />
+            <div id="mobileSearchDropdown" class="hidden"></div>
+        </div>
+        <div id="drawerFilters">
+            <h3>Region</h3>
+            <div class="drawerFilterGroup">
+                <label><input type="checkbox" class="mobileFilterCheck" data-group="sea" value="East Blue" checked> East Blue</label>
+                <label><input type="checkbox" class="mobileFilterCheck" data-group="sea" value="West Blue" checked> West Blue</label>
+                <label><input type="checkbox" class="mobileFilterCheck" data-group="sea" value="North Blue" checked> North Blue</label>
+                <label><input type="checkbox" class="mobileFilterCheck" data-group="sea" value="South Blue" checked> South Blue</label>
+                <label><input type="checkbox" class="mobileFilterCheck" data-group="sea" value="Grand Line" checked> Grand Line</label>
+                <label><input type="checkbox" class="mobileFilterCheck" data-group="sea" value="Red Line" checked> Red Line</label>
+                <label><input type="checkbox" class="mobileFilterCheck" data-group="sea" value="Calm Belt" checked> Calm Belt</label>
+                <label><input type="checkbox" class="mobileFilterCheck" data-group="sea" value="New World" checked> New World</label>
+            </div>
+            <h3>Type</h3>
+            <div class="drawerFilterGroup">
+                <label><input type="checkbox" class="mobileFilterCheck" data-group="type" value="Island" checked> Island</label>
+                <label><input type="checkbox" class="mobileFilterCheck" data-group="type" value="Kingdom" checked> Kingdom</label>
+                <label><input type="checkbox" class="mobileFilterCheck" data-group="type" value="Marine Base" checked> Marine Base</label>
+                <label><input type="checkbox" class="mobileFilterCheck" data-group="type" value="Other" checked> Other</label>
+                <label><input type="checkbox" class="mobileFilterCheck" data-group="type" value="Town" checked> Town</label>
+                <label><input type="checkbox" class="mobileFilterCheck" data-group="type" value="Archipelago" checked> Archipelago</label>
+            </div>
+            <h3>Arc</h3>
+            <div class="drawerFilterGroup">
+                <label><input type="checkbox" class="mobileFilterCheck" data-group="arc" value="canon" checked> Canon</label>
+                <label><input type="checkbox" class="mobileFilterCheck" data-group="arc" value="filler" checked> Filler</label>
+            </div>
+        </div>
+    <div id="drawerRoute">
+        <button id="mobileRouteToggle">⚓ Straw Hat Route</button>
+    </div>
+    <div id="drawerSpoiler">
+        <h3>Story Progress</h3>
+        <div id="mobileSpoilerArc">Elbaf Arc</div>
+        <input type="range" id="mobileSpoilerSlider" min="0" max="34" value="34" step="1">
+    </div>
+</div>
+
     <div id="searchContainer">
         <input 
             type="text" 

@@ -502,9 +502,120 @@ document.addEventListener('keydown', function(e) {
         slider.value = Math.max(parseInt(slider.value) - 1, parseInt(slider.min));
         applyFilters();
     }
-
-
 });
+
+// ============================================
+// MOBILE MENU
+// ============================================
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileDrawer  = document.getElementById('mobileDrawer');
+const drawerClose   = document.getElementById('drawerClose');
+
+mobileMenuBtn.addEventListener('click', function() {
+  mobileDrawer.classList.remove('hidden');
+});
+
+drawerClose.addEventListener('click', function() {
+  mobileDrawer.classList.add('hidden');
+});
+
+document.getElementById('mobileRouteToggle').addEventListener('click', function() {
+  routeVisible = !routeVisible;
+  if (routeVisible) {
+    showRoute();
+    this.classList.add('active');
+    this.textContent = '✖ Hide Route';
+    document.getElementById('routeToggle').classList.add('active');
+    document.getElementById('routeToggle').textContent = '✖ Hide Route';
+  } else {
+    hideRoute();
+    this.classList.remove('active');
+    this.textContent = '⚓ Straw Hat Route';
+    document.getElementById('routeToggle').classList.remove('active');
+    document.getElementById('routeToggle').textContent = '⚓ Straw Hat Route';
+  }
+});
+
+const mobileSpoilerSlider = document.getElementById('mobileSpoilerSlider');
+const mobileSpoilerArc    = document.getElementById('mobileSpoilerArc');
+
+mobileSpoilerSlider.addEventListener('input', function() {
+  spoilerSlider.value         = this.value;
+  mobileSpoilerArc.textContent = arcDisplayNames[arcOrder[parseInt(this.value)]] || arcOrder[parseInt(this.value)];
+  applyFilters();
+});
+
+document.getElementById('mobileSearchInput').addEventListener('input', function() {
+  const query = this.value.toLowerCase();
+  const dropdown = document.getElementById('mobileSearchDropdown');
+
+  if (query.length < 2) {
+    dropdown.classList.add('hidden');
+    dropdown.innerHTML = '';
+    return;
+  }
+
+  const sliderIndex = parseInt(spoilerSlider.value);
+  const allowedArcs = arcOrder.slice(0, sliderIndex + 1);
+  const showFiller  = document.querySelector('.mobileFilterCheck[data-group="arc"][value="filler"]').checked;
+
+  const results = allLocations.filter(location => {
+    const isFiller   = location.arc.toLowerCase().includes('filler');
+    const inArcRange = allowedArcs.includes(location.arc);
+    const arcVisible = (isFiller && showFiller) || (!isFiller && inArcRange);
+    return location.name.toLowerCase().includes(query) && arcVisible;
+  });
+
+  dropdown.innerHTML = '';
+  results.slice(0, 6).forEach(location => {
+    const item = document.createElement('div');
+    item.className = 'searchResult';
+
+    const nameEl = document.createElement('div');
+    nameEl.className   = 'searchResultName';
+    nameEl.textContent = location.name;
+
+    const seaEl = document.createElement('div');
+    seaEl.className   = 'searchResultSea';
+    seaEl.textContent = `${location.sea} · ${location.type}`;
+
+    item.appendChild(nameEl);
+    item.appendChild(seaEl);
+
+    item.addEventListener('click', function() {
+      viewer.camera.flyTo({
+        destination: Cesium.Cartesian3.fromDegrees(
+          location.lon,
+          location.lat,
+          3000000
+        ),
+        duration: 2,
+      });
+
+      showPanel({
+        name:  location.name,
+        sea:   location.sea,
+        type:  location.type,
+        arc:   location.arc,
+        notes: location.notes,
+      });
+
+      dropdown.classList.add('hidden');
+      dropdown.innerHTML = '';
+      this.value = '';
+      mobileDrawer.classList.add('hidden');
+    });
+
+    dropdown.appendChild(item);
+  });
+
+  dropdown.classList.remove('hidden');
+});
+
+document.querySelectorAll('.mobileFilterCheck').forEach(checkbox => {
+  checkbox.addEventListener('change', applyFilters);
+});
+ 
 
 // ============================================
 // ROUTE TOGGLE
