@@ -240,7 +240,7 @@ viewer.scene.backgroundColor = Cesium.Color.BLACK;
 viewer.scene.skyAtmosphere.show = true;
 
 const imageryProvider = new Cesium.UrlTemplateImageryProvider({
-  url: 'tiles/{z}/{x}/{reverseY}.jpg',
+  url: 'https://pub-71040b0ef3cc4043989f738f9235afb9.r2.dev/{z}/{x}/{reverseY}.jpg',
   tilingScheme: new Cesium.WebMercatorTilingScheme(),
   minimumLevel: 0,
   maximumLevel: 6,

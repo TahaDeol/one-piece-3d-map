@@ -3,3 +3,4 @@ images/
 tiles/
 node_modules/
 .env
+.vercel
