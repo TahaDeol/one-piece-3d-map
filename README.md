@@ -19,18 +19,19 @@ and detailed island information.
 - 3D interactive globe with One Piece world map texture
 - 173 location markers color coded by sea region
 - Fly-to camera animations on location select
-- Location info panel with arc and lore details
+- Smooth slide-in info panel with arc and lore details
 - Pirate map themed loading screen with animated progress bar
 - Cinematic opening camera animation flying into Dawn Island
 - Search bar with live dropdown suggestions
 - Spoiler-aware search that hides locations beyond story progress
 - Collapsible filter panel by region, type and arc
-- Straw Hat journey route overlay with animated ship
-- Story progress slider filtering locations by arc
+- Straw Hat journey route overlay with animated Jolly Roger ship
+- Story progress slider filtering locations by arc in canonical order
 - Location counter showing filtered results
-- Smooth slide-in info panel animation
 - Keyboard shortcuts for all major actions
 - Hide UI toggle for clean globe viewing
+- URL state preservation for location sharing
+- Mobile responsive layout with slide-out drawer menu
 
 ## Keyboard Shortcuts
 | Key | Action |
@@ -86,11 +87,6 @@ gdal2tiles.py --profile=mercator --zoom=0-6 --webviewer=none --no-kml --tiledriv
 All location coordinates were manually recorded using a custom built 
 coordinate recording tool. Each location includes name, region, type, 
 story arc, and lore notes.
-
-## Upcoming Features
-- URL state preservation
-- Mobile responsive layout
-- Marker clustering
 
 ## Credits
 Map image created by Xads181 on DeviantArt.
