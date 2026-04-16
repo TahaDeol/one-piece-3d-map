@@ -631,7 +631,7 @@ function showRoute() {
     });
 
     const img = new Image();
-    img.src = 'images/straw-hat-jolly-roger.png';
+    img.src = 'assets/straw-hat-jolly-roger.png';
     img.onload = function () {
         const canvas = document.createElement('canvas');
         canvas.width = 64;
