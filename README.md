@@ -7,8 +7,6 @@ A Google Earth-style 3D globe of the One Piece world — built with CesiumJS, ho
 [![Cloudflare R2](https://img.shields.io/badge/Tiles-Cloudflare%20R2-orange?style=for-the-badge)](https://developers.cloudflare.com/r2/)
 [![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge)](https://vercel.com)
 
-![Demo](https://i.imgur.com/qdx7tnb.mp4)
-
 </div>
 
 ---
