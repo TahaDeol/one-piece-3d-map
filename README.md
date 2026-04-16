@@ -2,12 +2,12 @@
 
 A Google Earth-style 3D globe of the One Piece world — built with CesiumJS, hosted on Cloudflare R2, and deployed on Vercel. V2 will expand this into a full social web app with React, Node.js, and Supabase.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-brightgreen?style=for-the-badge)](https://your-vercel-url.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-brightgreen?style=for-the-badge)](https://one-piece-3d-map-7j5l.vercel.app/)
 [![CesiumJS](https://img.shields.io/badge/CesiumJS-1.x-blue?style=for-the-badge)](https://cesium.com)
 [![Cloudflare R2](https://img.shields.io/badge/Tiles-Cloudflare%20R2-orange?style=for-the-badge)](https://developers.cloudflare.com/r2/)
 [![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge)](https://vercel.com)
 
-<video src="https://i.imgur.com/qdx7tnb.mp4" autoplay loop muted playsinline width="800"></video>
+<video src="assets/demo.mp4" autoplay loop muted playsinline width="800"></video>
 
 </div>
 
@@ -17,7 +17,7 @@ A Google Earth-style 3D globe of the One Piece world — built with CesiumJS, ho
 
 ### Shipped
 - **3D interactive globe** — rotate, zoom, and fly around the One Piece world rendered on a WebGL globe
-- **190+ location markers** — color-coded by sea region, manually pinned using a custom coordinate recording tool
+- **173+ location markers** — color-coded by sea region, manually pinned using a custom coordinate recording tool
 - **Spoiler-aware filtering** — story progress slider hides locations beyond the selected arc in canonical order
 - **Straw Hat route overlay** — animated Jolly Roger ship interpolates across 36 waypoints through the crew's full journey
 - **Live search** — dropdown suggestions filtered by story progress and region visibility
