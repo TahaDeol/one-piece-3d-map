@@ -269,7 +269,7 @@ html, body, #cesiumContainer {
   top: 40px;
   right: 40px;
   width: 320px;
-  z-index: 999;
+  z-index: 1001;
   font-family: 'IM Fell English', Georgia, serif;
 }
 
