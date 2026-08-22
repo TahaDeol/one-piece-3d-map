@@ -1,3 +1,17 @@
 {
-  "dependencies": {}
+  "type": "module",
+  "scripts": {
+    "lint": "eslint src",
+    "validate:html": "html-validate index.html",
+    "validate:data": "node scripts/validate-data.js",
+    "test": "playwright test",
+    "dev": "npx serve ."
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "ajv": "^8.20.0",
+    "eslint": "^10.9.0",
+    "html-validate": "^11.9.0",
+    "serve": "^14.2.6"
+  }
 }

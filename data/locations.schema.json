@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Location",
+  "description": "A single pinned location in locations.json. Structural rules only — cross-referencing `arc` against the canonical arc list in src/config.js happens in scripts/validate-data.js, since that list lives in a JS module rather than this schema.",
+  "type": "object",
+  "required": ["id", "name", "lon", "lat", "sea", "type", "arc", "notes"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Unique identifier, also used as the Cesium entity id (String(id))."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lon": {
+      "type": "number",
+      "minimum": -180,
+      "maximum": 180
+    },
+    "lat": {
+      "type": "number",
+      "minimum": -90,
+      "maximum": 90
+    },
+    "sea": {
+      "type": "string",
+      "enum": [
+        "East Blue",
+        "West Blue",
+        "North Blue",
+        "South Blue",
+        "Grand Line",
+        "New World",
+        "Calm Belt",
+        "Red Line"
+      ]
+    },
+    "type": {
+      "type": "string",
+      "enum": ["Island", "Kingdom", "Marine Base", "Other", "Town", "Archipelago"]
+    },
+    "arc": {
+      "type": "string",
+      "minLength": 1
+    },
+    "notes": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

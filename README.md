@@ -2,7 +2,8 @@
 
 A Google Earth–style 3D globe of the One Piece world — 173 hand-pinned locations, spoiler-aware filtering, and an animated route overlay, built on a custom GDAL tile pipeline served from Cloudflare R2.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-brightgreen?style=for-the-badge)](https://one-piece-3d-map-7j5l.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-brightgreen?style=for-the-badge)](https://grandline3d.com/)
+[![CI](https://github.com/TahaDeol/one-piece-3d-map/actions/workflows/ci.yml/badge.svg)](https://github.com/TahaDeol/one-piece-3d-map/actions/workflows/ci.yml)
 [![CesiumJS](https://img.shields.io/badge/CesiumJS-1.x-blue?style=for-the-badge)](https://cesium.com)
 [![Cloudflare R2](https://img.shields.io/badge/Tiles-Cloudflare%20R2-orange?style=for-the-badge)](https://developers.cloudflare.com/r2/)
 [![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge)](https://vercel.com)
