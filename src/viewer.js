@@ -59,7 +59,7 @@ zoomCanvas.addEventListener('wheel', function (e) {
 }, { passive: false });
 
 const imageryProvider = new Cesium.UrlTemplateImageryProvider({
-    url: 'https://pub-71040b0ef3cc4043989f738f9235afb9.r2.dev/geodetic/{z}/{x}/{reverseY}.jpg',
+    url: 'https://pub-c74d8d872e454a78955377cc3fc0b7f7.r2.dev/{z}/{x}/{reverseY}.jpg',
     tilingScheme: new Cesium.GeographicTilingScheme(),
     minimumLevel: 0,
     maximumLevel: 6,
