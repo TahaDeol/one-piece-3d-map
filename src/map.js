@@ -192,8 +192,8 @@ viewer.scene.backgroundColor = Cesium.Color.BLACK;
 viewer.scene.skyAtmosphere.show = true;
 
 const imageryProvider = new Cesium.UrlTemplateImageryProvider({
-    url: 'https://pub-71040b0ef3cc4043989f738f9235afb9.r2.dev/{z}/{x}/{reverseY}.jpg',
-    tilingScheme: new Cesium.WebMercatorTilingScheme(),
+    url: 'https://pub-71040b0ef3cc4043989f738f9235afb9.r2.dev/geodetic/{z}/{x}/{reverseY}.jpg',
+    tilingScheme: new Cesium.GeographicTilingScheme(),
     minimumLevel: 0,
     maximumLevel: 6,
 });
@@ -214,6 +214,49 @@ viewer.camera.flyTo({
     duration: 5,
     easingFunction: Cesium.EasingFunction.CUBIC_IN_OUT,
 });
+
+// ============================================
+// SCROLL ZOOM
+// ============================================
+// Cesium's default wheel-zoom pivots around whatever point is under the
+// cursor in both directions, which visibly shifts the globe off-center
+// when zooming out from anywhere but dead center. Zooming out here instead
+// dollies straight back along the current view direction (globe stays put);
+// zooming in still flies toward the point under the cursor.
+
+viewer.scene.screenSpaceCameraController.zoomEventTypes = [Cesium.CameraEventType.PINCH];
+
+const zoomCanvas = viewer.scene.canvas;
+
+zoomCanvas.addEventListener('wheel', function (e) {
+    e.preventDefault();
+
+    const camera = viewer.camera;
+    const height = camera.positionCartographic.height;
+    const amount = (Math.min(Math.abs(e.deltaY), 300) / 300) * height * 0.2;
+
+    if (e.deltaY < 0) {
+        const rect = zoomCanvas.getBoundingClientRect();
+        const cursor = new Cesium.Cartesian2(e.clientX - rect.left, e.clientY - rect.top);
+        const target = camera.pickEllipsoid(cursor, viewer.scene.globe.ellipsoid);
+
+        if (target) {
+            const direction = Cesium.Cartesian3.subtract(target, camera.position, new Cesium.Cartesian3());
+            const distance = Cesium.Cartesian3.magnitude(direction);
+            Cesium.Cartesian3.normalize(direction, direction);
+            const moveAmount = Math.min(amount, distance * 0.9);
+            Cesium.Cartesian3.add(
+                camera.position,
+                Cesium.Cartesian3.multiplyByScalar(direction, moveAmount, direction),
+                camera.position
+            );
+        } else {
+            camera.zoomIn(amount);
+        }
+    } else {
+        camera.zoomOut(amount);
+    }
+}, { passive: false });
 
 // ============================================
 // MARKERS & LOCATIONS
