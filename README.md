@@ -1,39 +1,51 @@
 # One Piece Interactive World Map
 
-A Google Earth-style 3D globe of the One Piece world — built with CesiumJS, hosted on Cloudflare R2, and deployed on Vercel. V2 will expand this into a full social web app with React, Node.js, and Supabase.
+A Google Earth–style 3D globe of the One Piece world — 173 hand-pinned locations, spoiler-aware filtering, and an animated route overlay, built on a custom GDAL tile pipeline served from Cloudflare R2.
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-brightgreen?style=for-the-badge)](https://one-piece-3d-map-7j5l.vercel.app/)
 [![CesiumJS](https://img.shields.io/badge/CesiumJS-1.x-blue?style=for-the-badge)](https://cesium.com)
 [![Cloudflare R2](https://img.shields.io/badge/Tiles-Cloudflare%20R2-orange?style=for-the-badge)](https://developers.cloudflare.com/r2/)
 [![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge)](https://vercel.com)
 
-</div>
+---
+
+![Demo](screenshots/demo.gif)
+
+| Route overlay | Filter panel | Mobile drawer |
+|---|---|---|
+| ![Route overlay](screenshots/route-overlay.png) | ![Filter panel](screenshots/filter-panel.png) | ![Mobile drawer](screenshots/mobile-drawer.png) |
 
 ---
 
 ## ✨ Features
 
-### Shipped
 - **3D interactive globe** — rotate, zoom, and fly around the One Piece world rendered on a WebGL globe
-- **173+ location markers** — color-coded by sea region, manually pinned using a custom coordinate recording tool
-- **Spoiler-aware filtering** — story progress slider hides locations beyond the selected arc in canonical order
-- **Straw Hat route overlay** — animated Jolly Roger ship interpolates across 36 waypoints through the crew's full journey
-- **Live search** — dropdown suggestions filtered by story progress and region visibility
-- **Fly-to animations** — smooth camera transitions on location select with cinematic opening animation
-- **Parchment-themed UI** — info panel, loading screen, and filter panel styled to match a pirate map aesthetic
-- **Collapsible filter panel** — filter by sea region, location type, and arc
-- **Keyboard shortcuts** — full keyboard navigation for all major actions
-- **Mobile responsive** — slide-out drawer menu with touch-friendly controls
-- **Hide UI mode** — clean globe viewing with a single keypress
-- **URL state** — deep-linkable locations via query string
+- **173 location markers** — color-coded by sea region, manually pinned using a custom coordinate recording tool
+- **Spoiler-aware filtering** — a story-progress slider hides locations beyond the selected arc, in canonical order, everywhere (map, search, counters)
+- **Straw Hat route overlay** — an animated Jolly Roger ship interpolates across 36 waypoints at a speed proportional to each leg's real distance
+- **Live search** — dropdown suggestions that respect every active filter (region, type, canon/filler, story progress), not just some of them
+- **Deep-linkable URL state** — every location view is a shareable link; the app restores it on load
 
-### Planned — V2 (Social Features)
-- **User accounts** — register, log in, and maintain a persistent profile
-- **Location comments** — leave notes and reactions at any location on the map
-- **Crew system** — add friends as "crew mates" and see their activity on the globe
-- **Custom saved locations** — pin and share personal favourite spots with crew mates
-- **Real-time updates** — friend saves and comments appear live via Supabase subscriptions
-- **React + Node.js rewrite** — V2 will migrate to a component-based React frontend and a Node.js/Express backend API to support auth, database reads/writes, and real-time data
+---
+
+## 🛠 How It's Built
+
+The source map is a single 8192×4168 JPEG (~12.8 MB). Loading that as one texture on a WebGL globe would mean downloading the whole thing before anything renders — and re-rendering an enormous flat image onto a sphere is exactly the kind of thing that stutters on a mid-range laptop.
+
+Instead, the image is sliced into a tile pyramid: 7 zoom levels, each one twice the resolution of the last, chopped into 256×256 JPEG tiles. CesiumJS then only requests the tiles that are actually on screen at the current zoom level — a few hundred KB at the initial cinematic view instead of 12.8 MB up front, growing only as the user zooms in.
+
+```mermaid
+flowchart LR
+    A[Fan map JPEG<br/>8192×4168] -->|gdal_translate<br/>EPSG:4326| B[Georeferenced image]
+    B -->|gdal2tiles<br/>geodetic, 7 zoom levels| C[~10,900 JPEG tiles]
+    C -->|wrangler upload| D[Cloudflare R2 bucket]
+    D -->|public CDN, CORS| E[CesiumJS<br/>UrlTemplateImageryProvider]
+    E --> F[3D globe in browser]
+```
+
+**Why geodetic, not Mercator.** The first version tiled the map with GDAL's `mercator` profile — the same projection Google Maps uses. Mercator is mathematically undefined past ±85.05° latitude, so squeezing a full ±90° source image through it stretched and warped everything near the poles. Since this is a fan map, not a navigational chart, there's no reason to pay that penalty: the tiles are generated with GDAL's `geodetic` (plate carrée) profile instead, paired with Cesium's `GeographicTilingScheme`, which represents the full latitude range linearly — no distortion, and incidentally about half the redundant tile coverage Mercator's square-grid framing would have produced.
+
+**Numbers:** the initial view fetches on the order of 150–200 tiles (under 2 MB) instead of the 12.8 MB source image — the whole tile set is ~10,900 files totaling roughly 50 MB, but a given session only ever touches the tiles it can see.
 
 ---
 
@@ -42,19 +54,11 @@ A Google Earth-style 3D globe of the One Piece world — built with CesiumJS, ho
 | Tool | Purpose |
 |------|---------|
 | [CesiumJS](https://cesium.com) | 3D globe rendering, camera animations, entity markers |
-| [GDAL](https://gdal.org) | Slicing the fan map into a 7-zoom-level mercator tile set |
-| [Cloudflare R2](https://developers.cloudflare.com/r2/) | Hosting 5,461 map tiles with public CDN access |
+| [GDAL](https://gdal.org) | Slicing the fan map into a 7-level geodetic tile set |
+| [Cloudflare R2](https://developers.cloudflare.com/r2/) | Hosting the tile set with public CDN access |
 | [Vercel](https://vercel.com) | Static site deployment with GitHub auto-deploy |
-| Vanilla JavaScript | All application logic — no frameworks |
+| Vanilla JavaScript (ES modules) | All application logic — no framework, no build step |
 | CSS3 | Parchment UI theme with `Uncial Antiqua` and `IM Fell English` fonts |
-
-**Planned for V2**
-
-| Tool | Purpose |
-|------|---------|
-| [React](https://react.dev) | Component-based frontend rewrite |
-| [Node.js](https://nodejs.org) + [Express](https://expressjs.com) | Backend API — auth, comments, friendships, saved locations |
-| [Supabase](https://supabase.com) | Postgres database, auth, and real-time subscriptions |
 
 ---
 
@@ -81,9 +85,17 @@ Tiles are not tracked in Git. Generate them locally from the source map image:
 gdal_translate -a_srs EPSG:4326 -a_ullr -180 90 180 -90 \
   images/one-piece-map.jpg images/one-piece-map-geo.jpg
 
-gdal2tiles.py --profile=mercator --zoom=0-6 \
+# Note the zoom offset: gdal2tiles' geodetic zoom 0 is a squashed 1x1 tile,
+# but Cesium's GeographicTilingScheme level 0 is already a 2x1 grid — a
+# one-level mismatch. Generate zoom 1-7, then rename directories down by
+# one (1->0 ... 7->6) so folder names match the levels Cesium requests.
+gdal2tiles.py --profile=geodetic --zoom=1-7 \
   --webviewer=none --no-kml --tiledriver=JPEG \
-  images/one-piece-map-geo.jpg tiles/
+  images/one-piece-map-geo.jpg tiles-raw/
+
+mkdir tiles
+for z in 1 2 3 4 5 6 7; do mv "tiles-raw/$z" "tiles/$((z - 1))"; done
+rm -rf tiles-raw
 ```
 
 ### Run Locally
@@ -110,26 +122,6 @@ Open `http://localhost:3000`
 
 ---
 
-## 🗂️ Project Structure
-
-```
-one-piece-3d-map/
-├── index.html              # Main application entry point
-├── recorder.html           # Internal coordinate recording tool
-├── src/
-│   ├── map.js              # Core globe logic — markers, search, filters, route
-│   ├── map.css             # All styling — loading screen, panels, theme
-│   ├── recorder.js         # Coordinate recording tool logic
-│   └── recorder.css        # Recorder tool styling
-├── data/
-│   └── locations.json      # 190+ locations with coordinates and metadata
-├── assets/
-│   └── straw-hat-jolly-roger.png
-└── tiles/                  # Generated map tiles (not tracked in git)
-```
-
----
-
 ## 🌊 Region Color Key
 
 | Region | Color |
@@ -145,36 +137,9 @@ one-piece-3d-map/
 
 ---
 
-## 🗺️ Roadmap
-
-### V1 — Static Portfolio (Complete ✅)
-| Status | Item |
-|--------|------|
-| ✅ | Core 3D globe with tiled map architecture |
-| ✅ | 190+ manually pinned locations |
-| ✅ | Spoiler filter, live search, route overlay |
-| ✅ | Parchment UI theme, mobile drawer |
-| ✅ | Cloudflare R2 tile hosting |
-| ✅ | Vercel deployment |
-
-### V2 — Social Web Application (Planned)
-| Status | Item |
-|--------|------|
-| 🔲 | React frontend — component-based rewrite |
-| 🔲 | Node.js + Express backend API |
-| 🔲 | Supabase auth — user accounts and sessions |
-| 🔲 | Supabase database — users, comments, friendships, saved locations |
-| 🔲 | Crew system — add friends and view their saved locations |
-| 🔲 | Location comments — per-location community notes |
-| 🔲 | Real-time updates — live friend activity via Supabase subscriptions |
-
-See open [Issues](https://github.com/TahaDeol/one-piece-3d-map/issues) for detailed tracking.
-
----
-
 ## 📦 Data
 
-All 173+ location coordinates were manually recorded using a custom-built coordinate recording tool (`recorder.html`) that logs clicked globe positions to JSON. Each entry includes name, sea region, location type, story arc, and lore notes.
+All 173 location coordinates were manually recorded using a custom-built coordinate recording tool (`recorder.html`) that logs clicked globe positions to JSON. Each entry includes name, sea region, location type, story arc, and lore notes.
 
 ---
 
