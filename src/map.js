@@ -156,8 +156,6 @@ const drawerClose = document.getElementById('drawerClose');
 const mobileSpoilerSlider = document.getElementById('mobileSpoilerSlider');
 const mobileSpoilerArc = document.getElementById('mobileSpoilerArc');
 
-filterPanel.style.marginTop = '107px';
-
 // ============================================
 // LOADING SCREEN
 // ============================================
@@ -333,6 +331,25 @@ viewer.screenSpaceEventHandler.setInputAction(function (click) {
     }
 }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
 
+let hoveredEntity = null;
+
+viewer.screenSpaceEventHandler.setInputAction(function (movement) {
+    const picked = viewer.scene.pick(movement.endPosition);
+    const entity = Cesium.defined(picked) && picked.id && picked.id.label ? picked.id : null;
+
+    if (entity === hoveredEntity) return;
+
+    if (hoveredEntity) {
+        hoveredEntity.label.show = false;
+    }
+
+    hoveredEntity = entity;
+
+    if (hoveredEntity) {
+        hoveredEntity.label.show = true;
+    }
+}, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
+
 // ============================================
 // URL STATE
 // ============================================
@@ -384,6 +401,16 @@ async function restoreURL() {
 // FILTER PANEL
 // ============================================
 
+function isLocationVisible(location, { checkedSeas, checkedTypes, allowedArcs, showCanon, showFiller }) {
+    const isFiller = location.arc.toLowerCase().includes('filler');
+    const inArcRange = allowedArcs.includes(location.arc);
+    const arcMatch = (isFiller && showFiller) || (!isFiller && showCanon && inArcRange);
+
+    return checkedSeas.includes(location.sea) &&
+        checkedTypes.includes(location.type) &&
+        arcMatch;
+}
+
 function applyFilters() {
     const sliderIndex = parseInt(spoilerSlider.value);
     const allowedArcs = arcOrder.slice(0, sliderIndex + 1);
@@ -395,17 +422,11 @@ function applyFilters() {
     viewer.entities.values.forEach(entity => {
         if (!entity.properties) return;
 
-        const sea = entity.properties.sea.getValue();
-        const type = entity.properties.type.getValue();
-        const arc = entity.properties.arc.getValue();
-
-        const isFiller = arc.toLowerCase().includes('filler');
-        const inArcRange = allowedArcs.includes(arc);
-        const arcMatch = (isFiller && showFiller) || (!isFiller && showCanon && inArcRange);
-
-        entity.show = checkedSeas.includes(sea) &&
-            checkedTypes.includes(type) &&
-            arcMatch;
+        entity.show = isLocationVisible({
+            sea: entity.properties.sea.getValue(),
+            type: entity.properties.type.getValue(),
+            arc: entity.properties.arc.getValue(),
+        }, { checkedSeas, checkedTypes, allowedArcs, showCanon, showFiller });
     });
 
     const current = arcOrder[sliderIndex];
@@ -447,25 +468,24 @@ searchInput.addEventListener('input', function () {
     if (query.length < 2) {
         searchDropdown.classList.add('hidden');
         searchDropdown.innerHTML = '';
-        filterPanel.style.marginTop = '107px';
         return;
     }
 
     const sliderIndex = parseInt(spoilerSlider.value);
     const allowedArcs = arcOrder.slice(0, sliderIndex + 1);
+    const checkedSeas = [...document.querySelectorAll('.filterCheck[data-group="sea"]:checked')].map(cb => cb.value);
+    const checkedTypes = [...document.querySelectorAll('.filterCheck[data-group="type"]:checked')].map(cb => cb.value);
     const showFiller = document.querySelector('.filterCheck[data-group="arc"][value="filler"]').checked;
+    const showCanon = document.querySelector('.filterCheck[data-group="arc"][value="canon"]').checked;
 
-    const results = allLocations.filter(location => {
-        const isFiller = location.arc.toLowerCase().includes('filler');
-        const inArcRange = allowedArcs.includes(location.arc);
-        const arcVisible = (isFiller && showFiller) || (!isFiller && inArcRange);
-        return location.name.toLowerCase().includes(query) && arcVisible;
-    });
+    const results = allLocations.filter(location =>
+        location.name.toLowerCase().includes(query) &&
+        isLocationVisible(location, { checkedSeas, checkedTypes, allowedArcs, showCanon, showFiller })
+    );
 
     if (results.length === 0) {
         searchDropdown.classList.add('hidden');
         searchDropdown.innerHTML = '';
-        filterPanel.style.marginTop = '107px';
         return;
     }
 
@@ -505,19 +525,12 @@ searchInput.addEventListener('input', function () {
     });
 
     searchDropdown.classList.remove('hidden');
-
-    const dropdownBottom = searchDropdown.getBoundingClientRect().bottom;
-    const searchTop = document.getElementById('searchContainer').getBoundingClientRect().top;
-    const offset = dropdownBottom - searchTop + 45;
-    filterPanel.style.marginTop = offset + 'px';
-    filterPanel.style.transition = 'margin-top 0.2s ease';
 });
 
 document.addEventListener('click', function (e) {
     if (!document.getElementById('searchContainer').contains(e.target)) {
         searchDropdown.classList.add('hidden');
         searchDropdown.innerHTML = '';
-        filterPanel.style.marginTop = '107px';
     }
 });
 
@@ -531,6 +544,26 @@ function buildRoute() {
         positions.push(Cesium.Cartesian3.fromDegrees(point.lon, point.lat));
     });
     return positions;
+}
+
+function buildLegs() {
+    const legs = [];
+
+    for (let i = 0; i < routeCoordinates.length; i++) {
+        const from = routeCoordinates[i];
+        const to = routeCoordinates[(i + 1) % routeCoordinates.length];
+
+        let dLon = to.lon - from.lon;
+        if (dLon > 180) dLon -= 360;
+        if (dLon < -180) dLon += 360;
+
+        const dLat = to.lat - from.lat;
+        const distance = Math.hypot(dLon, dLat) || 0.0001;
+
+        legs.push({ from, to, dLon, distance });
+    }
+
+    return legs;
 }
 
 function showRoute() {
@@ -591,28 +624,29 @@ function showRoute() {
         shipEntity.billboard.image = canvas;
     };
 
-    let currentStop = 0;
-    let nextStop = 1;
+    const legs = buildLegs();
+    const totalDistance = legs.reduce((sum, leg) => sum + leg.distance, 0);
+    const TICK_MS = 16;
+    const degreesPerTick = totalDistance / (legs.length * (3200 / TICK_MS));
+
+    let legIndex = 0;
     let progress = 0;
-    const STEP = 0.005;
 
     shipInterval = setInterval(function () {
-        progress += STEP;
+        const leg = legs[legIndex];
+        progress += degreesPerTick / leg.distance;
 
         if (progress >= 1) {
             progress = 0;
-            currentStop = nextStop;
-            nextStop = (nextStop + 1) % routeCoordinates.length;
+            legIndex = (legIndex + 1) % legs.length;
         }
 
-        const from = routeCoordinates[currentStop];
-        const to = routeCoordinates[nextStop];
-
-        const lon = from.lon + (to.lon - from.lon) * progress;
-        const lat = from.lat + (to.lat - from.lat) * progress;
+        const current = legs[legIndex];
+        const lon = current.from.lon + current.dLon * progress;
+        const lat = current.from.lat + (current.to.lat - current.from.lat) * progress;
 
         shipEntity.position = Cesium.Cartesian3.fromDegrees(lon, lat);
-    }, 16);
+    }, TICK_MS);
 }
 
 function hideRoute() {
@@ -667,7 +701,6 @@ document.addEventListener('keydown', function (e) {
         searchInput.blur();
         searchDropdown.classList.add('hidden');
         searchDropdown.innerHTML = '';
-        filterPanel.style.marginTop = '107px';
         filterContent.classList.add('hidden');
         hidePanel();
         searchInput.value = '';
@@ -749,14 +782,15 @@ document.getElementById('mobileSearchInput').addEventListener('input', function 
 
     const sliderIndex = parseInt(spoilerSlider.value);
     const allowedArcs = arcOrder.slice(0, sliderIndex + 1);
+    const checkedSeas = [...document.querySelectorAll('.mobileFilterCheck[data-group="sea"]:checked')].map(cb => cb.value);
+    const checkedTypes = [...document.querySelectorAll('.mobileFilterCheck[data-group="type"]:checked')].map(cb => cb.value);
     const showFiller = document.querySelector('.mobileFilterCheck[data-group="arc"][value="filler"]').checked;
+    const showCanon = document.querySelector('.mobileFilterCheck[data-group="arc"][value="canon"]').checked;
 
-    const results = allLocations.filter(location => {
-        const isFiller = location.arc.toLowerCase().includes('filler');
-        const inArcRange = allowedArcs.includes(location.arc);
-        const arcVisible = (isFiller && showFiller) || (!isFiller && inArcRange);
-        return location.name.toLowerCase().includes(query) && arcVisible;
-    });
+    const results = allLocations.filter(location =>
+        location.name.toLowerCase().includes(query) &&
+        isLocationVisible(location, { checkedSeas, checkedTypes, allowedArcs, showCanon, showFiller })
+    );
 
     dropdown.innerHTML = '';
     results.slice(0, 6).forEach(location => {

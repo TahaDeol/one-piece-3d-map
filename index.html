@@ -152,7 +152,7 @@
     </div>
 
     <div id="infoPanel">
-        <button id="closePanel" onclick="hidePanel()">✕</button>
+        <button id="closePanel" onclick="hidePanel()" aria-label="Close panel">✕</button>
         <h2 id="panelName"></h2>
         <div class="panelRow">
             <span class="panelLabel">Region</span>
@@ -169,12 +169,12 @@
         <p id="panelNotes"></p>
     </div>
 
-    <button id="mobileMenuBtn">☰</button>
+    <button id="mobileMenuBtn" aria-label="Open menu">☰</button>
 
     <div id="mobileDrawer" class="hidden">
         <div id="drawerHeader">
             <span>One Piece Map</span>
-            <button id="drawerClose">✕</button>
+            <button id="drawerClose" aria-label="Close menu">✕</button>
         </div>
         <div id="drawerSearch">
             <input

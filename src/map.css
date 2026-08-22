@@ -298,6 +298,9 @@ html, body, #cesiumContainer {
 }
 
 #searchDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
   width: 100%;
   background: rgba(201, 169, 110, 0.97);
   border: 2px solid rgba(80, 45, 10, 0.6);
@@ -308,7 +311,6 @@ html, body, #cesiumContainer {
   overflow-y: auto;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   z-index: 1000;
-  position: relative;
 }
 
 .searchResult {
@@ -342,7 +344,7 @@ html, body, #cesiumContainer {
 
 #filterPanel {
   position: absolute;
-  top: 0px;
+  top: 107px;
   right: 40px;
   width: 320px;
   z-index: 999;
