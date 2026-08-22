@@ -4,3 +4,4 @@ tiles/
 node_modules/
 .env
 .vercel
+CLAUDE.md

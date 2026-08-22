@@ -162,59 +162,13 @@ filterPanel.style.marginTop = '107px';
 // LOADING SCREEN
 // ============================================
 
-const loadingMessages = [
-    'Hoisting the sails...',
-    'Entering the Grand Line...',
-    'Finding the Poneglyphs...',
-    'Braving the New World...',
-    'Locating Laugh Tale...',
-];
-
-let messageIndex = 0;
-let progress = 0;
-
-const totalDuration = 10000;
-const intervalSpeed = 750;
-const totalSteps = totalDuration / intervalSpeed;
-const increment = 100 / totalSteps;
-
-const loadingInterval = setInterval(function () {
-    progress += increment;
-    if (progress > 100) progress = 100;
-    loadingFill.style.width = progress + '%';
-
-    const newIndex = Math.min(
-        Math.floor((progress / 100) * loadingMessages.length),
-        loadingMessages.length - 1
-    );
-
-    if (newIndex !== messageIndex) {
-        messageIndex = newIndex;
-        loadingText.style.opacity = '0';
-        setTimeout(function () {
-            loadingText.textContent = loadingMessages[messageIndex];
-            loadingText.style.opacity = '1';
-        }, 400);
-    }
-}, intervalSpeed);
+loadingFill.style.width = '100%';
+loadingText.textContent = 'The One Piece is Real!';
+loadingScreen.style.opacity = '0';
 
 setTimeout(function () {
-    clearInterval(loadingInterval);
-    loadingFill.style.width = '100%';
-    loadingText.style.opacity = '0';
-
-    setTimeout(function () {
-        loadingText.style.opacity = '1';
-        loadingText.textContent = 'The One Piece is Real!';
-
-        setTimeout(function () {
-            loadingScreen.style.opacity = '0';
-            setTimeout(function () {
-                loadingScreen.style.display = 'none';
-            }, 800);
-        }, 800);
-    }, 400);
-}, 10000);
+    loadingScreen.style.display = 'none';
+}, 800);
 
 // ============================================
 // 3D GLOBE SETUP
@@ -252,18 +206,16 @@ viewer.camera.setView({
     destination: Cesium.Cartesian3.fromDegrees(0, 0, 62500000),
 });
 
-setTimeout(function () {
-    viewer.camera.flyTo({
-        destination: Cesium.Cartesian3.fromDegrees(138, 50, 3000000),
-        orientation: {
-            heading: Cesium.Math.toRadians(0),
-            pitch: Cesium.Math.toRadians(-75),
-            roll: 0,
-        },
-        duration: 5,
-        easingFunction: Cesium.EasingFunction.CUBIC_IN_OUT,
-    });
-}, 11000);
+viewer.camera.flyTo({
+    destination: Cesium.Cartesian3.fromDegrees(138, 50, 3000000),
+    orientation: {
+        heading: Cesium.Math.toRadians(0),
+        pitch: Cesium.Math.toRadians(-75),
+        roll: 0,
+    },
+    duration: 5,
+    easingFunction: Cesium.EasingFunction.CUBIC_IN_OUT,
+});
 
 // ============================================
 // MARKERS & LOCATIONS
@@ -410,24 +362,22 @@ async function restoreURL() {
 
     if (!location) return;
 
-    setTimeout(function () {
-        viewer.camera.flyTo({
-            destination: Cesium.Cartesian3.fromDegrees(
-                location.lon,
-                location.lat,
-                3000000
-            ),
-            duration: 2,
-        });
+    viewer.camera.flyTo({
+        destination: Cesium.Cartesian3.fromDegrees(
+            location.lon,
+            location.lat,
+            3000000
+        ),
+        duration: 2,
+    });
 
-        showPanel({
-            name: location.name,
-            sea: location.sea,
-            type: location.type,
-            arc: location.arc,
-            notes: location.notes,
-        });
-    }, 11010);
+    showPanel({
+        name: location.name,
+        sea: location.sea,
+        type: location.type,
+        arc: location.arc,
+        notes: location.notes,
+    });
 }
 
 // ============================================
