@@ -89,7 +89,7 @@ function showRoute() {
     });
     routeEntities.push(routeLine);
 
-    routeCoordinates.forEach((stop, index) => {
+    routeCoordinates.forEach((stop) => {
         const dot = viewer.entities.add({
             position: Cesium.Cartesian3.fromDegrees(stop.lon, stop.lat),
             point: {

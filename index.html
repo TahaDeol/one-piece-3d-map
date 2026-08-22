@@ -8,7 +8,7 @@
     <script src="https://cesium.com/downloads/cesiumjs/releases/1.114/Build/Cesium/Cesium.js"></script>
     <link href="https://cesium.com/downloads/cesiumjs/releases/1.114/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
     <link rel="stylesheet" href="src/map.css">
-    
+
     <!-- Vercel Web Analytics -->
     <script>
         window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
@@ -57,7 +57,7 @@
                 </div>
                 <p id="loadingText">Setting sail...</p>
             </div>
-        </div>  
+        </div>
     </div>
 
     <div id="cesiumContainer"></div>
@@ -68,7 +68,7 @@
             id="searchInput"
             placeholder="Search for a location..."
             autocomplete="off"
-        />
+        >
         <div id="searchDropdown" class="hidden"></div>
     </div>
 
@@ -114,10 +114,10 @@
         <input type="range" id="spoilerSlider" min="0" max="34" value="34" step="1">
     </div>
 
-    <button id="routeToggle">⚓ Straw Hat Route</button>
+    <button id="routeToggle" type="button">⚓ Straw Hat Route</button>
 
     <div id="filterPanel">
-        <button id="filterToggle">☰ Filters</button>
+        <button id="filterToggle" type="button">☰ Filters</button>
         <div id="filterContent" class="hidden">
             <div class="filterSection">
                 <h3>Region</h3>
@@ -145,14 +145,16 @@
                 <label><input type="checkbox" class="filterCheck" data-group="arc" value="filler" checked> Filler</label>
             </div>
             <div class="filterActions">
-                <button class="filterActionBtn" id="selectAllBtn">Select All</button>
-                <button class="filterActionBtn" id="deselectAllBtn">Deselect All</button>
+                <button class="filterActionBtn" id="selectAllBtn" type="button">Select All</button>
+                <button class="filterActionBtn" id="deselectAllBtn" type="button">Deselect All</button>
             </div>
         </div>
     </div>
 
     <div id="infoPanel">
-        <button id="closePanel" onclick="hidePanel()" aria-label="Close panel">✕</button>
+        <button id="closePanel" onclick="hidePanel()" aria-label="Close panel" type="button">✕</button>
+        <!-- populated by infoPanel.js's showPanel(); intentionally empty until then -->
+        <!-- [html-validate-disable-next empty-heading] -->
         <h2 id="panelName"></h2>
         <div class="panelRow">
             <span class="panelLabel">Region</span>
@@ -169,12 +171,12 @@
         <p id="panelNotes"></p>
     </div>
 
-    <button id="mobileMenuBtn" aria-label="Open menu">☰</button>
+    <button id="mobileMenuBtn" aria-label="Open menu" type="button">☰</button>
 
     <div id="mobileDrawer" class="hidden">
         <div id="drawerHeader">
             <span>One Piece Map</span>
-            <button id="drawerClose" aria-label="Close menu">✕</button>
+            <button id="drawerClose" aria-label="Close menu" type="button">✕</button>
         </div>
         <div id="drawerSearch">
             <input
@@ -182,7 +184,7 @@
                 id="mobileSearchInput"
                 placeholder="Search for a location..."
                 autocomplete="off"
-            />
+            >
             <div id="mobileSearchDropdown" class="hidden"></div>
         </div>
         <div id="drawerFilters">
@@ -213,7 +215,7 @@
             </div>
         </div>
         <div id="drawerRoute">
-            <button id="mobileRouteToggle">⚓ Straw Hat Route</button>
+            <button id="mobileRouteToggle" type="button">⚓ Straw Hat Route</button>
         </div>
         <div id="drawerSpoiler">
             <h3>Story Progress</h3>
