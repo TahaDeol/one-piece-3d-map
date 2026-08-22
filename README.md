@@ -109,6 +109,43 @@ Open `http://localhost:3000`
 
 ---
 
+## 🗂️ Project Structure
+
+```
+one-piece-3d-map/
+├── index.html            # Main application entry point
+├── recorder.html         # Internal coordinate recording tool
+├── src/
+│   ├── main.js           # Bootstrap — wires everything together
+│   ├── viewer.js         # Cesium init, imagery provider, camera, zoom behavior
+│   ├── config.js         # Region colors, arc order, arc display names
+│   ├── markers.js        # Entity creation
+│   ├── infoPanel.js      # Info panel + globe click/hover picking
+│   ├── filters.js        # Region/type/arc/story-progress filtering
+│   ├── search.js         # Search query matching + dropdowns (desktop + mobile)
+│   ├── route.js          # Straw Hat route — waypoint interpolation, ship animation
+│   ├── urlState.js       # Query-string read/write, deep-link restore
+│   ├── keyboard.js       # Keyboard shortcuts
+│   ├── mobileMenu.js     # Mobile drawer open/close
+│   ├── data/
+│   │   └── locations.js  # Location data loader
+│   ├── map.css            # All styling — loading screen, panels, theme
+│   ├── recorder.js        # Coordinate recording tool logic
+│   └── recorder.css       # Recorder tool styling
+├── data/
+│   └── locations.json    # 173 locations with coordinates and metadata
+├── assets/
+│   └── straw-hat-jolly-roger.png
+└── tiles/                 # Generated map tiles (not tracked in git)
+```
+
+Desktop and mobile search/route/filter handlers are intentionally
+duplicated within their feature's file (e.g. both search bars live in
+`search.js`) rather than split by platform — a search bug fix should
+only ever require touching one file, not two.
+
+---
+
 ## ⌨️ Keyboard Shortcuts
 
 | Key | Action |
