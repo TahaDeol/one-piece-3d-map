@@ -1,8 +1,6 @@
 .DS_Store
 images/
 tiles/
-tiles-geodetic/
-geodetic
 node_modules/
 .env
 .vercel
