@@ -12,7 +12,11 @@ export function setURL(name) {
 }
 
 export function clearURL() {
-    window.history.replaceState({}, '', window.location.pathname);
+    // Drop only our own key so unrelated params (utm_*, etc.) survive.
+    const params = new URLSearchParams(window.location.search);
+    params.delete('location');
+    const query = params.toString();
+    window.history.replaceState({}, '', window.location.pathname + (query ? '?' + query : ''));
 }
 
 export function getRestoreLocation() {
