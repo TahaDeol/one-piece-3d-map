@@ -50,6 +50,8 @@ export function applyFilters() {
         e.properties && e.show !== false).length;
 
     document.getElementById('counterCurrent').textContent = visibleCount;
+
+    viewer.scene.requestRender();
 }
 
 filterToggle.addEventListener('click', function () {

@@ -133,6 +133,7 @@ function showRoute() {
         const ctx = canvas.getContext('2d');
         ctx.drawImage(img, 0, 0, 64, 64);
         shipEntity.billboard.image = canvas;
+        viewer.scene.requestRender();
     };
 
     const legs = buildLegs();
@@ -173,6 +174,7 @@ function showRoute() {
         const lon = leg.from.lon + leg.dLon * progress;
         const lat = leg.from.lat + (leg.to.lat - leg.from.lat) * progress;
         shipEntity.position = Cesium.Cartesian3.fromDegrees(lon, lat);
+        viewer.scene.requestRender();
 
         shipFrame = requestAnimationFrame(step);
     }
@@ -191,6 +193,7 @@ function hideRoute() {
         cancelAnimationFrame(shipFrame);
         shipFrame = null;
     }
+    viewer.scene.requestRender();
 }
 
 document.getElementById('routeToggle').addEventListener('click', function () {

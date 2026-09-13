@@ -15,6 +15,13 @@ export const viewer = new Cesium.Viewer('cesiumContainer', {
     // and two hidden buttons at the front of the Tab order.
     infoBox: false,
     selectionIndicator: false,
+    // Only draw a frame when something changed. Camera moves, fly-tos and
+    // tile loads request one automatically; anything else that mutates the
+    // scene (marker visibility, hover labels, the ship) must call
+    // viewer.scene.requestRender() itself. Nothing here is clock-driven, so
+    // there is no reason to redraw on a timer.
+    requestRenderMode: true,
+    maximumRenderTimeChange: Infinity,
     terrainProvider: new Cesium.EllipsoidTerrainProvider(),
     imageryProvider: false,
 });

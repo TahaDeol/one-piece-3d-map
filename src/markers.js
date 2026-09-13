@@ -61,4 +61,6 @@ export function createMarkers(locations) {
             }
         });
     });
+
+    viewer.scene.requestRender();
 }

@@ -76,6 +76,8 @@ function updateHover() {
     if (hoveredEntity) {
         hoveredEntity.label.show = true;
     }
+
+    viewer.scene.requestRender();
 }
 
 // scene.pick() is a GPU read-back, and mouse events arrive faster than
