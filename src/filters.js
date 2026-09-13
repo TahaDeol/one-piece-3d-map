@@ -51,19 +51,30 @@ filterToggle.addEventListener('click', function () {
     filterContent.classList.toggle('hidden');
 });
 
+// applyFilters() reads only the desktop .filterCheck boxes, so the two
+// checkbox sets are mirrored on every change. Mobile search reads the
+// .mobileFilterCheck set, so both must agree or search and map diverge.
+function syncCheckbox(source, targetClass) {
+    const target = document.querySelector(
+        `.${targetClass}[data-group="${source.dataset.group}"][value="${source.value}"]`
+    );
+    if (target) target.checked = source.checked;
+}
+
+function setAllCheckboxes(checked) {
+    document.querySelectorAll('.filterCheck, .mobileFilterCheck').forEach(cb => cb.checked = checked);
+    applyFilters();
+}
+
 document.querySelectorAll('.filterCheck').forEach(checkbox => {
-    checkbox.addEventListener('change', applyFilters);
+    checkbox.addEventListener('change', function () {
+        syncCheckbox(this, 'mobileFilterCheck');
+        applyFilters();
+    });
 });
 
-selectAllBtn.addEventListener('click', function () {
-    document.querySelectorAll('.filterCheck').forEach(cb => cb.checked = true);
-    applyFilters();
-});
-
-deselectAllBtn.addEventListener('click', function () {
-    document.querySelectorAll('.filterCheck').forEach(cb => cb.checked = false);
-    applyFilters();
-});
+selectAllBtn.addEventListener('click', () => setAllCheckboxes(true));
+deselectAllBtn.addEventListener('click', () => setAllCheckboxes(false));
 
 spoilerSlider.addEventListener('input', applyFilters);
 
@@ -74,5 +85,8 @@ mobileSpoilerSlider.addEventListener('input', function () {
 });
 
 document.querySelectorAll('.mobileFilterCheck').forEach(checkbox => {
-    checkbox.addEventListener('change', applyFilters);
+    checkbox.addEventListener('change', function () {
+        syncCheckbox(this, 'filterCheck');
+        applyFilters();
+    });
 });
