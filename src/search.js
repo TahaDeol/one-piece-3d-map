@@ -8,6 +8,25 @@ const spoilerSlider = document.getElementById('spoilerSlider');
 const searchInput = document.getElementById('searchInput');
 const searchDropdown = document.getElementById('searchDropdown');
 
+// Shared by the desktop and mobile dropdowns. Uses textContent so a name
+// can never be interpreted as markup.
+function createResultItem(location) {
+    const item = document.createElement('div');
+    item.className = 'searchResult';
+
+    const nameEl = document.createElement('div');
+    nameEl.className = 'searchResultName';
+    nameEl.textContent = location.name;
+
+    const seaEl = document.createElement('div');
+    seaEl.className = 'searchResultSea';
+    seaEl.textContent = `${location.sea} · ${location.type}`;
+
+    item.appendChild(nameEl);
+    item.appendChild(seaEl);
+    return item;
+}
+
 searchInput.addEventListener('input', function () {
     const query = this.value.toLowerCase();
 
@@ -37,12 +56,7 @@ searchInput.addEventListener('input', function () {
 
     searchDropdown.innerHTML = '';
     results.slice(0, 8).forEach(location => {
-        const item = document.createElement('div');
-        item.className = 'searchResult';
-        item.innerHTML = `
-      <div class="searchResultName">${location.name}</div>
-      <div class="searchResultSea">${location.sea} · ${location.type}</div>
-    `;
+        const item = createResultItem(location);
 
         item.addEventListener('click', function () {
             viewer.camera.flyTo({
@@ -104,19 +118,7 @@ document.getElementById('mobileSearchInput').addEventListener('input', function 
 
     dropdown.innerHTML = '';
     results.slice(0, 6).forEach(location => {
-        const item = document.createElement('div');
-        item.className = 'searchResult';
-
-        const nameEl = document.createElement('div');
-        nameEl.className = 'searchResultName';
-        nameEl.textContent = location.name;
-
-        const seaEl = document.createElement('div');
-        seaEl.className = 'searchResultSea';
-        seaEl.textContent = `${location.sea} · ${location.type}`;
-
-        item.appendChild(nameEl);
-        item.appendChild(seaEl);
+        const item = createResultItem(location);
 
         item.addEventListener('click', function () {
             viewer.camera.flyTo({

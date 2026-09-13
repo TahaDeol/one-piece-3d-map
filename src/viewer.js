@@ -1,7 +1,5 @@
-const CESIUM_ION_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1NTkyZDZhYi03YWZjLTRhMGItYmNjNy0yYWMzMjEwMGY5OGQiLCJpZCI6NDE2MTY3LCJpYXQiOjE3NzU3ODUxMjF9.4yH3waGH3QMFC-dJI21EMZCHEj0-3sohaAaNNmRweyA';
-
-Cesium.Ion.defaultAccessToken = CESIUM_ION_TOKEN;
-
+// No Cesium Ion token: imagery comes from R2 and terrain is the plain
+// ellipsoid, so nothing here ever talks to Ion.
 export const viewer = new Cesium.Viewer('cesiumContainer', {
     baseLayerPicker: false,
     geocoder: false,

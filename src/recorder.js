@@ -165,8 +165,9 @@ function addToList(location) {
       <strong>${location.name}</strong><br>
       <span>${location.sea} · ${location.type}</span>
     </div>
-    <button class="delete-btn" onclick="deleteLocation(${location.id})">✕</button>
+    <button class="delete-btn" type="button">✕</button>
   `;
+  li.querySelector('.delete-btn').addEventListener('click', () => deleteLocation(location.id));
   listEl.appendChild(li);
 }
 

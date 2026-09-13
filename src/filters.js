@@ -10,6 +10,13 @@ const spoilerArc = document.getElementById('spoilerArc');
 const mobileSpoilerSlider = document.getElementById('mobileSpoilerSlider');
 const mobileSpoilerArc = document.getElementById('mobileSpoilerArc');
 
+// The markup carries placeholder min/max/value; the real range is whatever
+// arcOrder says, so adding an arc can't leave the sliders one step short.
+[spoilerSlider, mobileSpoilerSlider].forEach(slider => {
+    slider.max = arcOrder.length - 1;
+    slider.value = arcOrder.length - 1;
+});
+
 export function isLocationVisible(location, { checkedSeas, checkedTypes, allowedArcs, showCanon, showFiller }) {
     const isFiller = location.arc.toLowerCase().includes('filler');
     const inArcRange = allowedArcs.includes(location.arc);
