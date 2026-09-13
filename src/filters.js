@@ -38,8 +38,13 @@ export function applyFilters() {
         }, { checkedSeas, checkedTypes, allowedArcs, showCanon, showFiller });
     });
 
+    // Both sliders and labels are driven from here so desktop input,
+    // mobile input, and keyboard arrows all leave the two in agreement.
     const current = arcOrder[sliderIndex];
-    spoilerArc.textContent = arcDisplayNames[current] || current;
+    const label = arcDisplayNames[current] || current;
+    spoilerArc.textContent = label;
+    mobileSpoilerSlider.value = sliderIndex;
+    mobileSpoilerArc.textContent = label;
 
     const visibleCount = viewer.entities.values.filter(e =>
         e.properties && e.show !== false).length;
@@ -80,7 +85,6 @@ spoilerSlider.addEventListener('input', applyFilters);
 
 mobileSpoilerSlider.addEventListener('input', function () {
     spoilerSlider.value = this.value;
-    mobileSpoilerArc.textContent = arcDisplayNames[arcOrder[parseInt(this.value)]] || arcOrder[parseInt(this.value)];
     applyFilters();
 });
 
