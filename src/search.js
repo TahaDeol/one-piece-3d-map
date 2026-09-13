@@ -8,12 +8,20 @@ import { closeDrawer } from './mobileMenu.js';
 const spoilerSlider = document.getElementById('spoilerSlider');
 const searchInput = document.getElementById('searchInput');
 const searchDropdown = document.getElementById('searchDropdown');
+const mobileSearchInput = document.getElementById('mobileSearchInput');
+const mobileSearchDropdown = document.getElementById('mobileSearchDropdown');
 
-// Shared by the desktop and mobile dropdowns. Uses textContent so a name
-// can never be interpreted as markup.
-function createResultItem(location) {
+// ---- Combobox plumbing shared by the desktop and mobile dropdowns ----
+// The filtering logic below is intentionally duplicated per platform (see
+// CLAUDE.md); only the DOM/keyboard helpers are shared.
+
+// Uses textContent so a name can never be interpreted as markup.
+function createResultItem(location, idPrefix) {
     const item = document.createElement('div');
     item.className = 'searchResult';
+    item.id = `${idPrefix}-${location.id}`;
+    item.setAttribute('role', 'option');
+    item.setAttribute('aria-selected', 'false');
 
     const nameEl = document.createElement('div');
     nameEl.className = 'searchResultName';
@@ -28,12 +36,74 @@ function createResultItem(location) {
     return item;
 }
 
+function openDropdown(input, dropdown) {
+    dropdown.classList.remove('hidden');
+    input.setAttribute('aria-expanded', 'true');
+}
+
+function closeDropdown(input, dropdown) {
+    dropdown.classList.add('hidden');
+    dropdown.innerHTML = '';
+    input.setAttribute('aria-expanded', 'false');
+    input.removeAttribute('aria-activedescendant');
+}
+
+export function closeAllDropdowns() {
+    closeDropdown(searchInput, searchDropdown);
+    closeDropdown(mobileSearchInput, mobileSearchDropdown);
+}
+
+function setActiveOption(input, dropdown, index) {
+    const options = dropdown.querySelectorAll('.searchResult');
+    options.forEach((option, i) => {
+        option.classList.toggle('active', i === index);
+        option.setAttribute('aria-selected', String(i === index));
+    });
+
+    if (index >= 0 && options[index]) {
+        input.setAttribute('aria-activedescendant', options[index].id);
+        options[index].scrollIntoView({ block: 'nearest' });
+    } else {
+        input.removeAttribute('aria-activedescendant');
+    }
+}
+
+// Focus stays in the input; ArrowUp/ArrowDown move the highlight, Enter
+// selects it (or the first result if nothing is highlighted). Escape is
+// handled globally in keyboard.js.
+function attachComboboxKeys(input, dropdown) {
+    input.addEventListener('keydown', function (e) {
+        if (dropdown.classList.contains('hidden')) return;
+
+        const options = dropdown.querySelectorAll('.searchResult');
+        if (options.length === 0) return;
+
+        const current = [...options].findIndex(option => option.classList.contains('active'));
+
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            setActiveOption(input, dropdown, (current + 1) % options.length);
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            // With nothing highlighted, ArrowUp starts from the last result.
+            setActiveOption(input, dropdown, current < 0 ? options.length - 1 : (current - 1 + options.length) % options.length);
+        } else if (e.key === 'Enter') {
+            e.preventDefault();
+            options[current >= 0 ? current : 0].click();
+        }
+    });
+}
+
+attachComboboxKeys(searchInput, searchDropdown);
+attachComboboxKeys(mobileSearchInput, mobileSearchDropdown);
+
+// ---- Desktop search ----
+
 searchInput.addEventListener('input', function () {
     const query = this.value.toLowerCase();
 
     if (query.length < 2) {
-        searchDropdown.classList.add('hidden');
-        searchDropdown.innerHTML = '';
+        closeDropdown(searchInput, searchDropdown);
         return;
     }
 
@@ -50,14 +120,13 @@ searchInput.addEventListener('input', function () {
     );
 
     if (results.length === 0) {
-        searchDropdown.classList.add('hidden');
-        searchDropdown.innerHTML = '';
+        closeDropdown(searchInput, searchDropdown);
         return;
     }
 
     searchDropdown.innerHTML = '';
     results.slice(0, 8).forEach(location => {
-        const item = createResultItem(location);
+        const item = createResultItem(location, 'searchOption');
 
         item.addEventListener('click', function () {
             viewer.camera.flyTo({
@@ -77,31 +146,29 @@ searchInput.addEventListener('input', function () {
                 notes: location.notes,
             });
 
-            searchDropdown.classList.add('hidden');
-            searchDropdown.innerHTML = '';
+            closeDropdown(searchInput, searchDropdown);
             searchInput.value = '';
         });
 
         searchDropdown.appendChild(item);
     });
 
-    searchDropdown.classList.remove('hidden');
+    openDropdown(searchInput, searchDropdown);
 });
 
 document.addEventListener('click', function (e) {
     if (!document.getElementById('searchContainer').contains(e.target)) {
-        searchDropdown.classList.add('hidden');
-        searchDropdown.innerHTML = '';
+        closeDropdown(searchInput, searchDropdown);
     }
 });
 
-document.getElementById('mobileSearchInput').addEventListener('input', function () {
+// ---- Mobile search ----
+mobileSearchInput.addEventListener('input', function () {
     const query = this.value.toLowerCase();
-    const dropdown = document.getElementById('mobileSearchDropdown');
+    const dropdown = mobileSearchDropdown;
 
     if (query.length < 2) {
-        dropdown.classList.add('hidden');
-        dropdown.innerHTML = '';
+        closeDropdown(mobileSearchInput, dropdown);
         return;
     }
 
@@ -117,9 +184,14 @@ document.getElementById('mobileSearchInput').addEventListener('input', function 
         isLocationVisible(location, { checkedSeas, checkedTypes, allowedArcs, showCanon, showFiller })
     );
 
+    if (results.length === 0) {
+        closeDropdown(mobileSearchInput, dropdown);
+        return;
+    }
+
     dropdown.innerHTML = '';
     results.slice(0, 6).forEach(location => {
-        const item = createResultItem(location);
+        const item = createResultItem(location, 'mobileSearchOption');
 
         item.addEventListener('click', function () {
             viewer.camera.flyTo({
@@ -139,14 +211,15 @@ document.getElementById('mobileSearchInput').addEventListener('input', function 
                 notes: location.notes,
             });
 
-            dropdown.classList.add('hidden');
-            dropdown.innerHTML = '';
-            this.value = '';
+            closeDropdown(mobileSearchInput, dropdown);
+            // `this` here is the clicked row, not the input; the old code
+            // set this.value and never actually cleared the box.
+            mobileSearchInput.value = '';
             closeDrawer();
         });
 
         dropdown.appendChild(item);
     });
 
-    dropdown.classList.remove('hidden');
+    openDropdown(mobileSearchInput, dropdown);
 });

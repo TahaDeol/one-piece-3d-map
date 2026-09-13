@@ -100,8 +100,15 @@
             placeholder="Search for a location..."
             aria-label="Search locations"
             autocomplete="off"
+            role="combobox"
+            aria-autocomplete="list"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+            aria-controls="searchDropdown"
         >
-        <div id="searchDropdown" class="hidden"></div>
+        <!-- Live autocomplete listbox (WAI-ARIA combobox pattern); a native <select> can't do this. -->
+        <!-- [html-validate-disable-next prefer-native-element] -->
+        <div id="searchDropdown" class="hidden" role="listbox" aria-label="Search results"></div>
     </div>
 
     <div id="locationCounter" role="status" aria-live="polite">
@@ -217,8 +224,14 @@
                 placeholder="Search for a location..."
                 aria-label="Search locations"
                 autocomplete="off"
+                role="combobox"
+                aria-autocomplete="list"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                aria-controls="mobileSearchDropdown"
             >
-            <div id="mobileSearchDropdown" class="hidden"></div>
+            <!-- [html-validate-disable-next prefer-native-element] -->
+            <div id="mobileSearchDropdown" class="hidden" role="listbox" aria-label="Search results"></div>
         </div>
         <div id="drawerFilters">
             <h3>Region</h3>

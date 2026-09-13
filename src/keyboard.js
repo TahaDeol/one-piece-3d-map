@@ -1,16 +1,12 @@
 import { applyFilters, setFilterPanelOpen, toggleFilterPanel } from './filters.js';
 import { hidePanel } from './infoPanel.js';
 import { closeDrawer } from './mobileMenu.js';
+import { closeAllDropdowns } from './search.js';
 
 const searchInput = document.getElementById('searchInput');
-const searchDropdown = document.getElementById('searchDropdown');
-const mobileSearchDropdown = document.getElementById('mobileSearchDropdown');
 
 function closeEverything() {
-    searchDropdown.classList.add('hidden');
-    searchDropdown.innerHTML = '';
-    mobileSearchDropdown.classList.add('hidden');
-    mobileSearchDropdown.innerHTML = '';
+    closeAllDropdowns();
     setFilterPanelOpen(false);
     hidePanel();
     closeDrawer();

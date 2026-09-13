@@ -71,3 +71,49 @@ test('the hidden info panel keeps its close button out of the Tab order', async 
     // visibility:hidden while closed, so it is neither visible nor focusable.
     await expect(page.locator('#closePanel')).toBeHidden();
 });
+
+test('desktop search results are keyboard navigable', async ({ page }) => {
+    await page.goto('/');
+    await settled(page);
+
+    const input = page.locator('#searchInput');
+    await input.fill('island');
+    const options = page.locator('#searchDropdown [role="option"]');
+    await expect(options.nth(1)).toBeVisible();
+    await expect(input).toHaveAttribute('aria-expanded', 'true');
+
+    await input.press('ArrowDown');
+    await input.press('ArrowDown');
+    const second = options.nth(1);
+    await expect(second).toHaveAttribute('aria-selected', 'true');
+    await expect(input).toHaveAttribute('aria-activedescendant', await second.getAttribute('id'));
+    const expectedName = await second.locator('.searchResultName').textContent();
+
+    await input.press('Enter');
+    await expect(page.locator('#infoPanel')).toHaveClass(/visible/, { timeout: 5000 });
+    await expect(page.locator('#panelName')).toHaveText(expectedName);
+    await expect(input).toHaveAttribute('aria-expanded', 'false');
+    await expect(input).toHaveValue('');
+});
+
+test('mobile search results are keyboard navigable and clear the box', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto('/');
+    await settled(page);
+    await page.locator('#mobileMenuBtn').click();
+
+    const input = page.locator('#mobileSearchInput');
+    await input.fill('island');
+    const options = page.locator('#mobileSearchDropdown [role="option"]');
+    await expect(options.nth(1)).toBeVisible();
+
+    await input.press('ArrowUp'); // wraps to the last result
+    const last = options.last();
+    await expect(last).toHaveAttribute('aria-selected', 'true');
+    const expectedName = await last.locator('.searchResultName').textContent();
+
+    await input.press('Enter');
+    await expect(page.locator('#panelName')).toHaveText(expectedName);
+    await expect(page.locator('#mobileDrawer')).toBeHidden();
+    await expect(input).toHaveValue('');
+});

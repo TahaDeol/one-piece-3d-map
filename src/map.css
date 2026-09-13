@@ -358,7 +358,8 @@ input[type="range"]:focus-visible,
   border-bottom: none;
 } 
 
-.searchResult:hover {
+.searchResult:hover,
+.searchResult.active {
   background: rgba(180, 30, 70, 0.5);
 }
 
