@@ -56,9 +56,13 @@ viewer.screenSpaceEventHandler.setInputAction(function (click) {
 }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
 
 let hoveredEntity = null;
+let pendingHoverPosition = null;
+let hoverFrame = null;
 
-viewer.screenSpaceEventHandler.setInputAction(function (movement) {
-    const picked = viewer.scene.pick(movement.endPosition);
+function updateHover() {
+    hoverFrame = null;
+
+    const picked = viewer.scene.pick(pendingHoverPosition);
     const entity = Cesium.defined(picked) && picked.id && picked.id.label ? picked.id : null;
 
     if (entity === hoveredEntity) return;
@@ -71,5 +75,16 @@ viewer.screenSpaceEventHandler.setInputAction(function (movement) {
 
     if (hoveredEntity) {
         hoveredEntity.label.show = true;
+    }
+}
+
+// scene.pick() is a GPU read-back, and mouse events arrive faster than
+// frames. Record the latest position and pick once per frame at most.
+// Cesium reuses the movement object, so the position must be copied.
+viewer.screenSpaceEventHandler.setInputAction(function (movement) {
+    pendingHoverPosition = Cesium.Cartesian2.clone(movement.endPosition, pendingHoverPosition);
+
+    if (hoverFrame === null) {
+        hoverFrame = requestAnimationFrame(updateHover);
     }
 }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
