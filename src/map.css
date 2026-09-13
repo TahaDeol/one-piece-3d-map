@@ -99,7 +99,8 @@ html, body, #cesiumContainer {
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  transition: opacity 1.5s ease;
+  /* Must match the display:none timeout in main.js or the fade is cut short. */
+  transition: opacity 0.8s ease;
   overflow: hidden;
   background-color: #c9a96e;
   background-image:
@@ -252,6 +253,11 @@ html, body, #cesiumContainer {
 @keyframes shimmer {
   0%   { background-position: 200% center; }
   100% { background-position: -200% center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #loadingScreen { transition: none; }
+  #loadingFill   { animation: none; }
 }
 
 #loadingText {
