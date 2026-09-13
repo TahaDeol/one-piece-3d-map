@@ -1,21 +1,21 @@
 import { test, expect } from '@playwright/test';
 
 async function settled(page) {
-    await expect(page.locator('#loadingScreen')).toBeHidden({ timeout: 5000 });
-    await expect(page.locator('#counterCurrent')).toHaveText('173', { timeout: 5000 });
+    await expect(page.locator('#loadingScreen')).toBeHidden();
+    await expect(page.locator('#counterCurrent')).toHaveText('173');
 }
 
 test('a Cesium CDN failure is reported instead of hanging on the loading screen', async ({ page }) => {
     await page.route('**/cesium.com/**', route => route.abort());
     await page.goto('/');
-    await expect(page.locator('#loadingText')).toContainText("Couldn't load the map engine", { timeout: 5000 });
+    await expect(page.locator('#loadingText')).toContainText("Couldn't load the map engine");
     await expect(page.locator('#loadingScreen')).toBeVisible();
 });
 
 test('a locations.json failure is reported in the counter box', async ({ page }) => {
     await page.route('**/data/locations.json', route => route.fulfill({ status: 500, body: 'oops' }));
     await page.goto('/');
-    await expect(page.locator('#loadingScreen')).toBeHidden({ timeout: 5000 });
+    await expect(page.locator('#loadingScreen')).toBeHidden();
     await expect(page.locator('#locationCounter')).toContainText('Location data failed to load');
 });
 
@@ -32,7 +32,7 @@ test('closing the panel keeps unrelated query params', async ({ page }) => {
     await settled(page);
     await page.locator('#searchInput').fill('Water Seven');
     await page.locator('.searchResult').first().click();
-    await expect(page.locator('#infoPanel')).toHaveClass(/visible/, { timeout: 5000 });
+    await expect(page.locator('#infoPanel')).toHaveClass(/visible/);
     expect(page.url()).toContain('utm_source=test');
     expect(page.url()).toContain('location=Water+Seven');
 

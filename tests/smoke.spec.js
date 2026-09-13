@@ -4,7 +4,7 @@ test('map loads, search finds a location, opens the info panel', async ({ page }
     await page.goto('/');
 
     // No artificial loading delay — should resolve quickly.
-    await expect(page.locator('#loadingScreen')).toBeHidden({ timeout: 5000 });
+    await expect(page.locator('#loadingScreen')).toBeHidden();
 
     // The Cesium globe canvas should exist and be rendering.
     await expect(page.locator('#cesiumContainer canvas').first()).toBeVisible();
@@ -18,17 +18,17 @@ test('map loads, search finds a location, opens the info panel', async ({ page }
 
     // Selecting it should fly there and open the info panel with the right title.
     await result.click();
-    await expect(page.locator('#infoPanel')).toHaveClass(/visible/, { timeout: 5000 });
+    await expect(page.locator('#infoPanel')).toHaveClass(/visible/);
     await expect(page.locator('#panelName')).toHaveText('Water Seven');
 });
 
 test('info panel close button hides the panel and clears the URL', async ({ page }) => {
     await page.goto('/');
-    await expect(page.locator('#loadingScreen')).toBeHidden({ timeout: 5000 });
+    await expect(page.locator('#loadingScreen')).toBeHidden();
 
     await page.locator('#searchInput').fill('Water Seven');
     await page.locator('.searchResult').first().click();
-    await expect(page.locator('#infoPanel')).toHaveClass(/visible/, { timeout: 5000 });
+    await expect(page.locator('#infoPanel')).toHaveClass(/visible/);
     expect(page.url()).toContain('location=Water+Seven');
 
     await page.locator('#closePanel').click();
@@ -39,9 +39,9 @@ test('info panel close button hides the panel and clears the URL', async ({ page
 test('mobile filter checkboxes hide markers and stay in sync with desktop', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto('/');
-    await expect(page.locator('#loadingScreen')).toBeHidden({ timeout: 5000 });
+    await expect(page.locator('#loadingScreen')).toBeHidden();
     // Markers are created after locations.json loads; wait for the counter to settle.
-    await expect(page.locator('#counterCurrent')).toHaveText('173', { timeout: 5000 });
+    await expect(page.locator('#counterCurrent')).toHaveText('173');
 
     await page.locator('#mobileMenuBtn').click();
     await page.locator('.mobileFilterCheck[data-group="sea"][value="East Blue"]').uncheck();
@@ -61,7 +61,7 @@ test('mobile filter checkboxes hide markers and stay in sync with desktop', asyn
 
 test('keyboard shortcuts ignore modifier chords', async ({ page }) => {
     await page.goto('/');
-    await expect(page.locator('#loadingScreen')).toBeHidden({ timeout: 5000 });
+    await expect(page.locator('#loadingScreen')).toBeHidden();
 
     const filterContent = page.locator('#filterContent');
     await expect(filterContent).toHaveClass(/hidden/);

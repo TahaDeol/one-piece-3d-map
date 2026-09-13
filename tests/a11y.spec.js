@@ -6,8 +6,8 @@ const require = createRequire(import.meta.url);
 const axeSource = readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
 
 async function settled(page) {
-    await expect(page.locator('#loadingScreen')).toBeHidden({ timeout: 5000 });
-    await expect(page.locator('#counterCurrent')).toHaveText('173', { timeout: 5000 });
+    await expect(page.locator('#loadingScreen')).toBeHidden();
+    await expect(page.locator('#counterCurrent')).toHaveText('173');
 }
 
 async function seriousViolations(page) {
@@ -53,7 +53,7 @@ test('toggles expose their state and Escape closes everything', async ({ page })
 
     await page.locator('#searchInput').fill('Water Seven');
     await page.locator('.searchResult').first().click();
-    await expect(page.locator('#infoPanel')).toHaveClass(/visible/, { timeout: 5000 });
+    await expect(page.locator('#infoPanel')).toHaveClass(/visible/);
 
     await page.locator('#searchInput').fill('Wa');
     await expect(page.locator('#searchDropdown')).toBeVisible();
@@ -90,7 +90,7 @@ test('desktop search results are keyboard navigable', async ({ page }) => {
     const expectedName = await second.locator('.searchResultName').textContent();
 
     await input.press('Enter');
-    await expect(page.locator('#infoPanel')).toHaveClass(/visible/, { timeout: 5000 });
+    await expect(page.locator('#infoPanel')).toHaveClass(/visible/);
     await expect(page.locator('#panelName')).toHaveText(expectedName);
     await expect(input).toHaveAttribute('aria-expanded', 'false');
     await expect(input).toHaveValue('');

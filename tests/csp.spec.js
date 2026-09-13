@@ -44,8 +44,8 @@ test('the report-only CSP produces no unexpected violations when enforced', asyn
     });
 
     await page.goto('/');
-    await expect(page.locator('#loadingScreen')).toBeHidden({ timeout: 5000 });
-    await expect(page.locator('#counterCurrent')).toHaveText('173', { timeout: 5000 });
+    await expect(page.locator('#loadingScreen')).toBeHidden();
+    await expect(page.locator('#counterCurrent')).toHaveText('173');
 
     // Route: polyline geometry is built in a Cesium web worker; sprite PNG.
     await page.locator('#routeToggle').click();
@@ -55,7 +55,7 @@ test('the report-only CSP produces no unexpected violations when enforced', asyn
     // Search + select: fly-to, info panel, history.replaceState.
     await page.locator('#searchInput').fill('Water Seven');
     await page.locator('.searchResult').first().click();
-    await expect(page.locator('#infoPanel')).toHaveClass(/visible/, { timeout: 5000 });
+    await expect(page.locator('#infoPanel')).toHaveClass(/visible/);
 
     // Filters and hover picking.
     await page.locator('#filterToggle').click();
