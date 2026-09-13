@@ -11,6 +11,10 @@ export const viewer = new Cesium.Viewer('cesiumContainer', {
     animation: false,
     timeline: false,
     fullscreenButton: false,
+    // The app never sets viewer.selectedEntity, so these only add an iframe
+    // and two hidden buttons at the front of the Tab order.
+    infoBox: false,
+    selectionIndicator: false,
     terrainProvider: new Cesium.EllipsoidTerrainProvider(),
     imageryProvider: false,
 });
