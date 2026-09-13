@@ -42,7 +42,7 @@ const routeCoordinates = [
 let routeVisible = false;
 let routeEntities = [];
 let shipEntity = null;
-let shipInterval = null;
+let shipFrame = null;
 
 function buildRoute() {
     const positions = [];
@@ -55,9 +55,12 @@ function buildRoute() {
 function buildLegs() {
     const legs = [];
 
-    for (let i = 0; i < routeCoordinates.length; i++) {
+    // One leg per drawn polyline segment. The ship does not sail from the
+    // last stop back to the first: that voyage never happened, and the line
+    // isn't drawn, so the animation jumps back to Dawn Island instead.
+    for (let i = 0; i < routeCoordinates.length - 1; i++) {
         const from = routeCoordinates[i];
-        const to = routeCoordinates[(i + 1) % routeCoordinates.length];
+        const to = routeCoordinates[i + 1];
 
         let dLon = to.lon - from.lon;
         if (dLon > 180) dLon -= 360;
@@ -73,7 +76,7 @@ function buildLegs() {
 }
 
 function showRoute() {
-    if (shipInterval) return;
+    if (shipFrame !== null) return;
     const positions = buildRoute();
 
     const routeLine = viewer.entities.add({
@@ -134,27 +137,47 @@ function showRoute() {
 
     const legs = buildLegs();
     const totalDistance = legs.reduce((sum, leg) => sum + leg.distance, 0);
-    const TICK_MS = 16;
-    const degreesPerTick = totalDistance / (legs.length * (3200 / TICK_MS));
+    const AVERAGE_LEG_MS = 3200;
+    const degreesPerMs = totalDistance / (legs.length * AVERAGE_LEG_MS);
+    // requestAnimationFrame pauses in background tabs; capping the step keeps
+    // the ship from teleporting when the tab comes back.
+    const MAX_FRAME_MS = 100;
 
     let legIndex = 0;
-    let progress = 0;
+    let progress = 0; // 0..1 along the current leg
+    let lastTime = null;
 
-    shipInterval = setInterval(function () {
-        const leg = legs[legIndex];
-        progress += degreesPerTick / leg.distance;
+    function step(now) {
+        if (lastTime !== null) {
+            let remaining = Math.min(now - lastTime, MAX_FRAME_MS) * degreesPerMs;
 
-        if (progress >= 1) {
-            progress = 0;
-            legIndex = (legIndex + 1) % legs.length;
+            // Carry leftover distance across leg boundaries so a slow frame
+            // can't skip a short leg.
+            while (remaining > 0) {
+                const leg = legs[legIndex];
+                const legLeft = (1 - progress) * leg.distance;
+
+                if (remaining < legLeft) {
+                    progress += remaining / leg.distance;
+                    remaining = 0;
+                } else {
+                    remaining -= legLeft;
+                    progress = 0;
+                    legIndex = (legIndex + 1) % legs.length;
+                }
+            }
         }
+        lastTime = now;
 
-        const current = legs[legIndex];
-        const lon = current.from.lon + current.dLon * progress;
-        const lat = current.from.lat + (current.to.lat - current.from.lat) * progress;
-
+        const leg = legs[legIndex];
+        const lon = leg.from.lon + leg.dLon * progress;
+        const lat = leg.from.lat + (leg.to.lat - leg.from.lat) * progress;
         shipEntity.position = Cesium.Cartesian3.fromDegrees(lon, lat);
-    }, TICK_MS);
+
+        shipFrame = requestAnimationFrame(step);
+    }
+
+    shipFrame = requestAnimationFrame(step);
 }
 
 function hideRoute() {
@@ -164,9 +187,9 @@ function hideRoute() {
         viewer.entities.remove(shipEntity);
         shipEntity = null;
     }
-    if (shipInterval) {
-        clearInterval(shipInterval);
-        shipInterval = null;
+    if (shipFrame !== null) {
+        cancelAnimationFrame(shipFrame);
+        shipFrame = null;
     }
 }
 
