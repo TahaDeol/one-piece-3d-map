@@ -20,6 +20,10 @@ export function hidePanel() {
     clearURL();
 }
 
+// Modules don't expose globals, so the close button must be wired here
+// rather than via an inline onclick="hidePanel()" in index.html.
+document.getElementById('closePanel').addEventListener('click', hidePanel);
+
 viewer.screenSpaceEventHandler.setInputAction(function (click) {
     const picked = viewer.scene.pick(click.position);
 
