@@ -51,7 +51,17 @@ async function boot() {
 
     dismissLoadingScreen();
 
-    const locations = await loadLocations();
+    let locations;
+    try {
+        locations = await loadLocations();
+    } catch (err) {
+        console.error('Failed to load location data:', err);
+        // Otherwise the counter keeps showing the placeholder "173 of 173"
+        // over an empty globe.
+        document.getElementById('locationCounter').textContent =
+            'Location data failed to load. Reload the page to try again.';
+        return;
+    }
     createMarkers(locations);
 
     const restoreLocation = getRestoreLocation();
