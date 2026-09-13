@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=IM+Fell+English:ital@0;1&display=swap');
+/* Fonts are linked from index.html <head> (with preconnect) rather than
+   @import here, which would chain a second blocking request behind this file. */
 
 * {
   margin: 0;

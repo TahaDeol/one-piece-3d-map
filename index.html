@@ -4,9 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>One Piece 3D Map</title>
+    <meta name="description" content="An interactive 3D globe of the One Piece world: 173 islands, kingdoms and landmarks from East Blue to Elbaf, with a spoiler slider, filters and the Straw Hats' route.">
+    <meta name="theme-color" content="#c9a96e">
+    <link rel="canonical" href="https://www.grandline3d.com/">
 
-    <script src="https://cesium.com/downloads/cesiumjs/releases/1.114/Build/Cesium/Cesium.js"></script>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.grandline3d.com/">
+    <meta property="og:title" content="One Piece 3D World Map">
+    <meta property="og:description" content="Explore the One Piece world on an interactive 3D globe: 173 locations, a spoiler-safe story slider, and the Straw Hats' route.">
+    <meta property="og:image" content="https://www.grandline3d.com/assets/social-card.jpg">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="640">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="One Piece 3D World Map">
+    <meta name="twitter:description" content="Explore the One Piece world on an interactive 3D globe: 173 locations, a spoiler-safe story slider, and the Straw Hats' route.">
+    <meta name="twitter:image" content="https://www.grandline3d.com/assets/social-card.jpg">
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://cesium.com">
+    <link rel="preconnect" href="https://pub-c74d8d872e454a78955377cc3fc0b7f7.r2.dev">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Deferred so the 1.4 MB engine download no longer blocks first paint of
+         the loading screen. Deferred scripts and module scripts run in
+         document order after parsing, so Cesium is defined before main.js. -->
+    <script defer src="https://cesium.com/downloads/cesiumjs/releases/1.114/Build/Cesium/Cesium.js"></script>
     <link href="https://cesium.com/downloads/cesiumjs/releases/1.114/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/map.css">
 
     <!-- Vercel Web Analytics -->
