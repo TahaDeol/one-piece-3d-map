@@ -16,6 +16,19 @@ export function createMarkerCanvas(color) {
     return canvas;
 }
 
+// Cesium's texture atlas caches billboard images by id. A canvas object gets
+// a fresh generated id per billboard, so 173 markers meant 173 atlas entries
+// for 8 colours. A string is used as its own id, so one data URL per colour
+// is shared by every marker of that region.
+const markerImageCache = new Map();
+
+function getMarkerImage(color) {
+    if (!markerImageCache.has(color)) {
+        markerImageCache.set(color, createMarkerCanvas(color).toDataURL());
+    }
+    return markerImageCache.get(color);
+}
+
 export function createMarkers(locations) {
     locations.forEach(location => {
         const color = regionColors[location.sea] || '#ffffff';
@@ -24,7 +37,7 @@ export function createMarkers(locations) {
             id: String(location.id),
             position: Cesium.Cartesian3.fromDegrees(location.lon, location.lat),
             billboard: {
-                image: createMarkerCanvas(color),
+                image: getMarkerImage(color),
                 verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
                 scale: 0.6,
             },
