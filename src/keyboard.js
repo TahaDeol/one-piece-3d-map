@@ -6,6 +6,9 @@ const searchDropdown = document.getElementById('searchDropdown');
 const filterContent = document.getElementById('filterContent');
 
 document.addEventListener('keydown', function (e) {
+    // Leave browser/OS chords alone (Cmd+F find, Cmd+R reload, Ctrl+C copy...).
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+
     const tag = document.activeElement.tagName.toLowerCase();
     const typing = tag === 'input' || tag === 'textarea';
 
