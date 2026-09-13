@@ -1,0 +1,13 @@
+# Development-only files that were being served from the live site.
+recorder.html
+src/recorder.js
+src/recorder.css
+tests/
+scripts/
+eslint.config.js
+playwright.config.js
+.htmlvalidate.json
+.github/
+screenshots/
+data/locations.schema.json
+node_modules/
