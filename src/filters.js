@@ -61,9 +61,16 @@ export function applyFilters() {
     viewer.scene.requestRender();
 }
 
-filterToggle.addEventListener('click', function () {
-    filterContent.classList.toggle('hidden');
-});
+export function setFilterPanelOpen(open) {
+    filterContent.classList.toggle('hidden', !open);
+    filterToggle.setAttribute('aria-expanded', String(open));
+}
+
+export function toggleFilterPanel() {
+    setFilterPanelOpen(filterContent.classList.contains('hidden'));
+}
+
+filterToggle.addEventListener('click', toggleFilterPanel);
 
 // applyFilters() reads only the desktop .filterCheck boxes, so the two
 // checkbox sets are mirrored on every change. Mobile search reads the

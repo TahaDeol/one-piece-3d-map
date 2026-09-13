@@ -1,13 +1,34 @@
-import { applyFilters } from './filters.js';
+import { applyFilters, setFilterPanelOpen, toggleFilterPanel } from './filters.js';
 import { hidePanel } from './infoPanel.js';
+import { closeDrawer } from './mobileMenu.js';
 
 const searchInput = document.getElementById('searchInput');
 const searchDropdown = document.getElementById('searchDropdown');
-const filterContent = document.getElementById('filterContent');
+const mobileSearchDropdown = document.getElementById('mobileSearchDropdown');
+
+function closeEverything() {
+    searchDropdown.classList.add('hidden');
+    searchDropdown.innerHTML = '';
+    mobileSearchDropdown.classList.add('hidden');
+    mobileSearchDropdown.innerHTML = '';
+    setFilterPanelOpen(false);
+    hidePanel();
+    closeDrawer();
+}
 
 document.addEventListener('keydown', function (e) {
     // Leave browser/OS chords alone (Cmd+F find, Cmd+R reload, Ctrl+C copy...).
     if (e.metaKey || e.ctrlKey || e.altKey) return;
+
+    // Escape works even while typing: it dismisses whatever is open and
+    // drops focus so the other shortcuts become available again.
+    if (e.key === 'Escape') {
+        closeEverything();
+        if (document.activeElement && document.activeElement.blur) {
+            document.activeElement.blur();
+        }
+        return;
+    }
 
     const tag = document.activeElement.tagName.toLowerCase();
     const typing = tag === 'input' || tag === 'textarea';
@@ -18,7 +39,7 @@ document.addEventListener('keydown', function (e) {
     }
 
     if ((e.key === 'f' || e.key === 'F') && !typing) {
-        filterContent.classList.toggle('hidden');
+        toggleFilterPanel();
     }
 
     if ((e.key === 'r' || e.key === 'R') && !typing) {
@@ -28,10 +49,7 @@ document.addEventListener('keydown', function (e) {
 
     if ((e.key === 'c' || e.key === 'C') && !typing) {
         searchInput.blur();
-        searchDropdown.classList.add('hidden');
-        searchDropdown.innerHTML = '';
-        filterContent.classList.add('hidden');
-        hidePanel();
+        closeEverything();
         searchInput.value = '';
     }
 

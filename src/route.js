@@ -196,32 +196,29 @@ function hideRoute() {
     viewer.scene.requestRender();
 }
 
+function setToggleState(button, active) {
+    button.classList.toggle('active', active);
+    button.setAttribute('aria-pressed', String(active));
+    button.textContent = active ? '✖ Hide Route' : '⚓ Straw Hat Route';
+}
+
 document.getElementById('routeToggle').addEventListener('click', function () {
     routeVisible = !routeVisible;
     if (routeVisible) {
         showRoute();
-        this.classList.add('active');
-        this.textContent = '✖ Hide Route';
     } else {
         hideRoute();
-        this.classList.remove('active');
-        this.textContent = '⚓ Straw Hat Route';
     }
+    setToggleState(this, routeVisible);
 });
 
 document.getElementById('mobileRouteToggle').addEventListener('click', function () {
     routeVisible = !routeVisible;
     if (routeVisible) {
         showRoute();
-        this.classList.add('active');
-        this.textContent = '✖ Hide Route';
-        document.getElementById('routeToggle').classList.add('active');
-        document.getElementById('routeToggle').textContent = '✖ Hide Route';
     } else {
         hideRoute();
-        this.classList.remove('active');
-        this.textContent = '⚓ Straw Hat Route';
-        document.getElementById('routeToggle').classList.remove('active');
-        document.getElementById('routeToggle').textContent = '⚓ Straw Hat Route';
     }
+    setToggleState(this, routeVisible);
+    setToggleState(document.getElementById('routeToggle'), routeVisible);
 });

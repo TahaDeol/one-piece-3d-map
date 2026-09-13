@@ -7,12 +7,37 @@
   box-sizing: border-box;
 }
 
-html, body, #cesiumContainer {
+html, body, main, #cesiumContainer {
   width: 100%;
   height: 100%;
   overflow: hidden;
   background: #000;
   font-family: 'Georgia', serif;
+}
+
+/* Visually hidden but available to assistive tech. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Keyboard focus ring on the parchment controls. The search inputs used
+   to set outline:none with only a faint border change on focus. */
+#searchInput:focus-visible,
+#drawerSearch input:focus-visible,
+button:focus-visible,
+input[type="range"]:focus-visible,
+.filterCheck:focus-visible,
+.mobileFilterCheck:focus-visible {
+  outline: 3px solid #2c1508;
+  outline-offset: 2px;
 }
 
 #infoPanel {
@@ -31,14 +56,17 @@ html, body, #cesiumContainer {
     inset 0 0 20px rgba(80, 40, 10, 0.1),
     0 4px 20px rgba(0, 0, 0, 0.4);
   transform: translateX(-420px);
-  transition: transform 0.4s ease, opacity 0.4s ease;
+  transition: transform 0.4s ease, opacity 0.4s ease, visibility 0s linear 0.4s;
   opacity: 0;
+  visibility: hidden; /* keeps the close button out of the Tab order while hidden */
   pointer-events: none;
 }
 
 #infoPanel.visible {
   transform: translateX(0);
   opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
   pointer-events: all;
 }
 
@@ -290,7 +318,6 @@ html, body, #cesiumContainer {
   font-family: 'IM Fell English', Georgia, serif;
   font-style: italic;
   font-size: 1.4rem;
-  outline: none;
   box-shadow: 
     inset 0 0 20px rgba(80, 40, 10, 0.1),
     0 4px 20px rgba(0, 0, 0, 0.4);
@@ -693,7 +720,6 @@ html, body, #cesiumContainer {
   font-family: 'IM Fell English', Georgia, serif;
   font-style: italic;
   font-size: 1rem;
-  outline: none;
   margin-bottom: 8px;
 }
 

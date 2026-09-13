@@ -3,6 +3,7 @@ import { allLocations } from './data/locations.js';
 import { arcOrder } from './config.js';
 import { isLocationVisible } from './filters.js';
 import { showPanel } from './infoPanel.js';
+import { closeDrawer } from './mobileMenu.js';
 
 const spoilerSlider = document.getElementById('spoilerSlider');
 const searchInput = document.getElementById('searchInput');
@@ -141,7 +142,7 @@ document.getElementById('mobileSearchInput').addEventListener('input', function 
             dropdown.classList.add('hidden');
             dropdown.innerHTML = '';
             this.value = '';
-            document.getElementById('mobileDrawer').classList.add('hidden');
+            closeDrawer();
         });
 
         dropdown.appendChild(item);
