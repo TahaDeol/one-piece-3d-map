@@ -122,6 +122,8 @@ function showRoute() {
     const img = new Image();
     img.src = 'assets/straw-hat-jolly-roger.png';
     img.onload = function () {
+        // The route may have been hidden before the sprite arrived.
+        if (!shipEntity) return;
         const canvas = document.createElement('canvas');
         canvas.width = 64;
         canvas.height = 64;
