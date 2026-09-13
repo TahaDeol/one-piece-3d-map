@@ -19,7 +19,9 @@ export function getRestoreLocation() {
     const locationName = getURL();
     if (!locationName) return null;
 
+    // URLSearchParams.get() already percent-decodes; decoding again threw
+    // URIError on values like "100%" and aborted init().
     return allLocations.find(location =>
-        location.name.toLowerCase() === decodeURIComponent(locationName).toLowerCase()
+        location.name.toLowerCase() === locationName.toLowerCase()
     ) || null;
 }
