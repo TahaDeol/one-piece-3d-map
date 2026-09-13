@@ -28,6 +28,13 @@ viewer.scene.screenSpaceCameraController.zoomEventTypes = [Cesium.CameraEventTyp
 
 const zoomCanvas = viewer.scene.canvas;
 
+// Cesium's maximumZoomDistance/minimumZoomDistance only govern its own
+// controller, not direct camera.zoomIn/zoomOut calls, so the custom wheel
+// handler clamps on its own. Without the ceiling, each tick grows height
+// by 20% and the globe shrinks to nothing with no home button to recover.
+const MAX_CAMERA_HEIGHT = 30000000;
+const MIN_CAMERA_HEIGHT = 100000;
+
 zoomCanvas.addEventListener('wheel', function (e) {
     e.preventDefault();
 
@@ -36,6 +43,9 @@ zoomCanvas.addEventListener('wheel', function (e) {
     const amount = (Math.min(Math.abs(e.deltaY), 300) / 300) * height * 0.2;
 
     if (e.deltaY < 0) {
+        const allowed = Math.min(amount, Math.max(0, height - MIN_CAMERA_HEIGHT));
+        if (allowed <= 0) return;
+
         const rect = zoomCanvas.getBoundingClientRect();
         const cursor = new Cesium.Cartesian2(e.clientX - rect.left, e.clientY - rect.top);
         const target = camera.pickEllipsoid(cursor, viewer.scene.globe.ellipsoid);
@@ -44,17 +54,19 @@ zoomCanvas.addEventListener('wheel', function (e) {
             const direction = Cesium.Cartesian3.subtract(target, camera.position, new Cesium.Cartesian3());
             const distance = Cesium.Cartesian3.magnitude(direction);
             Cesium.Cartesian3.normalize(direction, direction);
-            const moveAmount = Math.min(amount, distance * 0.9);
+            const moveAmount = Math.min(allowed, distance * 0.9);
             Cesium.Cartesian3.add(
                 camera.position,
                 Cesium.Cartesian3.multiplyByScalar(direction, moveAmount, direction),
                 camera.position
             );
         } else {
-            camera.zoomIn(amount);
+            camera.zoomIn(allowed);
         }
     } else {
-        camera.zoomOut(amount);
+        const allowed = Math.min(amount, Math.max(0, MAX_CAMERA_HEIGHT - height));
+        if (allowed <= 0) return;
+        camera.zoomOut(allowed);
     }
 }, { passive: false });
 
